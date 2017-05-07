@@ -7,14 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D58C61EAC5D25226F560989 /* Pods_StudyMate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCAC433631723D30A21846A /* Pods_StudyMate.framework */; };
 		D81676DA1EBF4A900024FD8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81676D91EBF4A900024FD8B /* AppDelegate.swift */; };
 		D81676DC1EBF4A900024FD8B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81676DB1EBF4A900024FD8B /* ViewController.swift */; };
 		D81676DF1EBF4A900024FD8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D81676DD1EBF4A900024FD8B /* Main.storyboard */; };
 		D81676E11EBF4A900024FD8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D81676E01EBF4A900024FD8B /* Assets.xcassets */; };
 		D81676E41EBF4A900024FD8B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D81676E21EBF4A900024FD8B /* LaunchScreen.storyboard */; };
+		D81676EC1EBF4BA80024FD8B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D81676EB1EBF4BA80024FD8B /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		84DC53CDFAB529FAE622882F /* Pods-StudyMate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyMate.release.xcconfig"; path = "Pods/Target Support Files/Pods-StudyMate/Pods-StudyMate.release.xcconfig"; sourceTree = "<group>"; };
+		B7F56DD4E97406D43EE6CFC8 /* Pods-StudyMate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyMate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StudyMate/Pods-StudyMate.debug.xcconfig"; sourceTree = "<group>"; };
 		D81676D61EBF4A900024FD8B /* StudyMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D81676D91EBF4A900024FD8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D81676DB1EBF4A900024FD8B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +26,8 @@
 		D81676E01EBF4A900024FD8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D81676E31EBF4A900024FD8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D81676E51EBF4A900024FD8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D81676EB1EBF4BA80024FD8B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DDCAC433631723D30A21846A /* Pods_StudyMate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudyMate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D58C61EAC5D25226F560989 /* Pods_StudyMate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		45220F119B49064C61EA764E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DDCAC433631723D30A21846A /* Pods_StudyMate.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4B3562499B9D4C6E023E7637 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B7F56DD4E97406D43EE6CFC8 /* Pods-StudyMate.debug.xcconfig */,
+				84DC53CDFAB529FAE622882F /* Pods-StudyMate.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D81676CD1EBF4A900024FD8B = {
 			isa = PBXGroup;
 			children = (
 				D81676D81EBF4A900024FD8B /* StudyMate */,
 				D81676D71EBF4A900024FD8B /* Products */,
+				4B3562499B9D4C6E023E7637 /* Pods */,
+				45220F119B49064C61EA764E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +86,7 @@
 				D81676E01EBF4A900024FD8B /* Assets.xcassets */,
 				D81676E21EBF4A900024FD8B /* LaunchScreen.storyboard */,
 				D81676E51EBF4A900024FD8B /* Info.plist */,
+				D81676EB1EBF4BA80024FD8B /* GoogleService-Info.plist */,
 			);
 			path = StudyMate;
 			sourceTree = "<group>";
@@ -71,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D81676E81EBF4A900024FD8B /* Build configuration list for PBXNativeTarget "StudyMate" */;
 			buildPhases = (
+				7B5F57A59992373BA22E9183 /* [CP] Check Pods Manifest.lock */,
 				D81676D21EBF4A900024FD8B /* Sources */,
 				D81676D31EBF4A900024FD8B /* Frameworks */,
 				D81676D41EBF4A900024FD8B /* Resources */,
+				1DE0879D4D3A8C913F1FD0B5 /* [CP] Embed Pods Frameworks */,
+				9C46CC0D1D8611DC379F7F84 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -125,12 +155,61 @@
 			buildActionMask = 2147483647;
 			files = (
 				D81676E41EBF4A900024FD8B /* LaunchScreen.storyboard in Resources */,
+				D81676EC1EBF4BA80024FD8B /* GoogleService-Info.plist in Resources */,
 				D81676E11EBF4A900024FD8B /* Assets.xcassets in Resources */,
 				D81676DF1EBF4A900024FD8B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1DE0879D4D3A8C913F1FD0B5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StudyMate/Pods-StudyMate-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B5F57A59992373BA22E9183 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9C46CC0D1D8611DC379F7F84 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StudyMate/Pods-StudyMate-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D81676D21EBF4A900024FD8B /* Sources */ = {
@@ -259,6 +338,7 @@
 		};
 		D81676E91EBF4A900024FD8B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7F56DD4E97406D43EE6CFC8 /* Pods-StudyMate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = KU5BPZ27UR;
@@ -272,6 +352,7 @@
 		};
 		D81676EA1EBF4A900024FD8B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84DC53CDFAB529FAE622882F /* Pods-StudyMate.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = KU5BPZ27UR;
