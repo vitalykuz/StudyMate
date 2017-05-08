@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="023b3ed3-cc51-4659-8b94-db3f33620c2f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/StudyMate/Constants.swift" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/StudyMate/FacebookButton.swift" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/StudyMate/ModernView.swift" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/StudyMate/TextFieldCustomView.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StudyMate/Assets.xcassets/logo.imageset/logo.png" afterPath="$PROJECT_DIR$/StudyMate/Assets.xcassets/logo.imageset/logo.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StudyMate.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/StudyMate.xcodeproj/project.pbxproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StudyMate/Base.lproj/Main.storyboard" afterPath="$PROJECT_DIR$/StudyMate/Base.lproj/Main.storyboard" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Podfile" afterPath="$PROJECT_DIR$/Podfile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StudyMate/Constants.swift" afterPath="$PROJECT_DIR$/StudyMate/Constants.swift" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -257,12 +251,12 @@
       <option name="presentableId" value="Default" />
       <updated>1494162020534</updated>
       <workItem from="1494162023853" duration="600000" />
-      <workItem from="1494207522308" duration="729000" />
+      <workItem from="1494207522308" duration="994000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1329000" />
+    <option name="totallyTimeSpent" value="1594000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="720" extended-state="6" />
