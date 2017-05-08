@@ -10,3 +10,6 @@ import UIKit
 
 //defines colors for shadows
 let SHADOW_GRAY: CGFloat = 120.0 / 255.0
+
+//user id
+let KEY_UID = "uid"

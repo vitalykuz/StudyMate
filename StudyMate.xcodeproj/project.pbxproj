@@ -20,6 +20,7 @@
 		D8ED0C751EC00A1400D2536D /* TextFieldCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ED0C741EC00A1400D2536D /* TextFieldCustomView.swift */; };
 		D8ED0C771EC00B8800D2536D /* ButtonCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ED0C761EC00B8800D2536D /* ButtonCustomView.swift */; };
 		D8ED0C791EC0244800D2536D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8ED0C781EC0244800D2536D /* Default-568h@2x.png */; };
+		D8ED0C7B1EC0808900D2536D /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ED0C7A1EC0808900D2536D /* FeedVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		D8ED0C741EC00A1400D2536D /* TextFieldCustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldCustomView.swift; sourceTree = "<group>"; };
 		D8ED0C761EC00B8800D2536D /* ButtonCustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonCustomView.swift; sourceTree = "<group>"; };
 		D8ED0C781EC0244800D2536D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		D8ED0C7A1EC0808900D2536D /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		DDCAC433631723D30A21846A /* Pods_StudyMate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudyMate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				D81676DB1EBF4A900024FD8B /* SignInVC.swift */,
+				D8ED0C7A1EC0808900D2536D /* FeedVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				D8ED0C751EC00A1400D2536D /* TextFieldCustomView.swift in Sources */,
 				D8ED0C731EC006D700D2536D /* FacebookButton.swift in Sources */,
 				D8ED0C771EC00B8800D2536D /* ButtonCustomView.swift in Sources */,
+				D8ED0C7B1EC0808900D2536D /* FeedVC.swift in Sources */,
 				D81676DA1EBF4A900024FD8B /* AppDelegate.swift in Sources */,
 				D8ED0C6E1EC0034500D2536D /* ModernView.swift in Sources */,
 				D8ED0C711EC0046800D2536D /* Constants.swift in Sources */,

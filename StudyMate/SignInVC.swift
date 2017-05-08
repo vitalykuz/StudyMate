@@ -10,6 +10,7 @@ import UIKit
 import FBSDKLoginKit
 import FBSDKCoreKit
 import Firebase
+import SwiftKeychainWrapper
 
 class SignInVC: UIViewController, UITextFieldDelegate {
 
@@ -59,16 +60,19 @@ class SignInVC: UIViewController, UITextFieldDelegate {
 	func firebaseAuth(_ credential: FIRAuthCredential) {
 		FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in
 			if error != nil {
-				print("Vitaly: successful auth with Firebase ")
-			} else {
 				print("Vitaly: unable to auth with firebase ")
+			} else {
+				print("Vitaly: successful auth with Firebase ")
+				if let user = user {
+					self.saveUserIdToKeyChain(id: user.uid)
+				}
 			}
 		})
 	}
 	
 	
 	/*
-	@brief This methods tries to sign in a Firebase user with email. 
+	@brief This methods tries to sign in a Firebase user with email.
 	 If the user does not exist (does not have an acc), it creates a new user with provided email and password.
 	*/
 	@IBAction func signInButtonTapped(_ sender: Any) {
@@ -77,18 +81,30 @@ class SignInVC: UIViewController, UITextFieldDelegate {
 			FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
 				if ( error == nil ) {
 					print("Vitaly: success login with email Firebase")
+					if let user = user {
+						self.saveUserIdToKeyChain(id: user.uid)
+					}
 				} else {
 					FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error ) in
 						if ( error != nil ) {
 							print("Vitaly: unable to auth with email firebase")
 						} else {
 							print("Vitaly: new user with email created with Firebase")
+							if let user = user {
+								self.saveUserIdToKeyChain(id: user.uid)
+							}
 						}
 					})
 				}
 			})
 		}
 	}
+	
+	func saveUserIdToKeyChain(id: String) {
+		KeychainWrapper.standard.set(id, forKey: KEY_UID)
+	}
+	
+	
 }
 
 
