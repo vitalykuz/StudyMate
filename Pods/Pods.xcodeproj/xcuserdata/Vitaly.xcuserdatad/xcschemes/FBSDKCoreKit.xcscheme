@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'BEF7E6E85DB5CDE5D7A18F4F2EB8494B'
-               BlueprintName = 'FBSDKCoreKit'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'FBSDKCoreKit.framework'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "BEF7E6E85DB5CDE5D7A18F4F2EB8494B"
+               BlueprintName = "FBSDKCoreKit"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "FBSDKCoreKit.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
