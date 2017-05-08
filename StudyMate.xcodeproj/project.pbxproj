@@ -13,7 +13,14 @@
 		D81676DF1EBF4A900024FD8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D81676DD1EBF4A900024FD8B /* Main.storyboard */; };
 		D81676E11EBF4A900024FD8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D81676E01EBF4A900024FD8B /* Assets.xcassets */; };
 		D81676E41EBF4A900024FD8B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D81676E21EBF4A900024FD8B /* LaunchScreen.storyboard */; };
-		D81676EC1EBF4BA80024FD8B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D81676EB1EBF4BA80024FD8B /* GoogleService-Info.plist */; };
+		D8ED0C6E1EC0034500D2536D /* ModernView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ED0C6D1EC0034500D2536D /* ModernView.swift */; };
+		D8ED0C711EC0046800D2536D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ED0C701EC0046800D2536D /* Constants.swift */; };
+		D8ED0C731EC006D700D2536D /* FacebookButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ED0C721EC006D700D2536D /* FacebookButton.swift */; };
+		D8ED0C751EC00A1400D2536D /* TextFieldCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ED0C741EC00A1400D2536D /* TextFieldCustomView.swift */; };
+		D8ED0C771EC00B8800D2536D /* ButtonCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ED0C761EC00B8800D2536D /* ButtonCustomView.swift */; };
+		D8ED0C791EC0244800D2536D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8ED0C781EC0244800D2536D /* Default-568h@2x.png */; };
+		D8ED0C7B1EC0808900D2536D /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ED0C7A1EC0808900D2536D /* FeedVC.swift */; };
+		D8ED0C7E1EC08E2500D2536D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8ED0C7D1EC08E2500D2536D /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +33,15 @@
 		D81676E01EBF4A900024FD8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D81676E31EBF4A900024FD8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D81676E51EBF4A900024FD8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D81676EB1EBF4BA80024FD8B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D8ED0C6D1EC0034500D2536D /* ModernView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModernView.swift; sourceTree = "<group>"; };
+		D8ED0C701EC0046800D2536D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D8ED0C721EC006D700D2536D /* FacebookButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookButton.swift; sourceTree = "<group>"; };
+		D8ED0C741EC00A1400D2536D /* TextFieldCustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldCustomView.swift; sourceTree = "<group>"; };
+		D8ED0C761EC00B8800D2536D /* ButtonCustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonCustomView.swift; sourceTree = "<group>"; };
+		D8ED0C781EC0244800D2536D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		D8ED0C7A1EC0808900D2536D /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
+		D8ED0C7C1EC08D2A00D2536D /* StudyMate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StudyMate.entitlements; sourceTree = "<group>"; };
+		D8ED0C7D1EC08E2500D2536D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DDCAC433631723D30A21846A /* Pods_StudyMate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudyMate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -62,6 +77,7 @@
 		D81676CD1EBF4A900024FD8B = {
 			isa = PBXGroup;
 			children = (
+				D8ED0C781EC0244800D2536D /* Default-568h@2x.png */,
 				D81676D81EBF4A900024FD8B /* StudyMate */,
 				D81676D71EBF4A900024FD8B /* Products */,
 				4B3562499B9D4C6E023E7637 /* Pods */,
@@ -80,6 +96,8 @@
 		D81676D81EBF4A900024FD8B /* StudyMate */ = {
 			isa = PBXGroup;
 			children = (
+				D8ED0C7C1EC08D2A00D2536D /* StudyMate.entitlements */,
+				D8ED0C6F1EC0043D00D2536D /* Utilities */,
 				D81676ED1EBF509F0024FD8B /* Model */,
 				D81676EE1EBF50B40024FD8B /* View */,
 				D81676EF1EBF50BC0024FD8B /* Controller */,
@@ -88,7 +106,7 @@
 				D81676E01EBF4A900024FD8B /* Assets.xcassets */,
 				D81676E21EBF4A900024FD8B /* LaunchScreen.storyboard */,
 				D81676E51EBF4A900024FD8B /* Info.plist */,
-				D81676EB1EBF4BA80024FD8B /* GoogleService-Info.plist */,
+				D8ED0C7D1EC08E2500D2536D /* GoogleService-Info.plist */,
 			);
 			path = StudyMate;
 			sourceTree = "<group>";
@@ -103,6 +121,10 @@
 		D81676EE1EBF50B40024FD8B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D8ED0C6D1EC0034500D2536D /* ModernView.swift */,
+				D8ED0C721EC006D700D2536D /* FacebookButton.swift */,
+				D8ED0C741EC00A1400D2536D /* TextFieldCustomView.swift */,
+				D8ED0C761EC00B8800D2536D /* ButtonCustomView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -111,8 +133,17 @@
 			isa = PBXGroup;
 			children = (
 				D81676DB1EBF4A900024FD8B /* SignInVC.swift */,
+				D8ED0C7A1EC0808900D2536D /* FeedVC.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		D8ED0C6F1EC0043D00D2536D /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				D8ED0C701EC0046800D2536D /* Constants.swift */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,6 +183,11 @@
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = KU5BPZ27UR;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -179,8 +215,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D81676E41EBF4A900024FD8B /* LaunchScreen.storyboard in Resources */,
-				D81676EC1EBF4BA80024FD8B /* GoogleService-Info.plist in Resources */,
 				D81676E11EBF4A900024FD8B /* Assets.xcassets in Resources */,
+				D8ED0C7E1EC08E2500D2536D /* GoogleService-Info.plist in Resources */,
+				D8ED0C791EC0244800D2536D /* Default-568h@2x.png in Resources */,
 				D81676DF1EBF4A900024FD8B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -241,7 +278,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D81676DC1EBF4A900024FD8B /* SignInVC.swift in Sources */,
+				D8ED0C751EC00A1400D2536D /* TextFieldCustomView.swift in Sources */,
+				D8ED0C731EC006D700D2536D /* FacebookButton.swift in Sources */,
+				D8ED0C771EC00B8800D2536D /* ButtonCustomView.swift in Sources */,
+				D8ED0C7B1EC0808900D2536D /* FeedVC.swift in Sources */,
 				D81676DA1EBF4A900024FD8B /* AppDelegate.swift in Sources */,
+				D8ED0C6E1EC0034500D2536D /* ModernView.swift in Sources */,
+				D8ED0C711EC0046800D2536D /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,6 +408,7 @@
 			baseConfigurationReference = B7F56DD4E97406D43EE6CFC8 /* Pods-StudyMate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = StudyMate/StudyMate.entitlements;
 				DEVELOPMENT_TEAM = KU5BPZ27UR;
 				INFOPLIST_FILE = StudyMate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -379,6 +423,7 @@
 			baseConfigurationReference = 84DC53CDFAB529FAE622882F /* Pods-StudyMate.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = StudyMate/StudyMate.entitlements;
 				DEVELOPMENT_TEAM = KU5BPZ27UR;
 				INFOPLIST_FILE = StudyMate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
