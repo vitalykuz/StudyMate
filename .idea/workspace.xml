@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="023b3ed3-cc51-4659-8b94-db3f33620c2f" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-StudyMate/Pods-StudyMate.debug copy.xcconfig" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/StudyMate/StudyMate.entitlements" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/StudyMate/GoogleService-Info.plist" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StudyMate.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/StudyMate.xcodeproj/project.pbxproj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StudyMate/AppDelegate.swift" afterPath="$PROJECT_DIR$/StudyMate/AppDelegate.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StudyMate/Constants.swift" afterPath="$PROJECT_DIR$/StudyMate/Constants.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StudyMate/Base.lproj/Main.storyboard" afterPath="$PROJECT_DIR$/StudyMate/Base.lproj/Main.storyboard" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StudyMate/FeedVC.swift" afterPath="$PROJECT_DIR$/StudyMate/FeedVC.swift" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StudyMate/SignInVC.swift" afterPath="$PROJECT_DIR$/StudyMate/SignInVC.swift" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,13 +21,30 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos_887fd9f4fb774ccbe82251e6eba90e8c64f7608a" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SignInVC.swift" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SignInVC.swift" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/StudyMate/SignInVC.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="27" column="32" lean-forward="true" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
+            <state relative-caret-position="235">
+              <caret line="48" column="8" lean-forward="false" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="8" />
               <folding>
                 <element signature="e#150#162#0" expanded="true" />
+                <marker date="1494243640000" expanded="true" signature="303:3409" ph="{...}" />
+                <marker date="1494243640000" expanded="true" signature="1900:2233" ph="{...}" />
+                <marker date="1494243640000" expanded="true" signature="2239:2420" ph="/*...*/" />
+                <marker date="1494243640000" expanded="true" signature="2471:3249" ph="{...}" />
+                <marker date="1494243640000" expanded="true" signature="3291:3403" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FeedVC.swift" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/StudyMate/FeedVC.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="24" column="4" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+              <folding>
+                <element signature="e#142#154#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -48,8 +68,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/StudyMate/SignInVC.swift" />
         <option value="$PROJECT_DIR$/StudyMate/AppDelegate.swift" />
+        <option value="$PROJECT_DIR$/StudyMate/SignInVC.swift" />
+        <option value="$PROJECT_DIR$/StudyMate/FeedVC.swift" />
       </list>
     </option>
   </component>
@@ -206,12 +227,12 @@
       <updated>1494162020534</updated>
       <workItem from="1494162023853" duration="427000" />
       <workItem from="1494236950271" duration="331000" />
-      <workItem from="1494237768913" duration="314000" />
+      <workItem from="1494237768913" duration="873000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1072000" />
+    <option name="totallyTimeSpent" value="1631000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="720" extended-state="6" />
@@ -254,6 +275,11 @@
           <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
           <folding>
             <element signature="e#150#162#0" expanded="true" />
+            <marker date="1494243640000" expanded="true" signature="303:3409" ph="{...}" />
+            <marker date="1494243640000" expanded="true" signature="1900:2233" ph="{...}" />
+            <marker date="1494243640000" expanded="true" signature="2239:2420" ph="/*...*/" />
+            <marker date="1494243640000" expanded="true" signature="2471:3249" ph="{...}" />
+            <marker date="1494243640000" expanded="true" signature="3291:3403" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -272,6 +298,11 @@
           <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding>
             <element signature="e#150#162#0" expanded="true" />
+            <marker date="1494243640000" expanded="true" signature="303:3409" ph="{...}" />
+            <marker date="1494243640000" expanded="true" signature="1900:2233" ph="{...}" />
+            <marker date="1494243640000" expanded="true" signature="2239:2420" ph="/*...*/" />
+            <marker date="1494243640000" expanded="true" signature="2471:3249" ph="{...}" />
+            <marker date="1494243640000" expanded="true" signature="3291:3403" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -290,6 +321,11 @@
           <caret line="10" column="34" lean-forward="false" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
           <folding>
             <element signature="e#150#162#0" expanded="true" />
+            <marker date="1494243640000" expanded="true" signature="303:3409" ph="{...}" />
+            <marker date="1494243640000" expanded="true" signature="1900:2233" ph="{...}" />
+            <marker date="1494243640000" expanded="true" signature="2239:2420" ph="/*...*/" />
+            <marker date="1494243640000" expanded="true" signature="2471:3249" ph="{...}" />
+            <marker date="1494243640000" expanded="true" signature="3291:3403" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -302,6 +338,11 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#150#162#0" expanded="true" />
+            <marker date="1494243640000" expanded="true" signature="303:3409" ph="{...}" />
+            <marker date="1494243640000" expanded="true" signature="1900:2233" ph="{...}" />
+            <marker date="1494243640000" expanded="true" signature="2239:2420" ph="/*...*/" />
+            <marker date="1494243640000" expanded="true" signature="2471:3249" ph="{...}" />
+            <marker date="1494243640000" expanded="true" signature="3291:3403" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -314,6 +355,11 @@
           <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
           <folding>
             <element signature="e#150#162#0" expanded="true" />
+            <marker date="1494243640000" expanded="true" signature="303:3409" ph="{...}" />
+            <marker date="1494243640000" expanded="true" signature="1900:2233" ph="{...}" />
+            <marker date="1494243640000" expanded="true" signature="2239:2420" ph="/*...*/" />
+            <marker date="1494243640000" expanded="true" signature="2471:3249" ph="{...}" />
+            <marker date="1494243640000" expanded="true" signature="3291:3403" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -324,6 +370,11 @@
           <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding>
             <element signature="e#150#162#0" expanded="true" />
+            <marker date="1494243640000" expanded="true" signature="303:3409" ph="{...}" />
+            <marker date="1494243640000" expanded="true" signature="1900:2233" ph="{...}" />
+            <marker date="1494243640000" expanded="true" signature="2239:2420" ph="/*...*/" />
+            <marker date="1494243640000" expanded="true" signature="2471:3249" ph="{...}" />
+            <marker date="1494243640000" expanded="true" signature="3291:3403" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -338,10 +389,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/StudyMate/SignInVC.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="27" column="32" lean-forward="true" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
+        <state relative-caret-position="235">
+          <caret line="48" column="8" lean-forward="false" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="8" />
           <folding>
             <element signature="e#150#162#0" expanded="true" />
+            <marker date="1494243640000" expanded="true" signature="303:3409" ph="{...}" />
+            <marker date="1494243640000" expanded="true" signature="1900:2233" ph="{...}" />
+            <marker date="1494243640000" expanded="true" signature="2239:2420" ph="/*...*/" />
+            <marker date="1494243640000" expanded="true" signature="2471:3249" ph="{...}" />
+            <marker date="1494243640000" expanded="true" signature="3291:3403" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StudyMate/FeedVC.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="4" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+          <folding>
+            <element signature="e#142#154#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -23,6 +23,14 @@ class SignInVC: UIViewController, UITextFieldDelegate {
 		emailTextField.delegate = self
 		passwordTextField.delegate = self
 	}
+	
+	override func viewDidAppear(_ animated: Bool) {
+		//checks if i got the uid in key chain
+		if KeychainWrapper.standard.string(forKey: KEY_UID) != nil {
+			print("Vitaly: User ID is in key chain")
+			performSegue(withIdentifier: "toFeedVC", sender: nil)
+		}
+	}
 
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
@@ -60,7 +68,7 @@ class SignInVC: UIViewController, UITextFieldDelegate {
 	func firebaseAuth(_ credential: FIRAuthCredential) {
 		FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in
 			if error != nil {
-				print("Vitaly: unable to auth with firebase ")
+				print("Vitaly: unable to auth with firebase error: \(error.debugDescription) ")
 			} else {
 				print("Vitaly: successful auth with Firebase ")
 				if let user = user {
@@ -102,6 +110,7 @@ class SignInVC: UIViewController, UITextFieldDelegate {
 	
 	func saveUserIdToKeyChain(id: String) {
 		KeychainWrapper.standard.set(id, forKey: KEY_UID)
+		performSegue(withIdentifier: "toFeedVC", sender: nil)
 	}
 	
 	
