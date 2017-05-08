@@ -13,6 +13,11 @@ import Firebase
 
 class SignInVC: UIViewController {
 
+	@IBOutlet var emailTextField: TextFieldCustomView!
+	@IBOutlet var passwordTextField: TextFieldCustomView!
+	
+	
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 	}
@@ -55,6 +60,18 @@ class SignInVC: UIViewController {
 			}
 		})
 	}
+	
+	@IBAction func signInButtonTapped(_ sender: Any) {
+		
+		
+		
+		
+	}
+	
+	
+	
+	
+	
 }
 
 
