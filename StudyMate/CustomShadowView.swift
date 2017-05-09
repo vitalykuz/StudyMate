@@ -1,5 +1,5 @@
 //
-//  ModernView.swift
+//  CustomShadowView.swift
 //  StudyMate
 //
 //  Created by Vitaly Kuzenkov on 8/5/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ModernView: UIView {
+class CustomShadowView: UIView {
 
 	override func awakeFromNib() {
 		super.awakeFromNib()
@@ -18,6 +18,7 @@ class ModernView: UIView {
 		layer.shadowOpacity = 1.0
 		layer.shadowRadius = 5.0
 		layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
+		layer.cornerRadius = 2.0
 	}
 
 }
