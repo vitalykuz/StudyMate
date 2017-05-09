@@ -10,6 +10,18 @@ import UIKit
 
 class PostTableViewCell: UITableViewCell {
 
+	@IBOutlet var avatarImageView: UIImageView!
+	@IBOutlet var nameLabel: UILabel!
+	@IBOutlet var uniLabel: UILabel!
+	@IBOutlet var subjectNameLabel: UILabel!
+	@IBOutlet var postDescriptionLabel: UILabel!
+	@IBOutlet var locationLabel: UILabel!
+	@IBOutlet var timeLabel: UILabel!
+	@IBOutlet var likesLabel: UILabel!
+	
+	
+	
+	
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
