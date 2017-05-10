@@ -16,6 +16,8 @@ class SignInVC: UIViewController, UITextFieldDelegate {
 
 	@IBOutlet var emailTextField: TextFieldCustomView!
 	@IBOutlet var passwordTextField: TextFieldCustomView!
+	var activeField: UITextField?
+	@IBOutlet var scrollView: UIScrollView!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -113,6 +115,24 @@ class SignInVC: UIViewController, UITextFieldDelegate {
 		performSegue(withIdentifier: "toFeedVC", sender: nil)
 	}
 	
+	
+	// methods below resposible for moving text fields up, when the keyboard appears
+	func textFieldDidBeginEditing(_ textField: UITextField) {
+		animateViewMoving(up: true, moveValue: 100)
+	}
+	func textFieldDidEndEditing(_ textField: UITextField) {
+		animateViewMoving(up: false, moveValue: 100)
+	}
+	
+	func animateViewMoving (up:Bool, moveValue :CGFloat){
+		let movementDuration:TimeInterval = 0.3
+		let movement:CGFloat = ( up ? -moveValue : moveValue)
+		UIView.beginAnimations( "animateView", context: nil)
+		UIView.setAnimationBeginsFromCurrentState(true)
+		UIView.setAnimationDuration(movementDuration )
+		self.view.frame = self.view.frame.offsetBy(dx: 0,  dy: movement)
+		UIView.commitAnimations()
+	}
 	
 }
 
