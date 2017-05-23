@@ -50,7 +50,7 @@ class SignInVC: UIViewController, UITextFieldDelegate {
 	@IBAction func facebookButtonTapped(_ sender: Any) {
 		
 		let facebookLoginManager = FBSDKLoginManager()
-		facebookLoginManager.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
+		facebookLoginManager.logIn(withReadPermissions: ["email", "public_profile"], from: self) { (result, error) in
 			if error != nil {
 				print("Vitaly: unable to authenticate with facebook ")
 			} else if result?.isCancelled == true {
@@ -74,6 +74,10 @@ class SignInVC: UIViewController, UITextFieldDelegate {
 			} else {
 				print("Vitaly: successful auth with Firebase ")
 				if let user = user {
+					print("User name \(String(describing: user.displayName))")
+					print("User email \(String(describing: user.email))")
+					print("Photo url \(String(describing: user.photoURL))")
+					print("User uid \(user.uid)")
 					self.saveUserIdToKeyChain(id: user.uid)
 				}
 			}
@@ -92,6 +96,9 @@ class SignInVC: UIViewController, UITextFieldDelegate {
 				if ( error == nil ) {
 					print("Vitaly: success login with email Firebase")
 					if let user = user {
+						print("Email name \(String(describing: user.displayName))")
+						print("Email email \(String(describing: user.email))")
+						print("Email photoURL \(String(describing: user.photoURL))")
 						self.saveUserIdToKeyChain(id: user.uid)
 					}
 				} else {
