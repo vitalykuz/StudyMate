@@ -12,6 +12,7 @@ import UIKit
 let SHADOW_GRAY: CGFloat = 120.0 / 255.0
 
 //database constants
+
 let USER_ID = "uid"
 let USER_EMAIL = "userEmail"
 let PROVIDER = "provider"
@@ -22,3 +23,5 @@ let EMAIL_NOT_PROVIDED = "email not provided"
 
 // Posts table in database
 let POST_DESCRIPTION = "postDescription"
+let POSTS = "posts"
+let USERS = "users"

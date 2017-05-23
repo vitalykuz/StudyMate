@@ -16,11 +16,11 @@ class Post {
 	private var _postKey: String!
 	private var _postRef: FIRDatabaseReference!
 	
-	var caption: String {
+	var postDescription: String {
 		return _postDescription
 	}
 	
-	var imageUrl: String {
+	var profileImageURL: String {
 		return _profileImageUrl
 	}
 	
@@ -38,7 +38,7 @@ class Post {
 		self._likes = likes
 	}
 	
-	init(postId: String, postData: Dictionary<String, AnyObject>) {
+	init(postId: String, postData: Dictionary<String, Any>) {
 		self._postKey = postId
 		
 		if let postDescription = postData[POST_DESCRIPTION] as? String {
