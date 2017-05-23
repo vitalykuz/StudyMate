@@ -19,8 +19,7 @@ class PostTableViewCell: UITableViewCell {
 	@IBOutlet var timeLabel: UILabel!
 	@IBOutlet var likesLabel: UILabel!
 	
-	
-	
+	var post: Post!
 	
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -33,4 +32,19 @@ class PostTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+	func configureCell(post: Post) {
+		self.post = post
+		self.postDescriptionLabel.text = post.postDescription
+		self.likesLabel.text = "\(post.likes)"
+	}
+	
 }
+
+
+
+
+
+
+
+
+

@@ -25,3 +25,6 @@ let EMAIL_NOT_PROVIDED = "email not provided"
 let POST_DESCRIPTION = "postDescription"
 let POSTS = "posts"
 let USERS = "users"
+
+// identifiers
+let POST_CELL = "postCell"

@@ -29,7 +29,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	func startListeningToChangesInPost() {
 		DataService.ds.REF_POSTS.observe(.value, with: { (snapshot) in
 			
-			self.posts = [] // THIS IS THE NEW LINE
+			self.posts = []
 			
 			if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
 				for snap in snapshot {
@@ -53,9 +53,13 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		
 		let post = posts[indexPath.row]
-		print("Post description: \(post.postDescription)")
 		
-		return tableView.dequeueReusableCell(withIdentifier: "postCell") as! PostTableViewCell
+		if let cell = tableView.dequeueReusableCell(withIdentifier: POST_CELL) as? PostTableViewCell {
+			cell.configureCell(post: post)
+			return cell
+		} else {
+			return PostTableViewCell()
+		}
 	}
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
