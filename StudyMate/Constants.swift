@@ -16,5 +16,9 @@ let USER_ID = "uid"
 let USER_EMAIL = "userEmail"
 let PROVIDER = "provider"
 let USER_NAME = "name"
+let LIKES = "likes"
 let PROFILE_IMAGE_URL = "profileImageURL"
 let EMAIL_NOT_PROVIDED = "email not provided"
+
+// Posts table in database
+let POST_DESCRIPTION = "postDescription"
