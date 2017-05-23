@@ -33,7 +33,7 @@
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.95686274509803915" green="0.2627450980392157" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.95686274510000002" green="0.26274509800000001" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="67k-Cf-4Uy" firstAttribute="centerY" secondItem="Nav-lA-0Fe" secondAttribute="centerY" id="2uX-nW-NAo"/>
                                     <constraint firstAttribute="height" constant="140" id="2up-Kk-COV"/>
@@ -91,7 +91,7 @@
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hCO-3y-Gar" customClass="ButtonCustomView" customModule="StudyMate" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="108" width="280" height="50"/>
-                                        <color key="backgroundColor" red="0.71764705882352942" green="0.10980392156862745" blue="0.10980392156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.95686274510000002" green="0.26274509800000001" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                         <state key="normal" title="Sign In">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -183,7 +183,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.34509803919999998" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.95686274510000002" green="0.26274509800000001" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="nl0-hb-3eJ" firstAttribute="top" secondItem="IyR-eY-zMR" secondAttribute="top" constant="18" id="0rd-5B-MRa"/>
                                     <constraint firstItem="D0G-Lp-N7G" firstAttribute="leading" secondItem="IyR-eY-zMR" secondAttribute="leading" constant="18" id="5hl-Ap-Dkg"/>
@@ -424,7 +424,7 @@
                                                             </constraints>
                                                         </stackView>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="1" green="0.34509803919999998" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="0.95686274510000002" green="0.26274509800000001" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="1sf-vi-vMI" secondAttribute="trailing" constant="8" id="4jM-oF-w5d"/>
                                                         <constraint firstAttribute="trailing" secondItem="uIr-oh-ccZ" secondAttribute="trailing" constant="8" id="91W-Y3-Vrg"/>
@@ -472,7 +472,7 @@
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PH3-8M-Uyh" customClass="FacebookButton" customModule="StudyMate" customModuleProvider="target">
                                 <rect key="frame" x="132.5" y="483" width="55" height="55"/>
-                                <color key="backgroundColor" red="0.71764705880000002" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.95686274510000002" green="0.26274509800000001" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="iey-vY-sAf"/>
                                     <constraint firstAttribute="width" constant="55" id="t91-hV-ZH1"/>
