@@ -41,7 +41,7 @@ class DataService {
 		//let uid = KeychainWrapper.stringForKey(KEY_UID)
 		//let uid = KeychainWrapper.set(KEY_UID)
 		//let uid = KeychainWrapper.defaultKeychainWrapper.string(forKey: KEY_UID)
-		let uid = KeychainWrapper.standard.string(forKey: KEY_UID)
+		let uid = KeychainWrapper.standard.string(forKey: USER_ID)
 		let user = REF_USERS.child(uid!)
 		return user
 	}
@@ -50,7 +50,7 @@ class DataService {
 		return _REF_POST_IMAGES
 	}
 	
-	func createFirbaseDBUser(uid: String, userData: Dictionary<String, String>) {
+	func createFirbaseDBUser(uid: String, userData: Dictionary<String, Any>) {
 		REF_USERS.child(uid).updateChildValues(userData)
 	}
 	

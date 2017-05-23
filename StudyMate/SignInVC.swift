@@ -28,7 +28,7 @@ class SignInVC: UIViewController, UITextFieldDelegate {
 	
 	override func viewDidAppear(_ animated: Bool) {
 		//checks if i got the uid in key chain
-		if KeychainWrapper.standard.string(forKey: KEY_UID) != nil {
+		if KeychainWrapper.standard.string(forKey: USER_ID) != nil {
 			print("Vitaly: User ID is in key chain")
 			performSegue(withIdentifier: "toFeedVC", sender: nil)
 		}
@@ -78,7 +78,8 @@ class SignInVC: UIViewController, UITextFieldDelegate {
 					print("User email \(String(describing: user.email))")
 					print("Photo url \(String(describing: user.photoURL))")
 					print("User uid \(user.uid)")
-					self.saveUserIdToKeyChain(id: user.uid)
+					let userData = [USER_EMAIL: user.email!, PROVIDER: credential.provider, USER_NAME: user.displayName!, PROFILE_IMAGE_URL: String(describing: user.photoURL!)] as [String : Any]
+					self.saveUserDataToKeyChain(userId: user.uid, userData: userData)
 				}
 			}
 		})
@@ -99,7 +100,8 @@ class SignInVC: UIViewController, UITextFieldDelegate {
 						print("Email name \(String(describing: user.displayName))")
 						print("Email email \(String(describing: user.email))")
 						print("Email photoURL \(String(describing: user.photoURL))")
-						self.saveUserIdToKeyChain(id: user.uid)
+						let userData = [USER_EMAIL: user.email!, PROVIDER: user.providerID] as [String : Any]
+						self.saveUserDataToKeyChain(userId: user.uid, userData: userData)
 					}
 				} else {
 					FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error ) in
@@ -108,7 +110,8 @@ class SignInVC: UIViewController, UITextFieldDelegate {
 						} else {
 							print("Vitaly: new user with email created with Firebase")
 							if let user = user {
-								self.saveUserIdToKeyChain(id: user.uid)
+								let userData = [USER_EMAIL: user.email!, PROVIDER: user.providerID ] as [String : Any]
+								self.saveUserDataToKeyChain(userId: user.uid, userData: userData)
 							}
 						}
 					})
@@ -117,8 +120,9 @@ class SignInVC: UIViewController, UITextFieldDelegate {
 		}
 	}
 	
-	func saveUserIdToKeyChain(id: String) {
-		KeychainWrapper.standard.set(id, forKey: KEY_UID)
+	func saveUserDataToKeyChain(userId: String, userData: Dictionary<String, Any>) {
+		DataService.ds.createFirbaseDBUser(uid: userId, userData: userData )
+		KeychainWrapper.standard.set(userId, forKey: USER_ID)
 		performSegue(withIdentifier: "toFeedVC", sender: nil)
 	}
 	
