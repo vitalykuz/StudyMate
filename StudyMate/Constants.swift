@@ -28,3 +28,7 @@ let USERS = "users"
 
 // identifiers
 let POST_CELL = "postCell"
+
+// View Controllers
+let ACCOUNT_VC = "toAccountVC"
+let FEED_VC = "toFeedVC"

@@ -78,4 +78,10 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 		performSegue(withIdentifier: "toSignInVC", sender: nil)
 	}
 
+	@IBAction func accountButtonTapped(_ sender: Any) {
+		performSegue(withIdentifier: ACCOUNT_VC, sender: nil)
+	}
+	
+	
+	
 }
