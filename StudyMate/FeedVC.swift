@@ -10,6 +10,7 @@ import UIKit
 import SwiftKeychainWrapper
 import Firebase
 
+//rename to Post manager
 class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	@IBOutlet var tableView: UITableView!
 
@@ -27,8 +28,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
 	
 	func startListeningToChangesInPost() {
-		DataService.ds.REF_POSTS.observe(.value, with: { (snapshot) in
-			
+		FeedManager.fm.startListeningToChangesInPost { (snapshot) in
 			self.posts = []
 			
 			if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
@@ -42,7 +42,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 				}
 			}
 			self.tableView.reloadData()
-		})
+		}
 	}
 
 	
