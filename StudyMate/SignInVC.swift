@@ -100,7 +100,7 @@ class SignInVC: UIViewController, UITextFieldDelegate {
 						print("Email name \(String(describing: user.displayName))")
 						print("Email email \(String(describing: user.email))")
 						print("Email photoURL \(String(describing: user.photoURL))")
-						let userData = [USER_EMAIL: user.email!, PROVIDER: user.providerID] as [String : Any]
+						let userData = [USER_EMAIL: user.email!, PROVIDER: user.providerID, PROFILE_IMAGE_URL: "http://"] as [String : Any]
 						self.saveUserDataToKeyChain(userId: user.uid, userData: userData)
 					}
 				} else {
@@ -110,7 +110,7 @@ class SignInVC: UIViewController, UITextFieldDelegate {
 						} else {
 							print("Vitaly: new user with email created with Firebase")
 							if let user = user {
-								let userData = [USER_EMAIL: user.email!, PROVIDER: user.providerID ] as [String : Any]
+								let userData = [USER_EMAIL: user.email!, PROVIDER: user.providerID, PROFILE_IMAGE_URL: "http://"] as [String : Any]
 								self.saveUserDataToKeyChain(userId: user.uid, userData: userData)
 							}
 						}

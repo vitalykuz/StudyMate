@@ -16,6 +16,7 @@
 		D82516431ED2885C00FED13C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D82516421ED2885C00FED13C /* GoogleService-Info.plist */; };
 		D8922AF21ED3CC5C00E5322C /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8922AF11ED3CC5C00E5322C /* DataService.swift */; };
 		D8922AF41ED40CA000E5322C /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8922AF31ED40CA000E5322C /* Post.swift */; };
+		D8B76FA91EDC5DFC00CA77C1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B76FA81EDC5DFC00CA77C1 /* User.swift */; };
 		D8CF25421ED795DE00E11579 /* FeedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CF25411ED795DE00E11579 /* FeedManager.swift */; };
 		D8E50ADD1ED6E83B00293302 /* AccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E50ADC1ED6E83B00293302 /* AccountVC.swift */; };
 		D8ED0C6E1EC0034500D2536D /* CustomShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ED0C6D1EC0034500D2536D /* CustomShadowView.swift */; };
@@ -42,6 +43,7 @@
 		D82516421ED2885C00FED13C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D8922AF11ED3CC5C00E5322C /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		D8922AF31ED40CA000E5322C /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		D8B76FA81EDC5DFC00CA77C1 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D8CF25411ED795DE00E11579 /* FeedManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedManager.swift; sourceTree = "<group>"; };
 		D8E50ADC1ED6E83B00293302 /* AccountVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountVC.swift; sourceTree = "<group>"; };
 		D8ED0C6D1EC0034500D2536D /* CustomShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomShadowView.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				D8922AF31ED40CA000E5322C /* Post.swift */,
+				D8B76FA81EDC5DFC00CA77C1 /* User.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				D8ED0C771EC00B8800D2536D /* ButtonCustomView.swift in Sources */,
 				D8922AF21ED3CC5C00E5322C /* DataService.swift in Sources */,
 				D8E50ADD1ED6E83B00293302 /* AccountVC.swift in Sources */,
+				D8B76FA91EDC5DFC00CA77C1 /* User.swift in Sources */,
 				D8ED0C7B1EC0808900D2536D /* FeedVC.swift in Sources */,
 				D81676DA1EBF4A900024FD8B /* AppDelegate.swift in Sources */,
 				D8F2C9F21EC17AE600D3E1A9 /* PostCell.swift in Sources */,

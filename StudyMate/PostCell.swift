@@ -48,9 +48,9 @@ class PostCell: UITableViewCell {
 				} else {
 					print("Vitaly: Image downloaded from Firebase storage")
 					if let imgData = data {
-						if let img = UIImage(data: imgData) {
+						if let profileImage = UIImage(data: imgData) {
 							self.profileImage.image = profileImage
-							FeedVC.imageCache.setObject(img, forKey: post.profileImageURL as NSString)
+							FeedVC.imageCache.setObject(profileImage, forKey: post.profileImageURL as NSString)
 						}
 					}
 				}
