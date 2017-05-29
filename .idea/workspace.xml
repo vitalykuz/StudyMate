@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="023b3ed3-cc51-4659-8b94-db3f33620c2f" name="Default" comment="" />
+    <list default="true" id="023b3ed3-cc51-4659-8b94-db3f33620c2f" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StudyMate/AccountVC.swift" afterPath="$PROJECT_DIR$/StudyMate/AccountVC.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StudyMate/Base.lproj/Main.storyboard" afterPath="$PROJECT_DIR$/StudyMate/Base.lproj/Main.storyboard" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StudyMate/Constants.swift" afterPath="$PROJECT_DIR$/StudyMate/Constants.swift" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -9,21 +13,17 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos_887fd9f4fb774ccbe82251e6eba90e8c64f7608a" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="SignInVC.swift" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/StudyMate/SignInVC.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
+            <state relative-caret-position="1955">
               <caret line="119" column="9" lean-forward="false" selection-start-line="119" selection-start-column="9" selection-end-line="119" selection-end-column="9" />
               <folding>
                 <element signature="e#150#162#0" expanded="true" />
-                <marker date="1495507810000" expanded="true" signature="303:5179" ph="{...}" />
                 <marker date="1495507810000" expanded="true" signature="1990:2484" ph="{...}" />
-                <marker date="1495507810000" expanded="true" signature="4611:4661" ph="{...}" />
-                <marker date="1495507810000" expanded="true" signature="4717:4768" ph="{...}" />
-                <marker date="1495507810000" expanded="true" signature="4824:5175" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -32,8 +32,8 @@
       <file leaf-file-name="Constants.swift" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/StudyMate/Constants.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+            <state relative-caret-position="391">
+              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -42,7 +42,7 @@
       <file leaf-file-name="Post.swift" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/StudyMate/Post.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
+            <state relative-caret-position="425">
               <caret line="26" column="20" lean-forward="false" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
               <folding />
             </state>
@@ -52,19 +52,17 @@
       <file leaf-file-name="FeedVC.swift" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/StudyMate/FeedVC.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="35" lean-forward="false" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
+            <state relative-caret-position="340">
+              <caret line="22" column="35" lean-forward="false" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
               <folding>
                 <element signature="e#142#154#0" expanded="true" />
-                <marker date="1495524411000" expanded="true" signature="1300:1535" ph="{...}" />
-                <marker date="1495524411000" expanded="true" signature="1623:1648" ph="{...}" />
-                <marker date="1495524411000" expanded="true" signature="1696:1802" ph="{...}" />
+                <marker date="1495753552000" expanded="true" signature="2145:2147" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PostTableViewCell.swift" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PostTableViewCell.swift" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/StudyMate/PostTableViewCell.swift">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="265">
@@ -72,6 +70,16 @@
               <folding>
                 <marker date="1495524075000" expanded="true" signature="208:994" ph="{...}" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AccountVC.swift" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/StudyMate/AccountVC.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="334">
+              <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -97,6 +105,7 @@
         <option value="$PROJECT_DIR$/StudyMate/Post.swift" />
         <option value="$PROJECT_DIR$/StudyMate/FeedVC.swift" />
         <option value="$PROJECT_DIR$/StudyMate/PostTableViewCell.swift" />
+        <option value="$PROJECT_DIR$/StudyMate/AccountVC.swift" />
       </list>
     </option>
   </component>
@@ -109,7 +118,7 @@
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1280" />
-    <option name="height" value="714" />
+    <option name="height" value="717" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -373,14 +382,16 @@
       <workItem from="1494319919500" duration="260000" />
       <workItem from="1494386832145" duration="413000" />
       <workItem from="1495505194564" duration="1858000" />
+      <workItem from="1496047386791" duration="100000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4840000" />
+    <option name="totallyTimeSpent" value="4940000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="714" extended-state="6" />
+    <frame x="0" y="23" width="1280" height="717" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -415,291 +426,11 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/StudyMate/SignInVC.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="50" column="8" lean-forward="false" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="8" />
-          <folding>
-            <element signature="e#150#162#0" expanded="true" />
-            <marker date="1495507810000" expanded="true" signature="303:5179" ph="{...}" />
-            <marker date="1495507810000" expanded="true" signature="1990:2484" ph="{...}" />
-            <marker date="1495507810000" expanded="true" signature="4611:4661" ph="{...}" />
-            <marker date="1495507810000" expanded="true" signature="4717:4768" ph="{...}" />
-            <marker date="1495507810000" expanded="true" signature="4824:5175" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StudyMate/FeedVC.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="e#142#154#0" expanded="true" />
-            <marker date="1495524411000" expanded="true" signature="1300:1535" ph="{...}" />
-            <marker date="1495524411000" expanded="true" signature="1623:1648" ph="{...}" />
-            <marker date="1495524411000" expanded="true" signature="1696:1802" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StudyMate/AppDelegate.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="14" column="45" lean-forward="false" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StudyMate/CustomShadowView.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StudyMate/SignInVC.swift">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#150#162#0" expanded="true" />
-            <marker date="1495507810000" expanded="true" signature="303:5179" ph="{...}" />
             <marker date="1495507810000" expanded="true" signature="1990:2484" ph="{...}" />
-            <marker date="1495507810000" expanded="true" signature="4611:4661" ph="{...}" />
-            <marker date="1495507810000" expanded="true" signature="4717:4768" ph="{...}" />
-            <marker date="1495507810000" expanded="true" signature="4824:5175" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StudyMate/FeedVC.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="e#142#154#0" expanded="true" />
-            <marker date="1495524411000" expanded="true" signature="1300:1535" ph="{...}" />
-            <marker date="1495524411000" expanded="true" signature="1623:1648" ph="{...}" />
-            <marker date="1495524411000" expanded="true" signature="1696:1802" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StudyMate/CustomShadowView.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StudyMate/SignInVC.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#150#162#0" expanded="true" />
-            <marker date="1495507810000" expanded="true" signature="303:5179" ph="{...}" />
-            <marker date="1495507810000" expanded="true" signature="1990:2484" ph="{...}" />
-            <marker date="1495507810000" expanded="true" signature="4611:4661" ph="{...}" />
-            <marker date="1495507810000" expanded="true" signature="4717:4768" ph="{...}" />
-            <marker date="1495507810000" expanded="true" signature="4824:5175" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StudyMate/FeedVC.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="e#142#154#0" expanded="true" />
-            <marker date="1495524411000" expanded="true" signature="1300:1535" ph="{...}" />
-            <marker date="1495524411000" expanded="true" signature="1623:1648" ph="{...}" />
-            <marker date="1495524411000" expanded="true" signature="1696:1802" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StudyMate/CustomShadowView.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StudyMate/SignInVC.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#150#162#0" expanded="true" />
-            <marker date="1495507810000" expanded="true" signature="303:5179" ph="{...}" />
-            <marker date="1495507810000" expanded="true" signature="1990:2484" ph="{...}" />
-            <marker date="1495507810000" expanded="true" signature="4611:4661" ph="{...}" />
-            <marker date="1495507810000" expanded="true" signature="4717:4768" ph="{...}" />
-            <marker date="1495507810000" expanded="true" signature="4824:5175" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StudyMate/FeedVC.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="24" column="4" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
-          <folding>
-            <element signature="e#142#154#0" expanded="true" />
-            <marker date="1495524411000" expanded="true" signature="1300:1535" ph="{...}" />
-            <marker date="1495524411000" expanded="true" signature="1623:1648" ph="{...}" />
-            <marker date="1495524411000" expanded="true" signature="1696:1802" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StudyMate/AppDelegate.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="14" column="45" lean-forward="false" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StudyMate/SignInVC.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-          <folding>
-            <element signature="e#150#162#0" expanded="true" />
-            <marker date="1495507810000" expanded="true" signature="303:5179" ph="{...}" />
-            <marker date="1495507810000" expanded="true" signature="1990:2484" ph="{...}" />
-            <marker date="1495507810000" expanded="true" signature="4611:4661" ph="{...}" />
-            <marker date="1495507810000" expanded="true" signature="4717:4768" ph="{...}" />
-            <marker date="1495507810000" expanded="true" signature="4824:5175" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StudyMate/AppDelegate.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StudyMate/SignInVC.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding>
-            <element signature="e#150#162#0" expanded="true" />
-            <marker date="1495507810000" expanded="true" signature="303:5179" ph="{...}" />
-            <marker date="1495507810000" expanded="true" signature="1990:2484" ph="{...}" />
-            <marker date="1495507810000" expanded="true" signature="4611:4661" ph="{...}" />
-            <marker date="1495507810000" expanded="true" signature="4717:4768" ph="{...}" />
-            <marker date="1495507810000" expanded="true" signature="4824:5175" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StudyMate/AppDelegate.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StudyMate/SignInVC.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="34" lean-forward="false" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
-          <folding>
-            <element signature="e#150#162#0" expanded="true" />
-            <marker date="1495507810000" expanded="true" signature="303:5179" ph="{...}" />
-            <marker date="1495507810000" expanded="true" signature="1990:2484" ph="{...}" />
-            <marker date="1495507810000" expanded="true" signature="4611:4661" ph="{...}" />
-            <marker date="1495507810000" expanded="true" signature="4717:4768" ph="{...}" />
-            <marker date="1495507810000" expanded="true" signature="4824:5175" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StudyMate/Constants.swift" />
-    <entry file="file://$PROJECT_DIR$/StudyMate/CustomShadowView.swift" />
-    <entry file="file://$PROJECT_DIR$/StudyMate/SignInVC.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#150#162#0" expanded="true" />
-            <marker date="1495507810000" expanded="true" signature="303:5179" ph="{...}" />
-            <marker date="1495507810000" expanded="true" signature="1990:2484" ph="{...}" />
-            <marker date="1495507810000" expanded="true" signature="4611:4661" ph="{...}" />
-            <marker date="1495507810000" expanded="true" signature="4717:4768" ph="{...}" />
-            <marker date="1495507810000" expanded="true" signature="4824:5175" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StudyMate/SignInVC.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="565">
-          <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-          <folding>
-            <element signature="e#150#162#0" expanded="true" />
-            <marker date="1495507810000" expanded="true" signature="303:5179" ph="{...}" />
-            <marker date="1495507810000" expanded="true" signature="1990:2484" ph="{...}" />
-            <marker date="1495507810000" expanded="true" signature="4611:4661" ph="{...}" />
-            <marker date="1495507810000" expanded="true" signature="4717:4768" ph="{...}" />
-            <marker date="1495507810000" expanded="true" signature="4824:5175" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StudyMate/SignInVC.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding>
-            <element signature="e#150#162#0" expanded="true" />
-            <marker date="1495507810000" expanded="true" signature="303:5179" ph="{...}" />
-            <marker date="1495507810000" expanded="true" signature="1990:2484" ph="{...}" />
-            <marker date="1495507810000" expanded="true" signature="4611:4661" ph="{...}" />
-            <marker date="1495507810000" expanded="true" signature="4717:4768" ph="{...}" />
-            <marker date="1495507810000" expanded="true" signature="4824:5175" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StudyMate/CustomShadowView.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StudyMate/AppDelegate.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="14" column="45" lean-forward="false" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StudyMate/SignInVC.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="119" column="9" lean-forward="false" selection-start-line="119" selection-start-column="9" selection-end-line="119" selection-end-column="9" />
-          <folding>
-            <element signature="e#150#162#0" expanded="true" />
-            <marker date="1495507810000" expanded="true" signature="303:5179" ph="{...}" />
-            <marker date="1495507810000" expanded="true" signature="1990:2484" ph="{...}" />
-            <marker date="1495507810000" expanded="true" signature="4611:4661" ph="{...}" />
-            <marker date="1495507810000" expanded="true" signature="4717:4768" ph="{...}" />
-            <marker date="1495507810000" expanded="true" signature="4824:5175" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -714,7 +445,253 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/StudyMate/Post.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
+        <state relative-caret-position="425">
+          <caret line="26" column="20" lean-forward="false" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StudyMate/SignInVC.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="50" column="8" lean-forward="false" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="8" />
+          <folding>
+            <element signature="e#150#162#0" expanded="true" />
+            <marker date="1495507810000" expanded="true" signature="1990:2484" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StudyMate/FeedVC.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <element signature="e#142#154#0" expanded="true" />
+            <marker date="1495753552000" expanded="true" signature="2145:2147" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StudyMate/AppDelegate.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="14" column="45" lean-forward="false" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StudyMate/CustomShadowView.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StudyMate/SignInVC.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#150#162#0" expanded="true" />
+            <marker date="1495507810000" expanded="true" signature="1990:2484" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StudyMate/FeedVC.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <element signature="e#142#154#0" expanded="true" />
+            <marker date="1495753552000" expanded="true" signature="2145:2147" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StudyMate/CustomShadowView.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StudyMate/SignInVC.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#150#162#0" expanded="true" />
+            <marker date="1495507810000" expanded="true" signature="1990:2484" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StudyMate/FeedVC.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <element signature="e#142#154#0" expanded="true" />
+            <marker date="1495753552000" expanded="true" signature="2145:2147" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StudyMate/CustomShadowView.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StudyMate/SignInVC.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#150#162#0" expanded="true" />
+            <marker date="1495507810000" expanded="true" signature="1990:2484" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StudyMate/FeedVC.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="24" column="4" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+          <folding>
+            <element signature="e#142#154#0" expanded="true" />
+            <marker date="1495753552000" expanded="true" signature="2145:2147" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StudyMate/AppDelegate.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="14" column="45" lean-forward="false" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StudyMate/SignInVC.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+          <folding>
+            <element signature="e#150#162#0" expanded="true" />
+            <marker date="1495507810000" expanded="true" signature="1990:2484" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StudyMate/AppDelegate.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StudyMate/SignInVC.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding>
+            <element signature="e#150#162#0" expanded="true" />
+            <marker date="1495507810000" expanded="true" signature="1990:2484" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StudyMate/AppDelegate.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StudyMate/SignInVC.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="34" lean-forward="false" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+          <folding>
+            <element signature="e#150#162#0" expanded="true" />
+            <marker date="1495507810000" expanded="true" signature="1990:2484" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StudyMate/Constants.swift" />
+    <entry file="file://$PROJECT_DIR$/StudyMate/CustomShadowView.swift" />
+    <entry file="file://$PROJECT_DIR$/StudyMate/SignInVC.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#150#162#0" expanded="true" />
+            <marker date="1495507810000" expanded="true" signature="1990:2484" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StudyMate/SignInVC.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="565">
+          <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding>
+            <element signature="e#150#162#0" expanded="true" />
+            <marker date="1495507810000" expanded="true" signature="1990:2484" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StudyMate/SignInVC.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding>
+            <element signature="e#150#162#0" expanded="true" />
+            <marker date="1495507810000" expanded="true" signature="1990:2484" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StudyMate/CustomShadowView.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StudyMate/AppDelegate.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="14" column="45" lean-forward="false" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StudyMate/SignInVC.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1955">
+          <caret line="119" column="9" lean-forward="false" selection-start-line="119" selection-start-column="9" selection-end-line="119" selection-end-column="9" />
+          <folding>
+            <element signature="e#150#162#0" expanded="true" />
+            <marker date="1495507810000" expanded="true" signature="1990:2484" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StudyMate/Constants.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StudyMate/Post.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
           <caret line="26" column="20" lean-forward="false" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
           <folding />
         </state>
@@ -724,19 +701,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/StudyMate/FeedVC.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="35" lean-forward="false" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
+        <state relative-caret-position="340">
+          <caret line="22" column="35" lean-forward="false" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
           <folding>
             <element signature="e#142#154#0" expanded="true" />
-            <marker date="1495524411000" expanded="true" signature="1300:1535" ph="{...}" />
-            <marker date="1495524411000" expanded="true" signature="1623:1648" ph="{...}" />
-            <marker date="1495524411000" expanded="true" signature="1696:1802" ph="{...}" />
+            <marker date="1495753552000" expanded="true" signature="2145:2147" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -748,6 +722,14 @@
           <folding>
             <marker date="1495524075000" expanded="true" signature="208:994" ph="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StudyMate/AccountVC.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>

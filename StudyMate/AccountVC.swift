@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class AccountVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 	@IBOutlet var profileImage: UIImageView!
@@ -22,7 +23,27 @@ class AccountVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
 		imagePicker = UIImagePickerController()
 		imagePicker.allowsEditing = true
 		imagePicker.delegate = self
+		
+		self.fetchUserData()
     }
+	
+	func fetchUserData() {
+			let ref = DataService.ds.REF_BASE
+			let userID = FIRAuth.auth()?.currentUser?.uid
+			_ = ref.child(USERS).child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+				if let dictionary = snapshot.value as? [String: AnyObject] {
+						self.nameLabel.text = dictionary[USER_NAME] as? String
+						self.profileDescription.text = dictionary[PROFILE_DESCRIPTION] as? String
+						self.uniLabel.text = dictionary[UNIVERSITY] as? String
+						let userProvider = dictionary[PROVIDER] as? String
+						//user came from Facebook, so we have name, profile image url
+						if userProvider == "facebook.com" {
+							self.nameLabel.text = dictionary[USER_NAME] as? String
+							//self.profileImage.image = dictionary[PROFILE_IMAGE_URL] as? UIImage
+						}
+					}
+			})
+	}
 	
 	@IBAction func saveButtonTapped(_ sender: Any) {
 	}
