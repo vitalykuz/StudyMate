@@ -13,7 +13,7 @@ import Firebase
 //rename to Post manager
 class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	@IBOutlet var tableView: UITableView!
-
+	static var imageCache: NSCache<NSString, UIImage> = NSCache()
 	var posts = [Post]()
 	
     override func viewDidLoad() {
@@ -54,11 +54,15 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 		
 		let post = posts[indexPath.row]
 		
-		if let cell = tableView.dequeueReusableCell(withIdentifier: POST_CELL) as? PostTableViewCell {
-			cell.configureCell(post: post)
+		if let cell = tableView.dequeueReusableCell(withIdentifier: POST_CELL) as? PostCell {
+			if let profileImage = FeedVC.imageCache.object(forKey: post.profileImageURL as NSString) {
+				cell.configureCell(post: post, profileImage: profileImage)
+			} else {
+				cell.configureCell(post: post)
+			}
 			return cell
 		} else {
-			return PostTableViewCell()
+			return PostCell()
 		}
 	}
 	

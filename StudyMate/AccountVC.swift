@@ -46,6 +46,9 @@ class AccountVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
 	}
 	
 	@IBAction func saveButtonTapped(_ sender: Any) {
+		if (self.nameLabel.text?.isEmpty)! {
+			
+		}
 	}
 	
 	@IBAction func backButtonTapped(_ sender: Any) {

@@ -26,7 +26,7 @@
 		D8ED0C791EC0244800D2536D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8ED0C781EC0244800D2536D /* Default-568h@2x.png */; };
 		D8ED0C7B1EC0808900D2536D /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ED0C7A1EC0808900D2536D /* FeedVC.swift */; };
 		D8F2C9F01EC16E1900D3E1A9 /* CustomCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F2C9EF1EC16E1900D3E1A9 /* CustomCircleView.swift */; };
-		D8F2C9F21EC17AE600D3E1A9 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F2C9F11EC17AE600D3E1A9 /* PostTableViewCell.swift */; };
+		D8F2C9F21EC17AE600D3E1A9 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F2C9F11EC17AE600D3E1A9 /* PostCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,7 +53,7 @@
 		D8ED0C7A1EC0808900D2536D /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		D8ED0C7C1EC08D2A00D2536D /* StudyMate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StudyMate.entitlements; sourceTree = "<group>"; };
 		D8F2C9EF1EC16E1900D3E1A9 /* CustomCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCircleView.swift; sourceTree = "<group>"; };
-		D8F2C9F11EC17AE600D3E1A9 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		D8F2C9F11EC17AE600D3E1A9 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		DDCAC433631723D30A21846A /* Pods_StudyMate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudyMate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -140,7 +140,7 @@
 				D8ED0C741EC00A1400D2536D /* TextFieldCustomView.swift */,
 				D8ED0C761EC00B8800D2536D /* ButtonCustomView.swift */,
 				D8F2C9EF1EC16E1900D3E1A9 /* CustomCircleView.swift */,
-				D8F2C9F11EC17AE600D3E1A9 /* PostTableViewCell.swift */,
+				D8F2C9F11EC17AE600D3E1A9 /* PostCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -313,7 +313,7 @@
 				D8E50ADD1ED6E83B00293302 /* AccountVC.swift in Sources */,
 				D8ED0C7B1EC0808900D2536D /* FeedVC.swift in Sources */,
 				D81676DA1EBF4A900024FD8B /* AppDelegate.swift in Sources */,
-				D8F2C9F21EC17AE600D3E1A9 /* PostTableViewCell.swift in Sources */,
+				D8F2C9F21EC17AE600D3E1A9 /* PostCell.swift in Sources */,
 				D8CF25421ED795DE00E11579 /* FeedManager.swift in Sources */,
 				D8ED0C6E1EC0034500D2536D /* CustomShadowView.swift in Sources */,
 				D8ED0C711EC0046800D2536D /* Constants.swift in Sources */,

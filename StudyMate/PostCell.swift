@@ -1,5 +1,5 @@
 //
-//  PostTableViewCell.swift
+//  PostCell.swift
 //  StudyMate
 //
 //  Created by Vitaly Kuzenkov on 9/5/17.
@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import Firebase
 
-class PostTableViewCell: UITableViewCell {
+class PostCell: UITableViewCell {
 
-	@IBOutlet var avatarImageView: UIImageView!
+	@IBOutlet var profileImage: UIImageView!
 	@IBOutlet var nameLabel: UILabel!
 	@IBOutlet var uniLabel: UILabel!
 	@IBOutlet var subjectNameLabel: UILabel!
@@ -32,10 +33,30 @@ class PostTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-	func configureCell(post: Post) {
+	func configureCell(post: Post, profileImage: UIImage? = nil) {
 		self.post = post
 		self.postDescriptionLabel.text = post.postDescription
 		self.likesLabel.text = "\(post.likes)"
+		
+		if profileImage != nil {
+			self.profileImage.image = profileImage
+		} else {
+			let ref = FIRStorage.storage().reference(forURL: post.profileImageURL)
+			ref.data(withMaxSize: 2 * 1024 * 1024, completion: { (data, error) in
+				if error != nil {
+					print("Vitaly: Unable to download image from Firebase storage")
+				} else {
+					print("Vitaly: Image downloaded from Firebase storage")
+					if let imgData = data {
+						if let img = UIImage(data: imgData) {
+							self.profileImage.image = profileImage
+							FeedVC.imageCache.setObject(img, forKey: post.profileImageURL as NSString)
+						}
+					}
+				}
+			})
+		}
+		
 	}
 	
 }
