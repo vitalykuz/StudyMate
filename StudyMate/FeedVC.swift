@@ -10,27 +10,64 @@ import UIKit
 import SwiftKeychainWrapper
 import Firebase
 
+//rename to Post manager
 class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	@IBOutlet var tableView: UITableView!
-
+	static var imageCache: NSCache<NSString, UIImage> = NSCache()
+	var posts = [Post]()
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 
 		tableView.delegate = self
 		tableView.dataSource = self
         // Do any additional setup after loading the view.
+		
+		//listens to any changes made to posts table in Firebase database
+		startListeningToChangesInPost()
     }
+	
+	func startListeningToChangesInPost() {
+		FeedManager.fm.startListeningToChangesInPost { (snapshot) in
+			self.posts = []
+			
+			if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
+				for snap in snapshot {
+					print("SNAP: \(snap)")
+					if let postDict = snap.value as? Dictionary<String, Any> {
+						let key = snap.key
+						let post = Post(postId: key, postData: postDict)
+						self.posts.append(post)
+					}
+				}
+			}
+			self.tableView.reloadData()
+		}
+	}
+
 	
 	func numberOfSections(in tableView: UITableView) -> Int {
 		return 1
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		return tableView.dequeueReusableCell(withIdentifier: "postCell") as! PostTableViewCell
+		
+		let post = posts[indexPath.row]
+		
+		if let cell = tableView.dequeueReusableCell(withIdentifier: POST_CELL) as? PostCell {
+			if let profileImage = FeedVC.imageCache.object(forKey: post.profileImageURL as NSString) {
+				cell.configureCell(post: post, profileImage: profileImage)
+			} else {
+				cell.configureCell(post: post)
+			}
+			return cell
+		} else {
+			return PostCell()
+		}
 	}
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 3
+		return posts.count
 	}
 	
 
@@ -45,4 +82,10 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 		performSegue(withIdentifier: "toSignInVC", sender: nil)
 	}
 
+	@IBAction func accountButtonTapped(_ sender: Any) {
+		performSegue(withIdentifier: ACCOUNT_VC, sender: nil)
+	}
+	
+	
+	
 }

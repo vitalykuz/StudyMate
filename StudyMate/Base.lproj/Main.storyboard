@@ -81,7 +81,7 @@
                                         <rect key="frame" x="0.0" y="34.5" width="280" height="29.5"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N9r-Wb-2od" customClass="TextFieldCustomView" customModule="StudyMate" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="71" width="280" height="30"/>
@@ -167,7 +167,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Study Mate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jvP-MZ-Gpv">
-                                        <rect key="frame" x="108" y="26.5" width="104" height="27.5"/>
+                                        <rect key="frame" x="108" y="26" width="104" height="28"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -182,15 +182,29 @@
                                             <action selector="signOutButtonTapped:" destination="Gsz-xR-Oxh" eventType="touchUpInside" id="v5B-B7-vVP"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q8H-yg-Qmg">
+                                        <rect key="frame" x="282" y="23" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="MME-de-sEm"/>
+                                            <constraint firstAttribute="height" constant="30" id="PIB-ap-9IU"/>
+                                        </constraints>
+                                        <state key="normal" image="profile"/>
+                                        <connections>
+                                            <action selector="accountButtonTapped:" destination="Gsz-xR-Oxh" eventType="touchUpInside" id="W0e-aq-eH0"/>
+                                            <segue destination="5h3-IY-h1M" kind="show" identifier="toAccountVC" id="QC1-E2-No2"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.95686274510000002" green="0.26274509800000001" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="nl0-hb-3eJ" firstAttribute="top" secondItem="IyR-eY-zMR" secondAttribute="top" constant="18" id="0rd-5B-MRa"/>
                                     <constraint firstItem="D0G-Lp-N7G" firstAttribute="leading" secondItem="IyR-eY-zMR" secondAttribute="leading" constant="18" id="5hl-Ap-Dkg"/>
                                     <constraint firstItem="jvP-MZ-Gpv" firstAttribute="centerY" secondItem="D0G-Lp-N7G" secondAttribute="centerY" id="FGQ-w7-dOv"/>
+                                    <constraint firstAttribute="trailing" secondItem="Q8H-yg-Qmg" secondAttribute="trailing" constant="8" id="JBH-9z-b4h"/>
                                     <constraint firstItem="jvP-MZ-Gpv" firstAttribute="centerX" secondItem="IyR-eY-zMR" secondAttribute="centerX" id="WC3-m1-SRA"/>
                                     <constraint firstItem="D0G-Lp-N7G" firstAttribute="top" secondItem="IyR-eY-zMR" secondAttribute="top" constant="20" id="h20-fc-Jlb"/>
                                     <constraint firstAttribute="height" constant="65" id="jxK-0G-9be"/>
+                                    <constraint firstAttribute="bottom" secondItem="Q8H-yg-Qmg" secondAttribute="bottom" constant="12" id="le2-Nj-Ooh"/>
                                     <constraint firstItem="nl0-hb-3eJ" firstAttribute="leading" secondItem="IyR-eY-zMR" secondAttribute="leading" constant="20" id="v4D-E9-LCk"/>
                                 </constraints>
                             </view>
@@ -198,7 +212,7 @@
                                 <rect key="frame" x="0.0" y="73" width="320" height="495"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" rowHeight="309" id="g3t-eG-UBa" customClass="PostTableViewCell" customModule="StudyMate" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" rowHeight="309" id="g3t-eG-UBa" customClass="PostCell" customModule="StudyMate" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="309"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g3t-eG-UBa" id="dNh-5a-Hyv">
@@ -214,7 +228,7 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="VtO-Q6-2sO">
                                                                     <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                                                     <subviews>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myself" translatesAutoresizingMaskIntoConstraints="NO" id="Ol5-Y2-VtT" customClass="CustomCircleView" customModule="StudyMate" customModuleProvider="target">
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_image" translatesAutoresizingMaskIntoConstraints="NO" id="Ol5-Y2-VtT" customClass="CustomCircleView" customModule="StudyMate" customModuleProvider="target">
                                                                             <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="60" id="AHL-uE-TVR"/>
@@ -458,11 +472,11 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="avatarImageView" destination="Ol5-Y2-VtT" id="7Cj-Bo-dl4"/>
                                             <outlet property="likesLabel" destination="DDA-kC-Kob" id="JuM-uJ-eqj"/>
                                             <outlet property="locationLabel" destination="0aS-cM-Ewy" id="SuY-Bk-rhx"/>
                                             <outlet property="nameLabel" destination="Pts-vC-Ftw" id="3N9-re-Q3C"/>
                                             <outlet property="postDescriptionLabel" destination="jYm-Ow-Cl1" id="sxr-Nu-8Uy"/>
+                                            <outlet property="profileImage" destination="Ol5-Y2-VtT" id="yID-kQ-38s"/>
                                             <outlet property="subjectNameLabel" destination="1IG-XA-X8v" id="cSy-6W-Kp7"/>
                                             <outlet property="timeLabel" destination="Td6-Oa-b4G" id="KPT-bA-0pu"/>
                                             <outlet property="uniLabel" destination="6xc-HK-Wr6" id="I6r-sE-Bli"/>
@@ -471,7 +485,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PH3-8M-Uyh" customClass="FacebookButton" customModule="StudyMate" customModuleProvider="target">
-                                <rect key="frame" x="132.5" y="483" width="55" height="55"/>
+                                <rect key="frame" x="133" y="483" width="55" height="55"/>
                                 <color key="backgroundColor" red="0.95686274510000002" green="0.26274509800000001" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="iey-vY-sAf"/>
@@ -502,14 +516,205 @@
             </objects>
             <point key="canvasLocation" x="886.875" y="11.619718309859156"/>
         </scene>
+        <!--AccountVC-->
+        <scene sceneID="ibq-dH-6ZR">
+            <objects>
+                <viewController id="5h3-IY-h1M" customClass="AccountVC" customModule="StudyMate" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dBO-jq-Bgl"/>
+                        <viewControllerLayoutGuide type="bottom" id="whc-rQ-aah"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1zR-jb-nK7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="45w-Hs-fqD" customClass="CustomShadowView" customModule="StudyMate" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dvy-g0-i2X">
+                                        <rect key="frame" x="18" y="20" width="282" height="40"/>
+                                        <subviews>
+                                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sign-out" translatesAutoresizingMaskIntoConstraints="NO" id="DDR-6B-26c">
+                                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                <gestureRecognizers/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="7HR-1E-gpI"/>
+                                                    <constraint firstAttribute="height" constant="40" id="hKu-hU-7cm"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="hRQ-KA-sEZ" appends="YES" id="6S2-wy-N5M"/>
+                                                </connections>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Study Mate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XeS-aC-bVI">
+                                                <rect key="frame" x="40" y="0.0" width="242" height="40"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Stl-vs-zGb"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.95686274510000002" green="0.26274509800000001" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Dvy-g0-i2X" secondAttribute="bottom" constant="5" id="32B-2v-Obl"/>
+                                    <constraint firstItem="Dvy-g0-i2X" firstAttribute="top" secondItem="45w-Hs-fqD" secondAttribute="top" constant="20" id="7PI-61-MEz"/>
+                                    <constraint firstItem="Dvy-g0-i2X" firstAttribute="leading" secondItem="45w-Hs-fqD" secondAttribute="leading" constant="18" id="VJn-05-m2K"/>
+                                    <constraint firstAttribute="height" constant="65" id="jRo-zW-BWn"/>
+                                    <constraint firstAttribute="trailing" secondItem="Dvy-g0-i2X" secondAttribute="trailing" constant="20" id="koE-06-iPD"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9UU-5q-VOI">
+                                <rect key="frame" x="8" y="73" width="304" height="487"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Bvv-4S-pDt">
+                                        <rect key="frame" x="102" y="8" width="101" height="86"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_image" translatesAutoresizingMaskIntoConstraints="NO" id="oUY-5j-y0d" customClass="CustomCircleView" customModule="StudyMate" customModuleProvider="target">
+                                                <rect key="frame" x="15.5" y="0.0" width="70" height="70"/>
+                                                <gestureRecognizers/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="70" id="3Kn-9M-aHF"/>
+                                                    <constraint firstAttribute="height" constant="70" id="Nxf-Wu-n9O"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="x7f-zc-p0g" appends="YES" id="u9u-OC-Z6C"/>
+                                                </connections>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Tap image to change photo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BhG-GJ-heN">
+                                                <rect key="frame" x="0.0" y="75" width="101" height="11"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="8"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="OPt-mu-Tbo">
+                                        <rect key="frame" x="8" y="189" width="288" height="155"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Tell us about yourself" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nN1-Rs-nsZ">
+                                                <rect key="frame" x="0.0" y="0.0" width="288" height="16.5"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kFT-mo-mwd">
+                                                <rect key="frame" x="0.0" y="16.5" width="288" height="138.5"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                            </textView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="155" id="DIx-Hg-xnx"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bSD-IW-O7c">
+                                        <rect key="frame" x="8" y="104" width="288" height="70"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SLS-kW-lSE" customClass="TextFieldCustomView" customModule="StudyMate" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="288" height="30"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="University you attend" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0X0-Ey-IMx" customClass="TextFieldCustomView" customModule="StudyMate" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="40" width="288" height="30"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="kCL-fG-zwP"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="TNd-0M-PPy">
+                                        <rect key="frame" x="8" y="352" width="288" height="36"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bee-oJ-Fw9" customClass="ButtonCustomView" customModule="StudyMate" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="288" height="36"/>
+                                                <color key="backgroundColor" red="0.71764705880000002" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                                <state key="normal" title="Save">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="saveButtonTapped:" destination="5h3-IY-h1M" eventType="touchUpInside" id="apm-rH-UkS"/>
+                                                    <action selector="signInButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="01K-2m-0QM"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="OR5-rh-jqb"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.95686274510000002" green="0.26274509800000001" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="TNd-0M-PPy" firstAttribute="leading" secondItem="9UU-5q-VOI" secondAttribute="leading" constant="8" id="16l-bi-te2"/>
+                                    <constraint firstItem="OPt-mu-Tbo" firstAttribute="top" secondItem="bSD-IW-O7c" secondAttribute="bottom" constant="15" id="AdE-Tt-eMl"/>
+                                    <constraint firstItem="bSD-IW-O7c" firstAttribute="top" secondItem="Bvv-4S-pDt" secondAttribute="bottom" constant="10" id="OG3-3U-tB8"/>
+                                    <constraint firstItem="TNd-0M-PPy" firstAttribute="top" secondItem="OPt-mu-Tbo" secondAttribute="bottom" constant="8" id="Qxg-dm-Gp5"/>
+                                    <constraint firstItem="Bvv-4S-pDt" firstAttribute="top" secondItem="9UU-5q-VOI" secondAttribute="topMargin" id="UKM-Qy-jEb"/>
+                                    <constraint firstItem="bSD-IW-O7c" firstAttribute="leading" secondItem="9UU-5q-VOI" secondAttribute="leading" constant="8" id="Ymk-mx-OiZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="bSD-IW-O7c" secondAttribute="trailing" constant="8" id="bJR-v4-13U"/>
+                                    <constraint firstAttribute="trailing" secondItem="OPt-mu-Tbo" secondAttribute="trailing" constant="8" id="boF-fM-9l5"/>
+                                    <constraint firstItem="OPt-mu-Tbo" firstAttribute="leading" secondItem="9UU-5q-VOI" secondAttribute="leading" constant="8" id="izu-B2-NJV"/>
+                                    <constraint firstAttribute="trailing" secondItem="TNd-0M-PPy" secondAttribute="trailing" constant="8" id="kdK-Uu-ru9"/>
+                                    <constraint firstItem="Bvv-4S-pDt" firstAttribute="centerX" secondItem="9UU-5q-VOI" secondAttribute="centerX" id="u6A-ag-MMv"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="45w-Hs-fqD" secondAttribute="trailing" id="Bo4-sY-ey5"/>
+                            <constraint firstAttribute="trailing" secondItem="9UU-5q-VOI" secondAttribute="trailing" constant="8" id="OX3-BG-nbz"/>
+                            <constraint firstItem="9UU-5q-VOI" firstAttribute="top" secondItem="45w-Hs-fqD" secondAttribute="bottom" constant="8" id="QNu-1K-AUh"/>
+                            <constraint firstItem="9UU-5q-VOI" firstAttribute="leading" secondItem="1zR-jb-nK7" secondAttribute="leading" constant="8" id="YaL-zp-cMu"/>
+                            <constraint firstItem="45w-Hs-fqD" firstAttribute="leading" secondItem="1zR-jb-nK7" secondAttribute="leading" id="c5w-Fn-6Jq"/>
+                            <constraint firstItem="whc-rQ-aah" firstAttribute="top" secondItem="9UU-5q-VOI" secondAttribute="bottom" constant="8" id="j1X-Us-Fce"/>
+                            <constraint firstItem="45w-Hs-fqD" firstAttribute="top" secondItem="1zR-jb-nK7" secondAttribute="top" id="jXH-eV-IVd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="nameLabel" destination="SLS-kW-lSE" id="JRb-LZ-LFd"/>
+                        <outlet property="profileDescription" destination="kFT-mo-mwd" id="Lsl-I8-m4b"/>
+                        <outlet property="profileImage" destination="oUY-5j-y0d" id="BWU-iw-U52"/>
+                        <outlet property="uniLabel" destination="0X0-Ey-IMx" id="FlO-i0-H25"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hOt-mZ-oWS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="hRQ-KA-sEZ" userLabel="Back Button Gesture">
+                    <connections>
+                        <action selector="backButtonTapped:" destination="5h3-IY-h1M" id="E2j-6w-9o9"/>
+                        <segue destination="Gsz-xR-Oxh" kind="show" identifier="toFeedVC" id="MRc-yH-MUN"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="x7f-zc-p0g" userLabel="Profile Image Gesture">
+                    <connections>
+                        <action selector="profileImageTapped:" destination="5h3-IY-h1M" id="cgh-nB-XKa"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1702.5" y="11.619718309859156"/>
+        </scene>
     </scenes>
     <resources>
         <image name="add_button" width="17" height="17"/>
         <image name="empty-heart" width="70" height="70"/>
         <image name="f" width="352" height="328"/>
         <image name="logo2" width="512" height="512"/>
-        <image name="myself" width="960" height="960"/>
+        <image name="profile" width="22" height="20"/>
+        <image name="profile_image" width="512" height="512"/>
         <image name="settings" width="128" height="128"/>
         <image name="sign-out" width="92" height="65"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="MRc-yH-MUN"/>
+    </inferredMetricsTieBreakers>
 </document>
