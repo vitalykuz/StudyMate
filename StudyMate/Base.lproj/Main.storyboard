@@ -228,7 +228,7 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="VtO-Q6-2sO">
                                                                     <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                                                     <subviews>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myself" translatesAutoresizingMaskIntoConstraints="NO" id="Ol5-Y2-VtT" customClass="CustomCircleView" customModule="StudyMate" customModuleProvider="target">
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_image" translatesAutoresizingMaskIntoConstraints="NO" id="Ol5-Y2-VtT" customClass="CustomCircleView" customModule="StudyMate" customModuleProvider="target">
                                                                             <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="60" id="AHL-uE-TVR"/>
@@ -572,7 +572,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Bvv-4S-pDt">
                                         <rect key="frame" x="102" y="8" width="101" height="86"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_btn" translatesAutoresizingMaskIntoConstraints="NO" id="oUY-5j-y0d" customClass="CustomCircleView" customModule="StudyMate" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_image" translatesAutoresizingMaskIntoConstraints="NO" id="oUY-5j-y0d" customClass="CustomCircleView" customModule="StudyMate" customModuleProvider="target">
                                                 <rect key="frame" x="15.5" y="0.0" width="70" height="70"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
@@ -709,9 +709,8 @@
         <image name="empty-heart" width="70" height="70"/>
         <image name="f" width="352" height="328"/>
         <image name="logo2" width="512" height="512"/>
-        <image name="myself" width="960" height="960"/>
         <image name="profile" width="22" height="20"/>
-        <image name="profile_btn" width="28" height="28"/>
+        <image name="profile_image" width="512" height="512"/>
         <image name="settings" width="128" height="128"/>
         <image name="sign-out" width="92" height="65"/>
     </resources>

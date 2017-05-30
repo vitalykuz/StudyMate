@@ -38,7 +38,7 @@ class AccountVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
 					self.nameLabel.text = dictionary[USER_NAME] as? String
 					self.profileDescription.text = dictionary[PROFILE_DESCRIPTION] as? String
 					self.uniLabel.text = dictionary[UNIVERSITY] as? String
-					print("Profile image url: \(dictionary[PROFILE_IMAGE_URL])")
+					print("Profile image url: \(String(describing: dictionary[PROFILE_IMAGE_URL]))")
 					self.profileImageUrl = dictionary[PROFILE_IMAGE_URL] as! String
 					print("Profile image url: \(self.profileImageUrl)")
 
