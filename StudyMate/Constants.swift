@@ -37,7 +37,8 @@ let FEED_VC = "toFeedVC"
 // Profile Images 
 let DEFAULT_PROFILE_IMAGE_URL = "https://firebasestorage.googleapis.com/v0/b/study-mate-86d3d.appspot.com/o/profile-images%2Fprofile_image.png?alt=media&token=e27fec66-cfba-4740-ab3b-3801a9c2ed9d"
 
-
+//providers
+let PROVIDER_FACEBOOK = "facebook.com"
 
 
 
