@@ -93,7 +93,7 @@ class SignInVC: UIViewController, UITextFieldDelegate {
 		let data = try? Data(contentsOf: profileImageUrl) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
 		let profileImage = UIImage(data: data!)
 		
-		if let imgData = UIImageJPEGRepresentation(profileImage!, 0.2) {
+		if let imgData = UIImageJPEGRepresentation(profileImage!, 1) {
 			
 			//gets a unique ID for the image
 			let imgUid = NSUUID().uuidString

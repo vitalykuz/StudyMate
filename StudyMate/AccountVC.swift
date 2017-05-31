@@ -16,6 +16,8 @@ class AccountVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
 	@IBOutlet var uniLabel: TextFieldCustomView!
 	@IBOutlet var profileDescription: UITextView!
 	static var profileImageCache: NSCache<NSString, UIImage> = NSCache()
+	
+	//TO-DO: make it private
 	var imagePicker: UIImagePickerController!
 	var profileImageUrl: String = ""
 	var imageSelected = false
@@ -102,7 +104,7 @@ class AccountVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
 			return
 		}
 		
-		if let imgData = UIImageJPEGRepresentation(profileImage, 0.2) {
+		if let imgData = UIImageJPEGRepresentation(profileImage, 1) {
 			
 			//gets a unique ID for the image
 			let imgUid = NSUUID().uuidString
