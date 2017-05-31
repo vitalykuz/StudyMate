@@ -135,7 +135,6 @@ class AccountVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
 		]
 		
 		let currentUser  = DataService.ds.REF_USER_CURRENT
-		print("Name \(currentUser.description())")
 		currentUser.updateChildValues(user)
 		//currentUser.setValuesForKeys(user)
 		

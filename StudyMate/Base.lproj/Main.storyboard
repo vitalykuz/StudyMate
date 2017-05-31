@@ -582,14 +582,14 @@
                                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Where do you want to meet" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tbv-hk-SfY" customClass="TextFieldCustomView" customModule="StudyMate" customModuleProvider="target">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Meeting location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tbv-hk-SfY" customClass="TextFieldCustomView" customModule="StudyMate" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="45" width="294" height="35"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="When do you want to meet" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qpa-gh-6Cd" customClass="TextFieldCustomView" customModule="StudyMate" customModuleProvider="target">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Meeting day and time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qpa-gh-6Cd" customClass="TextFieldCustomView" customModule="StudyMate" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="90" width="294" height="35"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87" colorSpace="custom" customColorSpace="sRGB"/>
@@ -629,6 +629,9 @@
                                         <state key="normal" title="Create Post">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="createPostButtonTapped:" destination="ATV-5V-Uic" eventType="touchUpInside" id="zFT-Sm-Zck"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.95686274510000002" green="0.26274509800000001" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -653,6 +656,12 @@
                             <constraint firstItem="odQ-vb-53d" firstAttribute="leading" secondItem="oI8-lF-iWx" secondAttribute="leading" id="wJv-OM-bzE"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="locationField" destination="Tbv-hk-SfY" id="Bol-Bp-ik1"/>
+                        <outlet property="postDescription" destination="xQ0-mR-e2k" id="Yu1-ox-RUB"/>
+                        <outlet property="subjectNameField" destination="6cE-fM-x7S" id="oKF-kd-Np4"/>
+                        <outlet property="whenLabel" destination="Qpa-gh-6Cd" id="Jxc-GF-BiE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MdR-2Y-9gd" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="CcM-EW-nf1" userLabel="Go to Feed VC Tap">

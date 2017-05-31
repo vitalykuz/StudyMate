@@ -40,5 +40,9 @@ let DEFAULT_PROFILE_IMAGE_URL = "https://firebasestorage.googleapis.com/v0/b/stu
 //providers
 let PROVIDER_FACEBOOK = "facebook.com"
 
-
+// Error messages
+let ERROR_SUBJECT_NAME_EMPTY = "Subject name is required"
+let ERROR_LOCATION_EMPTY = "Meeting location is required"
+let ERROR_MEETING_TIME_EMPTY = "Meeting time is required"
+let ERROR_POST_DESCRIPTION_EMPTY = "Plese provide post description"
 
