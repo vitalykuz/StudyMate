@@ -22,46 +22,6 @@ class Post {
 	private var _postKey: String!
 	private var _postRef: FIRDatabaseReference!
 	
-	var postDescription: String {
-		return _postDescription
-	}
-	
-	var subjectName: String {
-		return _subjectName
-	}
-	
-	var uni: String {
-		return _uni
-	}
-	
-	var userName: String {
-		return _userName
-	}
-	
-	var meetingTime: String {
-		return _meetingTime
-	}
-	
-	var location: String {
-		return _location
-	}
-	
-	var comments: Int {
-		return _comments
-	}
-	
-	var profileImageURL: String {
-		return _profileImageUrl
-	}
-	
-	var likes: Int {
-		return _likes
-	}
-	
-	var postKey: String {
-		return _postKey
-	}
-	
 	init(postDescription: String, profileImageUrl: String, likes: Int) {
 		self._postDescription = postDescription
 		self._profileImageUrl = profileImageUrl
@@ -121,4 +81,43 @@ class Post {
 		
 	}
 	
+	var postDescription: String {
+		return _postDescription
+	}
+	
+	var subjectName: String {
+		return _subjectName
+	}
+	
+	var uni: String {
+		return _uni
+	}
+	
+	var userName: String {
+		return _userName
+	}
+	
+	var meetingTime: String {
+		return _meetingTime
+	}
+	
+	var location: String {
+		return _location
+	}
+	
+	var comments: Int {
+		return _comments
+	}
+	
+	var profileImageURL: String {
+		return _profileImageUrl
+	}
+	
+	var likes: Int {
+		return _likes
+	}
+	
+	var postKey: String {
+		return _postKey
+	}
 }

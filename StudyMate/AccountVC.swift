@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import SwiftKeychainWrapper
 
-class AccountVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class AccountVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate {
 	@IBOutlet var profileImage: UIImageView!
 	@IBOutlet var nameLabel: TextFieldCustomView!
 	@IBOutlet var uniLabel: TextFieldCustomView!
@@ -28,6 +28,10 @@ class AccountVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
 		imagePicker = UIImagePickerController()
 		imagePicker.allowsEditing = true
 		imagePicker.delegate = self
+		
+		nameLabel.delegate = self
+		uniLabel.delegate = self
+		profileDescription.delegate = self
 		
 		self.fetchUserData()
     }
@@ -83,6 +87,7 @@ class AccountVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
 	}
 	
 	// to-do it adds a profile image each time the button is clicked
+	// when saved is cliked segue to another controller
 	@IBAction func saveButtonTapped(_ sender: Any) {
 		guard let name = nameLabel.text, name != "" else {
 			print("Vitaly: Name must be entered")
@@ -160,5 +165,19 @@ class AccountVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
 	@IBAction func profileImageTapped(_ sender: Any) {
 		present(imagePicker, animated: true, completion: nil)
 	}
+	
+	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+		self.view.endEditing(true)
+		return false
+	}
+	
+	func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+		if(text == "\n") {
+			textView.resignFirstResponder()
+			return false
+		}
+		return true
+	}
+
 	
 }

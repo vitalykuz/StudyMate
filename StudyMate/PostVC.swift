@@ -35,6 +35,7 @@ class PostVC: UIViewController, UITextViewDelegate, UITextFieldDelegate {
 		
     }
 	
+	// TO-DO: when post is created, segue to feed vc
 	@IBAction func createPostButtonTapped(_ sender: Any) {
 		guard let subjectName = subjectNameField.text, subjectName != "" else {
 			subjectNameField.attributedPlaceholder = NSAttributedString(string: ERROR_SUBJECT_NAME_EMPTY, attributes: [NSForegroundColorAttributeName: UIColor.red])
@@ -59,26 +60,6 @@ class PostVC: UIViewController, UITextViewDelegate, UITextFieldDelegate {
 		
 		self.postToFirebase()
 	}
-	
-//		if let imgData = UIImageJPEGRepresentation(img, 0.2) {
-//			
-//			let imgUid = NSUUID().uuidString
-//			let metadata = FIRStorageMetadata()
-//			metadata.contentType = "image/jpeg"
-//			
-//			DataService.ds.REF_POST_IMAGES.child(imgUid).put(imgData, metadata: metadata) { (metadata, error) in
-//				if error != nil {
-//					print("JESS: Unable to upload image to Firebasee torage")
-//				} else {
-//					print("JESS: Successfully uploaded image to Firebase storage")
-//					let downloadURL = metadata?.downloadURL()?.absoluteString
-//					if let url = downloadURL {
-//						self.postToFirebase(imgUrl: url)
-//					}
-//				}
-//			}
-//		}
-
 	
 	func postToFirebase() {
 		let post: Dictionary<String, Any> = [
@@ -105,9 +86,6 @@ class PostVC: UIViewController, UITextViewDelegate, UITextFieldDelegate {
 				self.userName = dictionary[USER_NAME] as? String
 				self.uni = dictionary[UNIVERSITY] as? String
 				self.profileImageUrl = dictionary[PROFILE_IMAGE_URL] as? String
-				print("Current user name: \(String(describing: self.userName))")
-				print("Uni: \(String(describing: self.uni))")
-				print("Image url: \(String(describing: self.profileImageUrl))")
 			}
 		})
 	}

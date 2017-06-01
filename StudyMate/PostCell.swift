@@ -23,10 +23,8 @@ class PostCell: UITableViewCell {
 	@IBOutlet var commentImage: UIImageView!
 	@IBOutlet var commentsLabel: UILabel!
 	
-	
-	
 	var post: Post!
-	var likesRef = DataService.ds.REF_USER_CURRENT.child(LIKES)
+	var likesRef: FIRDatabaseReference!
 	
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -47,6 +45,8 @@ class PostCell: UITableViewCell {
 
 	func configureCell(post: Post, profileImage: UIImage? = nil) {
 		self.post = post
+		likesRef  = DataService.ds.REF_USER_CURRENT.child(LIKES).child(post.postKey)
+		
 		self.postDescriptionLabel.text = post.postDescription
 		self.likesLabel.text = "\(post.likes)"
 		self.commentsLabel.text = "\(post.comments)"
