@@ -23,7 +23,7 @@ class DataService {
 	private var _REF_USERS = DB_BASE.child(USERS)
 	
 	// Storage references
-	private var _REF_PROFILE_IMAGES = STORAGE_BASE.child("profile-images")
+	private var _REF_PROFILE_IMAGES = STORAGE_BASE.child(STORAGE_PROFILE_IMAGES)
 	
 	var REF_BASE: FIRDatabaseReference {
 		return _REF_BASE

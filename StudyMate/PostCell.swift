@@ -19,6 +19,11 @@ class PostCell: UITableViewCell {
 	@IBOutlet var locationLabel: UILabel!
 	@IBOutlet var timeLabel: UILabel!
 	@IBOutlet var likesLabel: UILabel!
+	@IBOutlet var likeImage: UIImageView!
+	@IBOutlet var commentImage: UIImageView!
+	@IBOutlet var commentsLabel: UILabel!
+	
+	
 	
 	var post: Post!
 	
@@ -37,6 +42,8 @@ class PostCell: UITableViewCell {
 		self.post = post
 		self.postDescriptionLabel.text = post.postDescription
 		self.likesLabel.text = "\(post.likes)"
+		//self.commentsLabel = "\(post.com)"
+
 		
 		if profileImage != nil {
 			self.profileImage.image = profileImage

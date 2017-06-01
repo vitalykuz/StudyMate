@@ -82,7 +82,7 @@ class AccountVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
 		}
 	}
 	
-	// to-do it add a profile image each time the button is clicked
+	// to-do it adds a profile image each time the button is clicked
 	@IBAction func saveButtonTapped(_ sender: Any) {
 		guard let name = nameLabel.text, name != "" else {
 			print("Vitaly: Name must be entered")

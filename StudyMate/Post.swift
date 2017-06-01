@@ -13,6 +13,7 @@ class Post {
 	private var _postDescription: String!
 	private var _profileImageUrl: String!
 	private var _likes: Int!
+	private var _comments: Int!
 	private var _postKey: String!
 	private var _postRef: FIRDatabaseReference!
 	

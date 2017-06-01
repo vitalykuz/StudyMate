@@ -53,3 +53,12 @@ let ERROR_DEFAULT_VALUE = "Default value"
 
 // placeholders
 let PROVIDE_POST_DESCRIPTION = "Add post description"
+
+//data in Firebase Storage
+let STORAGE_PROFILE_IMAGES = "profile-images"
+
+
+
+
+
+
