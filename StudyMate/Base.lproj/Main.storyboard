@@ -313,7 +313,7 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="F5W-6f-Tni">
                                                                     <rect key="frame" x="0.0" y="0.0" width="70" height="85"/>
                                                                     <subviews>
-                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty-heart" translatesAutoresizingMaskIntoConstraints="NO" id="CbC-rf-uPD">
+                                                                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageComment" translatesAutoresizingMaskIntoConstraints="NO" id="CbC-rf-uPD">
                                                                             <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="70" id="pVP-qd-VMu"/>
@@ -338,8 +338,9 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="1Vd-IM-BFy">
                                                                     <rect key="frame" x="101" y="0.0" width="70" height="85"/>
                                                                     <subviews>
-                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty-heart" translatesAutoresizingMaskIntoConstraints="NO" id="cVL-ER-k3s">
+                                                                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="like" translatesAutoresizingMaskIntoConstraints="NO" id="cVL-ER-k3s">
                                                                             <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                                                            <gestureRecognizers/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="70" id="CPc-cC-TNN"/>
                                                                                 <constraint firstAttribute="width" constant="70" id="xQo-Uw-iNj"/>
@@ -363,7 +364,7 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="9tf-cZ-qK1">
                                                                     <rect key="frame" x="202" y="0.0" width="70" height="85"/>
                                                                     <subviews>
-                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty-heart" translatesAutoresizingMaskIntoConstraints="NO" id="rS5-XV-T3V">
+                                                                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty-heart" translatesAutoresizingMaskIntoConstraints="NO" id="rS5-XV-T3V">
                                                                             <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="70" id="foy-5U-lvi"/>
@@ -884,12 +885,14 @@
         <image name="add_button" width="17" height="17"/>
         <image name="empty-heart" width="70" height="70"/>
         <image name="f" width="352" height="328"/>
+        <image name="imageComment" width="512" height="512"/>
+        <image name="like" width="624" height="767"/>
         <image name="logo2" width="512" height="512"/>
         <image name="profile" width="22" height="20"/>
         <image name="profile_image" width="512" height="512"/>
         <image name="sign-out" width="92" height="65"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="uxh-T2-HlL"/>
+        <segue reference="MRc-yH-MUN"/>
     </inferredMetricsTieBreakers>
 </document>

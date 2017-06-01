@@ -14,11 +14,40 @@ class Post {
 	private var _profileImageUrl: String!
 	private var _likes: Int!
 	private var _comments: Int!
+	private var _location: String!
+	private var _meetingTime: String!
+	private var _userName: String!
+	private var _subjectName: String!
+	private var _uni: String!
 	private var _postKey: String!
 	private var _postRef: FIRDatabaseReference!
 	
 	var postDescription: String {
 		return _postDescription
+	}
+	
+	var subjectName: String {
+		return _subjectName
+	}
+	
+	var uni: String {
+		return _uni
+	}
+	
+	var userName: String {
+		return _userName
+	}
+	
+	var meetingTime: String {
+		return _meetingTime
+	}
+	
+	var location: String {
+		return _location
+	}
+	
+	var comments: Int {
+		return _comments
 	}
 	
 	var profileImageURL: String {
@@ -52,6 +81,30 @@ class Post {
 		
 		if let likes = postData[LIKES] as? Int {
 			self._likes = likes
+		}
+		
+		if let comments = postData[COMMENTS] as? Int {
+			self._comments = comments
+		}
+		
+		if let location = postData[LOCATION] as? String {
+			self._location = location
+		}
+		
+		if let meetingTime = postData[MEETING_TIME] as? String {
+			self._meetingTime = meetingTime
+		}
+		
+		if let userName = postData[USER_NAME] as? String {
+			self._userName = userName
+		}
+		
+		if let subjectName = postData[SUBJECT_NAME] as? String {
+			self._subjectName = subjectName
+		}
+		
+		if let uni = postData[UNIVERSITY] as? String {
+			self._uni = uni
 		}
 		
 		_postRef = DataService.ds.REF_POSTS.child(_postKey)
