@@ -10,8 +10,8 @@ import UIKit
 
 class CommentCell: UITableViewCell {
 	@IBOutlet var profileImage: CustomCircleView!
-
 	@IBOutlet var commentLabel: UILabel!
+	
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
