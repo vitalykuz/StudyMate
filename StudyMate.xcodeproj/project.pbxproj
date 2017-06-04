@@ -18,6 +18,7 @@
 		D8922AF41ED40CA000E5322C /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8922AF31ED40CA000E5322C /* Post.swift */; };
 		D8B76FA91EDC5DFC00CA77C1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B76FA81EDC5DFC00CA77C1 /* User.swift */; };
 		D8BDE9451EDE5DF600384D85 /* PostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BDE9441EDE5DF600384D85 /* PostVC.swift */; };
+		D8C427F41EE3EF8800B12E8A /* CommentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C427F31EE3EF8800B12E8A /* CommentVC.swift */; };
 		D8CF25421ED795DE00E11579 /* FeedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CF25411ED795DE00E11579 /* FeedManager.swift */; };
 		D8E50ADD1ED6E83B00293302 /* AccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E50ADC1ED6E83B00293302 /* AccountVC.swift */; };
 		D8ED0C6E1EC0034500D2536D /* CustomShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ED0C6D1EC0034500D2536D /* CustomShadowView.swift */; };
@@ -46,6 +47,7 @@
 		D8922AF31ED40CA000E5322C /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		D8B76FA81EDC5DFC00CA77C1 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D8BDE9441EDE5DF600384D85 /* PostVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostVC.swift; sourceTree = "<group>"; };
+		D8C427F31EE3EF8800B12E8A /* CommentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentVC.swift; sourceTree = "<group>"; };
 		D8CF25411ED795DE00E11579 /* FeedManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedManager.swift; sourceTree = "<group>"; };
 		D8E50ADC1ED6E83B00293302 /* AccountVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountVC.swift; sourceTree = "<group>"; };
 		D8ED0C6D1EC0034500D2536D /* CustomShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomShadowView.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				D8E50ADC1ED6E83B00293302 /* AccountVC.swift */,
 				D8CF25411ED795DE00E11579 /* FeedManager.swift */,
 				D8BDE9441EDE5DF600384D85 /* PostVC.swift */,
+				D8C427F31EE3EF8800B12E8A /* CommentVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				D8BDE9451EDE5DF600384D85 /* PostVC.swift in Sources */,
 				D8922AF21ED3CC5C00E5322C /* DataService.swift in Sources */,
 				D8E50ADD1ED6E83B00293302 /* AccountVC.swift in Sources */,
+				D8C427F41EE3EF8800B12E8A /* CommentVC.swift in Sources */,
 				D8B76FA91EDC5DFC00CA77C1 /* User.swift in Sources */,
 				D8ED0C7B1EC0808900D2536D /* FeedVC.swift in Sources */,
 				D81676DA1EBF4A900024FD8B /* AppDelegate.swift in Sources */,

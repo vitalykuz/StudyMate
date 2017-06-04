@@ -75,6 +75,7 @@ class PostVC: UIViewController, UITextViewDelegate, UITextFieldDelegate {
 		]
 		
 		let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
+		print("Post id: \(firebasePost.key)") // it works
 		firebasePost.setValue(post)
 	}
 

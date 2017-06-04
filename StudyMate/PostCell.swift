@@ -34,7 +34,7 @@ class PostCell: UITableViewCell {
 		tap.numberOfTapsRequired = 1
 		likeImage.addGestureRecognizer(tap)
 		likeImage.isUserInteractionEnabled = true
-		
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
