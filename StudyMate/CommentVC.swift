@@ -15,6 +15,9 @@ class CommentVC: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+	@IBAction func backImageTapped(_ sender: Any) {
+		self.performSegue(withIdentifier: "unwindToMain", sender: self)
+	}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

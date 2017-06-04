@@ -88,6 +88,6 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 		performSegue(withIdentifier: ACCOUNT_VC, sender: nil)
 	}
 	
-	
+	@IBAction func unwindToMain(segue:UIStoryboardSegue) { }
 	
 }
