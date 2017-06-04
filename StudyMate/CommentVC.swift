@@ -9,6 +9,7 @@
 import UIKit
 
 class CommentVC: UIViewController {
+	@IBOutlet var futureCommentLabel: TextFieldCustomView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,4 +25,6 @@ class CommentVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+	@IBAction func sendButtonTapped(_ sender: Any) {
+	}
 }
