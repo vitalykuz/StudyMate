@@ -33,7 +33,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 			
 			if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
 				for snap in snapshot {
-					//print("SNAP: \(snap)")
+					print("SNAP: \(snap)")
 					if let postDict = snap.value as? Dictionary<String, Any> {
 						let key = snap.key
 						let post = Post(postId: key, postData: postDict)
@@ -44,6 +44,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 			self.posts.reverse()
 			self.tableView.reloadData()
 		}
+		
 	}
 
 	
@@ -58,7 +59,6 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 		if let cell = tableView.dequeueReusableCell(withIdentifier: POST_CELL) as? PostCell {
 			//adds an action to the button in the cell
 			cell.commentButtonOutlet.addTarget(self, action: #selector(FeedVC.someAction), for: .touchUpInside)
-			//cell.userDetailsOutlet.addTarget(self, action: #selector(FeedVC.userDetailsTapped), for: .touchUpInside)
 			if let profileImage = FeedVC.imageCache.object(forKey: post.profileImageURL as NSString) {
 				cell.configureCell(post: post, profileImage: profileImage)
 			} else {
@@ -95,10 +95,5 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	func someAction() {
 		print("I am in someAction")
 		self.performSegue(withIdentifier: "toCommentVC", sender: self)
-	}
-	
-	func userDetailsTapped() {
-		print("Vitaly: I am in userDetailsTapped FeedVC")
-		self.performSegue(withIdentifier: "toAccountVC", sender: self)
 	}
 }

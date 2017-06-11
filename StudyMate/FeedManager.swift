@@ -17,5 +17,4 @@ class FeedManager {
 	func startListeningToChangesInPost(completion: @escaping (FIRDataSnapshot) -> Swift.Void ) -> Void {
 		DataService.ds.REF_POSTS.observe(.value, with: completion)
 	}
-
 }

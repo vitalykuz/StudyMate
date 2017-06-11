@@ -16,6 +16,10 @@ class PostVC: UIViewController, UITextViewDelegate, UITextFieldDelegate {
 	@IBOutlet var whenLabel: TextFieldCustomView!
 	@IBOutlet var postDescription: UITextView!
 	
+	@IBOutlet var activityIndicator: UIActivityIndicatorView!
+	
+//	var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
+	
 	private var userName: String?
 	private var uni: String?
 	private var profileImageUrl: String?
@@ -31,6 +35,13 @@ class PostVC: UIViewController, UITextViewDelegate, UITextFieldDelegate {
 		
 		postDescription.text = PROVIDE_POST_DESCRIPTION
 		postDescription.textColor = UIColor.lightGray
+		
+		activityIndicator.isHidden = true
+//		activityIndicator.center = self.view.center
+//		activityIndicator.hidesWhenStopped = true
+//		activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+//		view.addSubview(activityIndicator)
+		
 		
 		self.findUser()
 		
@@ -59,7 +70,17 @@ class PostVC: UIViewController, UITextViewDelegate, UITextFieldDelegate {
 			return
 		}
 		
+		activityIndicator.isHidden = false
+		activityIndicator.startAnimating()
+		UIApplication.shared.beginIgnoringInteractionEvents()
+		
 		self.postToFirebase()
+		
+//		activityIndicator.stopAnimating()
+//		activityIndicator.isHidden = true
+//		UIApplication.shared.endIgnoringInteractionEvents()
+		
+		
 	}
 	
 	func postToFirebase() {
@@ -78,6 +99,15 @@ class PostVC: UIViewController, UITextViewDelegate, UITextFieldDelegate {
 		let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
 		//print("Post id: \(firebasePost.key)") // it works
 		firebasePost.setValue(post)
+		
+		self.updateActivityIndicator()
+	}
+	
+	func updateActivityIndicator() {
+		self.activityIndicator.stopAnimating()
+		self.activityIndicator.isHidden = true
+		UIApplication.shared.endIgnoringInteractionEvents()
+		//self.performSegue(withIdentifier: "toFeedVC", sender: self)
 	}
 
 	func findUser() {

@@ -128,6 +128,10 @@ class AccountVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
 				}
 			}
 		}
+		
+		
+		
+		
 	}
 	
 	

@@ -795,15 +795,26 @@
                                         </state>
                                         <connections>
                                             <action selector="createPostButtonTapped:" destination="ATV-5V-Uic" eventType="touchUpInside" id="zFT-Sm-Zck"/>
+                                            <segue destination="1ir-bV-xit" kind="unwind" unwindAction="unwindToMainWithSegue:" id="k3K-es-jXE"/>
                                         </connections>
                                     </button>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="gkS-ah-VdY">
+                                        <rect key="frame" x="120.5" y="210.5" width="70" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="gC2-MG-prP"/>
+                                            <constraint firstAttribute="height" constant="70" id="nUh-ab-ACO"/>
+                                        </constraints>
+                                        <color key="color" red="0.95686274510000002" green="0.26274509800000001" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.95686274510000002" green="0.26274509800000001" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="4HU-yU-ldT" secondAttribute="trailing" constant="8" id="56m-zV-fIx"/>
+                                    <constraint firstItem="gkS-ah-VdY" firstAttribute="centerX" secondItem="Ufb-Pl-uLn" secondAttribute="centerX" id="GXS-Ud-OQy"/>
                                     <constraint firstAttribute="trailing" secondItem="vXU-bQ-PJa" secondAttribute="trailing" constant="8" id="QE2-Wg-qUK"/>
                                     <constraint firstItem="vXU-bQ-PJa" firstAttribute="top" secondItem="4HU-yU-ldT" secondAttribute="bottom" constant="8" id="RI8-ux-grf"/>
                                     <constraint firstItem="4HU-yU-ldT" firstAttribute="top" secondItem="Ufb-Pl-uLn" secondAttribute="top" constant="8" id="cEm-YY-zmL"/>
+                                    <constraint firstItem="gkS-ah-VdY" firstAttribute="centerY" secondItem="Ufb-Pl-uLn" secondAttribute="centerY" id="d2Q-g8-B9K"/>
                                     <constraint firstItem="4HU-yU-ldT" firstAttribute="leading" secondItem="Ufb-Pl-uLn" secondAttribute="leading" constant="8" id="dQk-KB-Okg"/>
                                     <constraint firstItem="vXU-bQ-PJa" firstAttribute="leading" secondItem="Ufb-Pl-uLn" secondAttribute="leading" constant="8" id="zRa-7T-xwm"/>
                                 </constraints>
@@ -821,6 +832,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="gkS-ah-VdY" id="lMb-pT-gsZ"/>
                         <outlet property="locationField" destination="Tbv-hk-SfY" id="Bol-Bp-ik1"/>
                         <outlet property="postDescription" destination="xQ0-mR-e2k" id="Yu1-ox-RUB"/>
                         <outlet property="subjectNameField" destination="6cE-fM-x7S" id="oKF-kd-Np4"/>
@@ -831,7 +843,7 @@
                 <exit id="1ir-bV-xit" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="CcM-EW-nf1" userLabel="Go to Feed VC Tap">
                     <connections>
-                        <segue destination="1ir-bV-xit" kind="unwind" unwindAction="unwindToMainWithSegue:" id="unI-P8-Bf6"/>
+                        <segue destination="1ir-bV-xit" kind="unwind" unwindAction="unwindToMainWithSegue:" id="CHE-ml-EWe"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
