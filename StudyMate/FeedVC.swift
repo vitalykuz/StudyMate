@@ -74,6 +74,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 		return posts.count
 	}
 	
+	
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

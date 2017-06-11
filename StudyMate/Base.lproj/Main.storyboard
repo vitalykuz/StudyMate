@@ -114,9 +114,15 @@
                                     <action selector="facebookButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7IT-c5-h1U"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="qtE-m9-DRd">
+                                <rect key="frame" x="142" y="266" width="37" height="37"/>
+                                <color key="color" red="0.95686274510000002" green="0.26274509800000001" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="qtE-m9-DRd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="AFC-4J-Jgc"/>
+                            <constraint firstItem="qtE-m9-DRd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="COm-5n-NjQ"/>
                             <constraint firstItem="Nav-lA-0Fe" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="GsI-t3-CZ6"/>
                             <constraint firstAttribute="trailing" secondItem="WoC-Oz-iX8" secondAttribute="trailing" constant="20" id="Ihn-va-keS"/>
                             <constraint firstAttribute="trailing" secondItem="Nav-lA-0Fe" secondAttribute="trailing" id="Msj-XI-QKa"/>
@@ -135,6 +141,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="qtE-m9-DRd" id="5ld-bR-edd"/>
                         <outlet property="emailTextField" destination="CA1-i7-UZX" id="phq-E4-yD7"/>
                         <outlet property="passwordTextField" destination="N9r-Wb-2od" id="9E1-9g-pIn"/>
                         <segue destination="Gsz-xR-Oxh" kind="show" identifier="toFeedVC" id="Pks-a9-gwD"/>
@@ -558,19 +565,19 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="hOo-sl-sYr" userLabel="Likes and Comments Stack">
-                                                            <rect key="frame" x="20" y="354.5" width="258" height="25"/>
+                                                            <rect key="frame" x="50" y="354.5" width="213" height="25"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Nxk-QM-NLB">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="84" height="25"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="86" height="25"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Likes:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpQ-Ia-pfr">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="42" height="25"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Likes: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpQ-Ia-pfr">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="43" height="25"/>
                                                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
                                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8764" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DDA-kC-Kob">
-                                                                            <rect key="frame" x="42" y="0.0" width="42" height="25"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="900" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DDA-kC-Kob">
+                                                                            <rect key="frame" x="43" y="0.0" width="43" height="25"/>
                                                                             <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="15"/>
                                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
@@ -578,7 +585,7 @@
                                                                     </subviews>
                                                                 </stackView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bDF-rT-LsE">
-                                                                    <rect key="frame" x="132.5" y="0.0" width="125.5" height="25"/>
+                                                                    <rect key="frame" x="98" y="0.0" width="115" height="25"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comments: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="rVt-Ea-D5a">
                                                                             <rect key="frame" x="0.0" y="0.0" width="83.5" height="25"/>
@@ -586,8 +593,8 @@
                                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8764" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9K5-9j-hbH">
-                                                                            <rect key="frame" x="83.5" y="0.0" width="42" height="25"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="900" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9K5-9j-hbH">
+                                                                            <rect key="frame" x="83.5" y="0.0" width="31.5" height="25"/>
                                                                             <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="15"/>
                                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
@@ -608,7 +615,7 @@
                                                         <constraint firstItem="Qer-18-S9a" firstAttribute="leading" secondItem="JXT-ox-ewi" secondAttribute="leading" constant="8" id="E0M-Vt-Kee"/>
                                                         <constraint firstItem="kmQ-mf-T7b" firstAttribute="top" secondItem="Qer-18-S9a" secondAttribute="bottom" constant="8" id="EpH-ek-Yly"/>
                                                         <constraint firstAttribute="height" constant="385" id="KQT-Qu-oo5"/>
-                                                        <constraint firstAttribute="trailing" secondItem="hOo-sl-sYr" secondAttribute="trailing" constant="10" id="L6d-1G-Syq"/>
+                                                        <constraint firstAttribute="trailing" secondItem="hOo-sl-sYr" secondAttribute="trailing" constant="25" id="L6d-1G-Syq"/>
                                                         <constraint firstAttribute="trailing" secondItem="Qer-18-S9a" secondAttribute="trailing" constant="8" id="MNn-Of-b6w"/>
                                                         <constraint firstItem="uIr-oh-ccZ" firstAttribute="leading" secondItem="JXT-ox-ewi" secondAttribute="leading" constant="8" id="TbE-5E-mZo"/>
                                                         <constraint firstItem="1sf-vi-vMI" firstAttribute="top" secondItem="maA-ND-csS" secondAttribute="bottom" constant="8" id="Tji-VB-cRd"/>
@@ -621,7 +628,7 @@
                                                         <constraint firstItem="cDv-DF-2kl" firstAttribute="leading" secondItem="JXT-ox-ewi" secondAttribute="leading" constant="8" id="gMw-77-ojh"/>
                                                         <constraint firstAttribute="trailing" secondItem="kmQ-mf-T7b" secondAttribute="trailing" constant="8" id="j5x-VH-r9N"/>
                                                         <constraint firstItem="maA-ND-csS" firstAttribute="top" secondItem="kmQ-mf-T7b" secondAttribute="bottom" constant="8" id="oKe-xY-1hF"/>
-                                                        <constraint firstItem="hOo-sl-sYr" firstAttribute="leading" secondItem="JXT-ox-ewi" secondAttribute="leading" constant="20" id="oLV-ol-9zc"/>
+                                                        <constraint firstItem="hOo-sl-sYr" firstAttribute="leading" secondItem="JXT-ox-ewi" secondAttribute="leading" constant="50" id="oLV-ol-9zc"/>
                                                         <constraint firstItem="kmQ-mf-T7b" firstAttribute="leading" secondItem="JXT-ox-ewi" secondAttribute="leading" constant="8" id="wbv-bb-1HN"/>
                                                         <constraint firstItem="maA-ND-csS" firstAttribute="leading" secondItem="JXT-ox-ewi" secondAttribute="leadingMargin" id="xnJ-1w-MRD"/>
                                                     </constraints>
@@ -977,6 +984,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="saveButtonTapped:" destination="5h3-IY-h1M" eventType="touchUpInside" id="apm-rH-UkS"/>
+                                                    <segue destination="sos-4i-l7R" kind="unwind" unwindAction="unwindToMainWithSegue:" id="Hpp-pc-4YB"/>
                                                 </connections>
                                             </button>
                                         </subviews>

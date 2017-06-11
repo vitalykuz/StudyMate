@@ -13,7 +13,7 @@ import Firebase
 import SwiftKeychainWrapper
 
 class SignInVC: UIViewController, UITextFieldDelegate {
-
+	@IBOutlet var activityIndicator: UIActivityIndicatorView!
 	@IBOutlet var emailTextField: TextFieldCustomView!
 	@IBOutlet var passwordTextField: TextFieldCustomView!
 	var activeField: UITextField?
@@ -24,12 +24,13 @@ class SignInVC: UIViewController, UITextFieldDelegate {
 		
 		emailTextField.delegate = self
 		passwordTextField.delegate = self
+		
+		activityIndicator.isHidden = true
 	}
 	
 	override func viewDidAppear(_ animated: Bool) {
 		//checks if i got the uid in key chain
 		if KeychainWrapper.standard.string(forKey: USER_ID) != nil {
-			print("Vitaly: User ID is in key chain")
 			performSegue(withIdentifier: "toFeedVC", sender: nil)
 		}
 	}
@@ -48,13 +49,16 @@ class SignInVC: UIViewController, UITextFieldDelegate {
 		 If successful, than it sends the FB credentials to Firebase
 	*/
 	@IBAction func facebookButtonTapped(_ sender: Any) {
+		self.startAcivityIndicator()
 		
 		let facebookLoginManager = FBSDKLoginManager()
 		facebookLoginManager.logIn(withReadPermissions: ["email", "public_profile"], from: self) { (result, error) in
 			if error != nil {
 				print("Vitaly: unable to authenticate with facebook ")
+				self.updateActivityIndicator()
 			} else if result?.isCancelled == true {
 				print("Vitaly: user cancelled FB auth ")
+				self.updateActivityIndicator()
 			} else {
 				print("Vitaly: FB auth success ")
 				let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
@@ -71,26 +75,22 @@ class SignInVC: UIViewController, UITextFieldDelegate {
 		FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in
 			if error != nil {
 				print("Vitaly: unable to auth with firebase error: \(error.debugDescription) ")
+				self.updateActivityIndicator()
 			} else {
 				print("Vitaly: successful auth with Firebase ")
 				if let user = user {
-					print("User name \(String(describing: user.displayName))")
-					print("User email \(String(describing: user.email))")
-					print("Photo url \(String(describing: user.photoURL))")
-					print("User uid \(user.uid)")
-					
 					self.saveFBProfileImageToFirebase(profileImageUrl: user.photoURL!)
 					
 					let userData = [USER_EMAIL: user.email!, PROVIDER: credential.provider, USER_NAME: user.displayName!] as [String : Any]
 					self.saveUserDataToKeyChain(userId: user.uid, userData: userData)
+					self.updateActivityIndicator()
 				}
 			}
 		})
 	}
 	
 	func saveFBProfileImageToFirebase(profileImageUrl: URL){
-		//let url = URL(string: profileImageUrl)
-		let data = try? Data(contentsOf: profileImageUrl) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+		let data = try? Data(contentsOf: profileImageUrl)
 		let profileImage = UIImage(data: data!)
 		
 		if let imgData = UIImageJPEGRepresentation(profileImage!, 1) {
@@ -114,15 +114,12 @@ class SignInVC: UIViewController, UITextFieldDelegate {
 		}
 	}
 	
-	
-	
 	func updateDatabase(imgUrl: String) {
 		let user: Dictionary<String, Any> = [
 			PROFILE_IMAGE_URL: imgUrl as Any,
 		]
 		
 		let currentUser  = DataService.ds.REF_USER_CURRENT
-		print("Name \(currentUser.description())")
 		currentUser.updateChildValues(user)
 	}
 	
@@ -131,26 +128,27 @@ class SignInVC: UIViewController, UITextFieldDelegate {
 	 If the user does not exist (does not have an acc), it creates a new user with provided email and password.
 	*/
 	@IBAction func signInButtonTapped(_ sender: Any) {
+		self.startAcivityIndicator()
 		//checks if text fields are not empty
 		if let email = emailTextField.text, let password = passwordTextField.text {
 			FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
 				if ( error == nil ) {
 					print("Vitaly: success login with email Firebase")
 					if let user = user {
-						print("Email name \(String(describing: user.displayName))")
-						print("Email email \(String(describing: user.email))")
-						print("Email photoURL \(String(describing: user.photoURL))")
 						let userData = [USER_EMAIL: user.email!, PROVIDER: user.providerID, PROFILE_IMAGE_URL: DEFAULT_PROFILE_IMAGE_URL] as [String : Any]
+						self.updateActivityIndicator()
 						self.saveUserDataToKeyChain(userId: user.uid, userData: userData)
 					}
 				} else {
 					FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error ) in
 						if ( error != nil ) {
 							print("Vitaly: unable to auth with email firebase")
+							self.updateActivityIndicator()
 						} else {
 							print("Vitaly: new user with email created with Firebase")
 							if let user = user {
 								let userData = [USER_EMAIL: user.email!, PROVIDER: user.providerID, PROFILE_IMAGE_URL: DEFAULT_PROFILE_IMAGE_URL] as [String : Any]
+								self.updateActivityIndicator()
 								self.saveUserDataToKeyChain(userId: user.uid, userData: userData)
 							}
 						}
@@ -160,14 +158,23 @@ class SignInVC: UIViewController, UITextFieldDelegate {
 		}
 	}
 	
-	
-	
 	func saveUserDataToKeyChain(userId: String, userData: Dictionary<String, Any>) {
 		DataService.ds.createFirbaseDBUser(uid: userId, userData: userData )
 		KeychainWrapper.standard.set(userId, forKey: USER_ID)
 		performSegue(withIdentifier: "toFeedVC", sender: nil)
 	}
 	
+	func updateActivityIndicator() {
+		self.activityIndicator.stopAnimating()
+		self.activityIndicator.isHidden = true
+		UIApplication.shared.endIgnoringInteractionEvents()
+	}
+	
+	func startAcivityIndicator() {
+		self.activityIndicator.isHidden = false
+		self.activityIndicator.startAnimating()
+		UIApplication.shared.beginIgnoringInteractionEvents()
+	}
 	
 	// methods below resposible for moving text fields up, when the keyboard appears
 	func textFieldDidBeginEditing(_ textField: UITextField) {
