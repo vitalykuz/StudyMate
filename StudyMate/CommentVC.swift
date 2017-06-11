@@ -54,7 +54,7 @@ class CommentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 		let comment = comments[indexPath.row]
 		
 		if let cell = tableView.dequeueReusableCell(withIdentifier: COMMENT_CELL) as? CommentCell {
-			cell.configureCell(comment: comment)
+			cell.configureCell(comment: comment, profileImageURL: comment.profileImageUrl)
 			return cell
 		} else {
 			return PostCell()

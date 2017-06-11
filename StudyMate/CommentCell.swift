@@ -29,9 +29,16 @@ class CommentCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-	func configureCell(comment: Comment) {
+	func configureCell(comment: Comment, profileImageURL: String) {
 		self.comment = comment
 		self.commentLabel.text = comment.comment
-	}
+		
+		
+		let url = URL(string: comment.profileImageUrl)
+		let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+		self.profileImage.image = UIImage(data: data!)
+		
+		//self.profileImage.image = comment.profileImageUrl
 	
+	}
 }

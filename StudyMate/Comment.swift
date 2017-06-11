@@ -10,7 +10,7 @@ import Foundation
 import Firebase
 
 class Comment {
-	private var _profileImageUrl: String!
+	private var _profileImageUrl: String! = ""
 	private var _comment: String = "N/A"
 	private var _commentId: String!
 	private var _commentRef: FIRDatabaseReference!

@@ -34,7 +34,7 @@ let MEETING_TIME = "meetingTime"
 
 //Comments table in database
 let COMMENT_TEXT = "commentText"
-let COMMENT_IMAGE = "profileImageUrl"
+let COMMENT_IMAGE = "profileImageURL"
 
 // identifiers
 let POST_CELL = "postCell"

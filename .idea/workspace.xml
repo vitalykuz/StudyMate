@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="023b3ed3-cc51-4659-8b94-db3f33620c2f" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Default-568h@2x.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StudyMate.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/StudyMate.xcodeproj/project.pbxproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StudyMate/Base.lproj/Main.storyboard" afterPath="$PROJECT_DIR$/StudyMate/Base.lproj/Main.storyboard" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StudyMate/Comment.swift" afterPath="$PROJECT_DIR$/StudyMate/Comment.swift" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StudyMate/CommentCell.swift" afterPath="$PROJECT_DIR$/StudyMate/CommentCell.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StudyMate/CommentVC.swift" afterPath="$PROJECT_DIR$/StudyMate/CommentVC.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StudyMate/Constants.swift" afterPath="$PROJECT_DIR$/StudyMate/Constants.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StudyMate/PostCell.swift" afterPath="$PROJECT_DIR$/StudyMate/PostCell.swift" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -61,20 +56,30 @@
               <caret line="24" column="35" lean-forward="false" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
               <folding>
                 <element signature="e#142#154#0" expanded="true" />
-                <marker date="1496563379000" expanded="true" signature="2422:2424" ph="{...}" />
+                <marker date="1497150552000" expanded="true" signature="2446:2448" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PostCell.swift" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PostCell.swift" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/StudyMate/PostCell.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="24" column="4" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+            <state relative-caret-position="235">
+              <caret line="34" column="43" lean-forward="false" selection-start-line="34" selection-start-column="43" selection-end-line="34" selection-end-column="43" />
               <folding>
                 <marker date="1496578102000" expanded="true" signature="3450:3461" ph="{...}" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommentCell.swift" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/StudyMate/CommentCell.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="41" column="8" lean-forward="true" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="8" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -114,6 +119,7 @@
         <option value="$PROJECT_DIR$/StudyMate/PostTableViewCell.swift" />
         <option value="$PROJECT_DIR$/StudyMate/AccountVC.swift" />
         <option value="$PROJECT_DIR$/StudyMate/PostCell.swift" />
+        <option value="$PROJECT_DIR$/StudyMate/CommentCell.swift" />
       </list>
     </option>
   </component>
@@ -391,19 +397,21 @@
       <workItem from="1494386832145" duration="413000" />
       <workItem from="1495505194564" duration="1858000" />
       <workItem from="1496047386791" duration="915000" />
-      <workItem from="1497145220485" duration="270000" />
+      <workItem from="1497145220485" duration="684000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6025000" />
+    <option name="totallyTimeSpent" value="6439000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="714" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32868218" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -465,7 +473,7 @@
           <caret line="22" column="35" lean-forward="false" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
           <folding>
             <element signature="e#142#154#0" expanded="true" />
-            <marker date="1496563379000" expanded="true" signature="2422:2424" ph="{...}" />
+            <marker date="1497150552000" expanded="true" signature="2446:2448" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -534,7 +542,7 @@
           <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
             <element signature="e#142#154#0" expanded="true" />
-            <marker date="1496563379000" expanded="true" signature="2422:2424" ph="{...}" />
+            <marker date="1497150552000" expanded="true" signature="2446:2448" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -570,7 +578,7 @@
           <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
             <element signature="e#142#154#0" expanded="true" />
-            <marker date="1496563379000" expanded="true" signature="2422:2424" ph="{...}" />
+            <marker date="1497150552000" expanded="true" signature="2446:2448" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -599,7 +607,7 @@
           <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
             <element signature="e#142#154#0" expanded="true" />
-            <marker date="1496563379000" expanded="true" signature="2422:2424" ph="{...}" />
+            <marker date="1497150552000" expanded="true" signature="2446:2448" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -628,7 +636,7 @@
           <caret line="24" column="4" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
           <folding>
             <element signature="e#142#154#0" expanded="true" />
-            <marker date="1496563379000" expanded="true" signature="2422:2424" ph="{...}" />
+            <marker date="1497150552000" expanded="true" signature="2446:2448" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -776,7 +784,7 @@
           <caret line="24" column="35" lean-forward="false" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
           <folding>
             <element signature="e#142#154#0" expanded="true" />
-            <marker date="1496563379000" expanded="true" signature="2422:2424" ph="{...}" />
+            <marker date="1497150552000" expanded="true" signature="2446:2448" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -793,11 +801,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/StudyMate/PostCell.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="24" column="4" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+        <state relative-caret-position="235">
+          <caret line="34" column="43" lean-forward="false" selection-start-line="34" selection-start-column="43" selection-end-line="34" selection-end-column="43" />
           <folding>
             <marker date="1496578102000" expanded="true" signature="3450:3461" ph="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StudyMate/CommentCell.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="41" column="8" lean-forward="true" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
