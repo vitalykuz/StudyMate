@@ -23,4 +23,8 @@ class User {
 		return _profileImageUrl
 	}
 	
+//	var USER_CURRENT: User {
+//		let user  = DataService.ds.REF_USER_CURRENT
+//		return user
+//	}
 }

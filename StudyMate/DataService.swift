@@ -21,9 +21,10 @@ class DataService {
 	private var _REF_BASE = DB_BASE
 	private var _REF_POSTS = DB_BASE.child(POSTS)
 	private var _REF_USERS = DB_BASE.child(USERS)
+	private var _REF_COMMENTS = DB_BASE.child(COMMENTS_TABLE)
 	
 	// Storage references
-	private var _REF_PROFILE_IMAGES = STORAGE_BASE.child("profile-images")
+	private var _REF_PROFILE_IMAGES = STORAGE_BASE.child(STORAGE_PROFILE_IMAGES)
 	
 	var REF_BASE: FIRDatabaseReference {
 		return _REF_BASE
@@ -31,6 +32,10 @@ class DataService {
 	
 	var REF_POSTS: FIRDatabaseReference {
 		return _REF_POSTS
+	}
+	
+	var REF_COMMENTS: FIRDatabaseReference {
+		return _REF_COMMENTS
 	}
 	
 	var REF_USERS: FIRDatabaseReference {
@@ -44,6 +49,12 @@ class DataService {
 		let uid = KeychainWrapper.standard.string(forKey: USER_ID)
 		let user = REF_USERS.child(uid!)
 		return user
+	}
+	
+	var REF_POST_CURRENT: FIRDatabaseReference {
+		let postId = KeychainWrapper.standard.string(forKey: "PostId")
+		let post = REF_POSTS.child(postId!)
+		return post
 	}
 	
 	var REF_PROFILE_IMAGES: FIRStorageReference {

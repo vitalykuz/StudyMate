@@ -78,13 +78,53 @@ class SignInVC: UIViewController, UITextFieldDelegate {
 					print("User email \(String(describing: user.email))")
 					print("Photo url \(String(describing: user.photoURL))")
 					print("User uid \(user.uid)")
-					let userData = [USER_EMAIL: user.email!, PROVIDER: credential.provider, USER_NAME: user.displayName!, PROFILE_IMAGE_URL: String(describing: user.photoURL!)] as [String : Any]
+					
+					self.saveFBProfileImageToFirebase(profileImageUrl: user.photoURL!)
+					
+					let userData = [USER_EMAIL: user.email!, PROVIDER: credential.provider, USER_NAME: user.displayName!] as [String : Any]
 					self.saveUserDataToKeyChain(userId: user.uid, userData: userData)
 				}
 			}
 		})
 	}
 	
+	func saveFBProfileImageToFirebase(profileImageUrl: URL){
+		//let url = URL(string: profileImageUrl)
+		let data = try? Data(contentsOf: profileImageUrl) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+		let profileImage = UIImage(data: data!)
+		
+		if let imgData = UIImageJPEGRepresentation(profileImage!, 1) {
+			
+			//gets a unique ID for the image
+			let imgUid = NSUUID().uuidString
+			let metadata = FIRStorageMetadata()
+			metadata.contentType = "image/jpeg"
+			
+			DataService.ds.REF_PROFILE_IMAGES.child(imgUid).put(imgData, metadata: metadata) { (metadata, error) in
+				if error != nil {
+					print("Vitaly: Unable to upload image to Firebasee torage")
+				} else {
+					print("Vitaly: Successfully uploaded image to Firebase storage")
+					let downloadURL = metadata?.downloadURL()?.absoluteString
+					if let url = downloadURL {
+						self.updateDatabase(imgUrl: url)
+					}
+				}
+			}
+		}
+	}
+	
+	
+	
+	func updateDatabase(imgUrl: String) {
+		let user: Dictionary<String, Any> = [
+			PROFILE_IMAGE_URL: imgUrl as Any,
+		]
+		
+		let currentUser  = DataService.ds.REF_USER_CURRENT
+		print("Name \(currentUser.description())")
+		currentUser.updateChildValues(user)
+	}
 	
 	/*
 	@brief This methods tries to sign in a Firebase user with email.
@@ -119,6 +159,8 @@ class SignInVC: UIViewController, UITextFieldDelegate {
 			})
 		}
 	}
+	
+	
 	
 	func saveUserDataToKeyChain(userId: String, userData: Dictionary<String, Any>) {
 		DataService.ds.createFirbaseDBUser(uid: userId, userData: userData )

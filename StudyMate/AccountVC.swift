@@ -8,15 +8,19 @@
 
 import UIKit
 import Firebase
+import SwiftKeychainWrapper
 
-class AccountVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class AccountVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate {
 	@IBOutlet var profileImage: UIImageView!
 	@IBOutlet var nameLabel: TextFieldCustomView!
 	@IBOutlet var uniLabel: TextFieldCustomView!
 	@IBOutlet var profileDescription: UITextView!
 	static var profileImageCache: NSCache<NSString, UIImage> = NSCache()
+	
+	//TO-DO: make it private
 	var imagePicker: UIImagePickerController!
 	var profileImageUrl: String = ""
+	var imageSelected = false
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +28,10 @@ class AccountVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
 		imagePicker = UIImagePickerController()
 		imagePicker.allowsEditing = true
 		imagePicker.delegate = self
+		
+		nameLabel.delegate = self
+		uniLabel.delegate = self
+		profileDescription.delegate = self
 		
 		self.fetchUserData()
     }
@@ -38,10 +46,16 @@ class AccountVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
 					self.nameLabel.text = dictionary[USER_NAME] as? String
 					self.profileDescription.text = dictionary[PROFILE_DESCRIPTION] as? String
 					self.uniLabel.text = dictionary[UNIVERSITY] as? String
-					print("Profile image url: \(String(describing: dictionary[PROFILE_IMAGE_URL]))")
 					self.profileImageUrl = dictionary[PROFILE_IMAGE_URL] as! String
-					print("Profile image url: \(self.profileImageUrl)")
-
+					
+					//TO-DO if a user is from facebook, set the imageSelected to true
+					let provider  = dictionary[PROVIDER] as? String
+					print("Provider: \(String(describing: provider))")
+					if provider == PROVIDER_FACEBOOK {
+						self.imageSelected = true
+					}
+					
+					//checks if the image is in cache already
 					if let profileImage = AccountVC.profileImageCache.object(forKey: self.profileImageUrl as NSString ) {
 							self.checkProfileImage(profileImage: profileImage)
 					} else {
@@ -72,11 +86,67 @@ class AccountVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
 		}
 	}
 	
+	// to-do it adds a profile image each time the button is clicked
+	// when saved is cliked segue to another controller
 	@IBAction func saveButtonTapped(_ sender: Any) {
-		if (self.nameLabel.text?.isEmpty)! {
+		guard let name = nameLabel.text, name != "" else {
+			print("Vitaly: Name must be entered")
+			return
+		}
+		
+		guard let uni = uniLabel.text, uni != "" else {
+			print("Vitaly: Uni must be entered")
+			return
+		}
+		
+		guard let profileDescription = profileDescription.text, profileDescription != "" else {
+			print("Vitaly: Profile description must be provided")
+			return
+		}
+		
+		guard let profileImage = profileImage.image, imageSelected == true else {
+			print("Vitaly: An image must be selected")
+			return
+		}
+		
+		if let imgData = UIImageJPEGRepresentation(profileImage, 1) {
 			
+			//gets a unique ID for the image
+			let imgUid = NSUUID().uuidString
+			let metadata = FIRStorageMetadata()
+			metadata.contentType = "image/jpeg"
+			
+			DataService.ds.REF_PROFILE_IMAGES.child(imgUid).put(imgData, metadata: metadata) { (metadata, error) in
+				if error != nil {
+					print("Vitaly: Unable to upload image to Firebasee torage")
+				} else {
+					print("Vitaly: Successfully uploaded image to Firebase storage")
+					let downloadURL = metadata?.downloadURL()?.absoluteString
+					if let url = downloadURL {
+						self.postToFirebase(imgUrl: url)
+					}
+				}
+			}
 		}
 	}
+	
+	
+	func postToFirebase(imgUrl: String) {
+		let user: Dictionary<String, Any> = [
+			USER_NAME: nameLabel.text! as Any,
+			PROFILE_IMAGE_URL: imgUrl as Any,
+			UNIVERSITY: uniLabel.text as Any,
+			PROFILE_DESCRIPTION: profileDescription.text as Any
+		]
+		
+		let currentUser  = DataService.ds.REF_USER_CURRENT
+		currentUser.updateChildValues(user)
+		//currentUser.setValuesForKeys(user)
+		
+//		let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
+//		firebasePost.setValue(user)
+	}
+
 	
 	@IBAction func backButtonTapped(_ sender: Any) {
 		performSegue(withIdentifier: FEED_VC, sender: nil)
@@ -85,6 +155,7 @@ class AccountVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
 	func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
 		if let image  = info[UIImagePickerControllerEditedImage] as? UIImage {
 			profileImage.image = image
+			self.imageSelected = true
 		} else {
 			print("Vitaly: not valid image")
 		}
@@ -94,5 +165,19 @@ class AccountVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
 	@IBAction func profileImageTapped(_ sender: Any) {
 		present(imagePicker, animated: true, completion: nil)
 	}
+	
+	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+		self.view.endEditing(true)
+		return false
+	}
+	
+	func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+		if(text == "\n") {
+			textView.resignFirstResponder()
+			return false
+		}
+		return true
+	}
+
 	
 }
