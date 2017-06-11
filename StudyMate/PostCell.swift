@@ -20,8 +20,8 @@ class PostCell: UITableViewCell {
 	@IBOutlet var timeLabel: UILabel!
 	@IBOutlet var likesLabel: UILabel!
 	@IBOutlet var likeImage: UIImageView!
-	@IBOutlet var commentImage: UIImageView!
 	@IBOutlet var commentsLabel: UILabel!
+	@IBOutlet var commentButtonOutlet: UIButton!
 	
 	var post: Post!
 	var likesRef: FIRDatabaseReference!
@@ -107,6 +107,10 @@ class PostCell: UITableViewCell {
 		})
 	}
 	
+	@IBAction func commentButtonTapped(_ sender: Any) {
+		print("I am here in commentButtonTapped")
+		print("PostId: \(self.post.postKey)")
+	}
 //	func commentTapped(sender: UITapGestureRecognizer) {
 //		print("I am here")
 //		//self.performSegue(withIdentifier: "toCommentVC", sender: self)

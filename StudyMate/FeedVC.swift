@@ -58,6 +58,8 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 		let post = posts[indexPath.row]
 		
 		if let cell = tableView.dequeueReusableCell(withIdentifier: POST_CELL) as? PostCell {
+			//adds an action to the button in the cell
+			cell.commentButtonOutlet.addTarget(self, action: #selector(FeedVC.someAction), for: .touchUpInside)
 			if let profileImage = FeedVC.imageCache.object(forKey: post.profileImageURL as NSString) {
 				cell.configureCell(post: post, profileImage: profileImage)
 			} else {
@@ -90,5 +92,21 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	}
 	
 	@IBAction func unwindToMain(segue:UIStoryboardSegue) { }
+	
+	
+//	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//		if segue.identifier == "toCommentVC" { // Make sure you name the segue to match
+//			
+//			let controller = segue.destination as! CommentVC
+//			controller.testText = "Hi"
+//			//controller.someInt = 5
+//		}
+//	}
+	
+	
+	func someAction() {
+		print("I am in someAction")
+		self.performSegue(withIdentifier: "toCommentVC", sender: self)
+	}
 	
 }

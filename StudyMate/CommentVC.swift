@@ -12,6 +12,7 @@ import Firebase
 class CommentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 	@IBOutlet var futureCommentLabel: TextFieldCustomView!
 	@IBOutlet var tableView: UITableView!
+	var testText: String = ":("
 	var userName: String = "N/A"
 	var profileImageUrl: String!
 	var comments = [Comment]()
@@ -22,6 +23,8 @@ class CommentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 		tableView.delegate = self
 		tableView.dataSource = self
         // Do any additional setup after loading the view.
+		
+		print("Vitaly \(testText)")
 		
 		findUser()
 		

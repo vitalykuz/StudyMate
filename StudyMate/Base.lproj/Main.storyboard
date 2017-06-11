@@ -563,6 +563,7 @@
                                                                             <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                                                             <state key="normal" title="Button" image="imageComment"/>
                                                                             <connections>
+                                                                                <action selector="commentButtonTapped:" destination="g3t-eG-UBa" eventType="touchUpInside" id="tDT-Xt-lwk"/>
                                                                                 <segue destination="A51-Dt-Z55" kind="show" identifier="toCommentVC" id="M9F-hu-9Ud"/>
                                                                             </connections>
                                                                         </button>
@@ -660,6 +661,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="commentButtonOutlet" destination="hXT-bq-kA8" id="V74-GG-0Ms"/>
                                             <outlet property="commentsLabel" destination="9K5-9j-hbH" id="84T-AD-Ggk"/>
                                             <outlet property="likeImage" destination="cVL-ER-k3s" id="QFc-nA-xqV"/>
                                             <outlet property="likesLabel" destination="DDA-kC-Kob" id="JuM-uJ-eqj"/>
