@@ -58,6 +58,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 		if let cell = tableView.dequeueReusableCell(withIdentifier: POST_CELL) as? PostCell {
 			//adds an action to the button in the cell
 			cell.commentButtonOutlet.addTarget(self, action: #selector(FeedVC.someAction), for: .touchUpInside)
+			//cell.userDetailsOutlet.addTarget(self, action: #selector(FeedVC.userDetailsTapped), for: .touchUpInside)
 			if let profileImage = FeedVC.imageCache.object(forKey: post.profileImageURL as NSString) {
 				cell.configureCell(post: post, profileImage: profileImage)
 			} else {
@@ -107,4 +108,8 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 		self.performSegue(withIdentifier: "toCommentVC", sender: self)
 	}
 	
+	func userDetailsTapped() {
+		print("Vitaly: I am in userDetailsTapped FeedVC")
+		self.performSegue(withIdentifier: "toAccountVC", sender: self)
+	}
 }

@@ -23,6 +23,7 @@ class PostCell: UITableViewCell {
 	@IBOutlet var likeImage: UIImageView!
 	@IBOutlet var commentsLabel: UILabel!
 	@IBOutlet var commentButtonOutlet: UIButton!
+	@IBOutlet var userDetailsOutlet: UIButton!
 	
 	var post: Post!
 	var likesRef: FIRDatabaseReference!
@@ -117,6 +118,13 @@ class PostCell: UITableViewCell {
 		KeychainWrapper.standard.set(self.commentsLabel.text!, forKey: "NumberOfComments")
 		
 	}
+	
+	
+	@IBAction func userDetailsTapped(_ sender: Any) {
+		print("Vitaly: I am here in userDetailsTapped")
+		//performSegue(withIdentifier: ACCOUNT_VC, sender: nil)
+	}
+	
 //	func commentTapped(sender: UITapGestureRecognizer) {
 //		print("I am here")
 //		//self.performSegue(withIdentifier: "toCommentVC", sender: self)
