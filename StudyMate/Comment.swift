@@ -10,10 +10,10 @@ import Foundation
 import Firebase
 
 class Comment {
-	private var _profileImageUrl: String! = ""
 	private var _comment: String = "N/A"
 	private var _commentId: String!
 	private var _commentRef: FIRDatabaseReference!
+	private var _userName: String!
 	
 	init(commentId: String, commentData: Dictionary<String, Any>) {
 		self._commentId	= commentId
@@ -22,8 +22,8 @@ class Comment {
 			self._comment = commentText
 		}
 		
-		if let profileImageUrl = commentData[COMMENT_IMAGE] as? String {
-			self._profileImageUrl = profileImageUrl
+		if let userName = commentData[USER_NAME] as? String {
+			self._userName = userName
 		}
 		
 		_commentRef = DataService.ds.REF_COMMENTS.child(_commentId)
@@ -33,8 +33,8 @@ class Comment {
 		return _commentId
 	}
 	
-	var profileImageUrl: String {
-		return _profileImageUrl
+	var userName: String {
+		return _userName
 	}
 	
 	var comment: String {

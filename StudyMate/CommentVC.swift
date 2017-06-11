@@ -54,7 +54,7 @@ class CommentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 		let comment = comments[indexPath.row]
 		
 		if let cell = tableView.dequeueReusableCell(withIdentifier: COMMENT_CELL) as? CommentCell {
-			cell.configureCell(comment: comment, profileImageURL: comment.profileImageUrl)
+			cell.configureCell(comment: comment)
 			return cell
 		} else {
 			return PostCell()
@@ -96,14 +96,14 @@ class CommentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 				print("User: \(snapshot)")
 				self.userName = (dictionary[USER_NAME] as? String)!
 				//self.uni = dictionary[UNIVERSITY] as? String
-				self.profileImageUrl = dictionary[PROFILE_IMAGE_URL] as? String
+				//self.profileImageUrl = dictionary[PROFILE_IMAGE_URL] as? String
 			}
 		})
 	}
 	
 	func postToFirebase() {
 		let comment: Dictionary<String, Any> = [
-			PROFILE_IMAGE_URL: self.profileImageUrl as Any,
+			//PROFILE_IMAGE_URL: self.profileImageUrl as Any,
 			USER_NAME: self.userName as Any,
 			COMMENT_TEXT: self.futureCommentLabel.text as Any
 			//COMMENTS: 0 as Any,

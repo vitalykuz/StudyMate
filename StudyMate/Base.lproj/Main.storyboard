@@ -209,35 +209,33 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nwJ-27-KQR" customClass="CustomShadowView" customModule="StudyMate" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="288" height="100"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_image" translatesAutoresizingMaskIntoConstraints="NO" id="1x9-IB-ki2" customClass="CustomCircleView" customModule="StudyMate" customModuleProvider="target">
-                                                            <rect key="frame" x="8" y="25" width="50" height="50"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.94999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi! I would like to join. This is a good idea. thanks mate. What happens when its bigger" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="KKN-FK-G1g">
+                                                            <rect key="frame" x="8" y="28" width="272" height="56"/>
+                                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vitaly Kuzenkov said:" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="yd9-Kc-erk">
+                                                            <rect key="frame" x="8" y="8" width="272" height="12"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="50" id="EtB-Aj-YWS"/>
-                                                                <constraint firstAttribute="width" constant="50" id="b7V-Rf-gvw"/>
+                                                                <constraint firstAttribute="height" constant="12" id="mnq-2T-ZwQ"/>
                                                             </constraints>
-                                                        </imageView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SMQ-Jj-5bC">
-                                                            <rect key="frame" x="66" y="8" width="214" height="84"/>
-                                                            <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi! I would like to join. This is a good idea. thanks mate. What happens when its bigger" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="KKN-FK-G1g">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="214" height="84"/>
-                                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
-                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                            </subviews>
-                                                        </stackView>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="20"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.95686274510000002" green="0.26274509800000001" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
+                                                        <constraint firstItem="KKN-FK-G1g" firstAttribute="top" secondItem="yd9-Kc-erk" secondAttribute="bottom" constant="8" id="3a2-KN-jfw"/>
                                                         <constraint firstAttribute="height" constant="100" id="5hd-ef-Yzz"/>
-                                                        <constraint firstItem="1x9-IB-ki2" firstAttribute="centerY" secondItem="nwJ-27-KQR" secondAttribute="centerY" id="BIP-h2-qxT"/>
-                                                        <constraint firstItem="1x9-IB-ki2" firstAttribute="leading" secondItem="nwJ-27-KQR" secondAttribute="leading" constant="8" id="Ooi-XY-ahz"/>
-                                                        <constraint firstItem="SMQ-Jj-5bC" firstAttribute="leading" secondItem="1x9-IB-ki2" secondAttribute="trailing" constant="8" id="c0d-Vb-MSu"/>
-                                                        <constraint firstAttribute="trailing" secondItem="SMQ-Jj-5bC" secondAttribute="trailing" constant="8" id="fSI-IH-C0E"/>
-                                                        <constraint firstAttribute="bottom" secondItem="SMQ-Jj-5bC" secondAttribute="bottom" constant="8" id="hUX-AM-Xu8"/>
-                                                        <constraint firstItem="SMQ-Jj-5bC" firstAttribute="top" secondItem="nwJ-27-KQR" secondAttribute="top" constant="8" id="tjf-7u-xUk"/>
+                                                        <constraint firstAttribute="bottom" secondItem="KKN-FK-G1g" secondAttribute="bottom" constant="16" id="VHq-qk-yQH"/>
+                                                        <constraint firstItem="yd9-Kc-erk" firstAttribute="leading" secondItem="nwJ-27-KQR" secondAttribute="leading" constant="8" id="Yha-Lk-aaI"/>
+                                                        <constraint firstAttribute="trailing" secondItem="yd9-Kc-erk" secondAttribute="trailing" constant="8" id="e4s-zU-A6k"/>
+                                                        <constraint firstItem="KKN-FK-G1g" firstAttribute="leading" secondItem="nwJ-27-KQR" secondAttribute="leading" constant="8" id="kld-v2-1Ta"/>
+                                                        <constraint firstItem="yd9-Kc-erk" firstAttribute="top" secondItem="nwJ-27-KQR" secondAttribute="top" constant="8" id="vLI-sP-hxA"/>
+                                                        <constraint firstAttribute="trailing" secondItem="KKN-FK-G1g" secondAttribute="trailing" constant="8" id="xdZ-vF-13T"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -249,7 +247,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="commentLabel" destination="KKN-FK-G1g" id="x9i-bj-eoM"/>
-                                            <outlet property="profileImage" destination="1x9-IB-ki2" id="SRd-43-Yd0"/>
+                                            <outlet property="nameLabel" destination="yd9-Kc-erk" id="IhD-k8-PwB"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -561,17 +559,13 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="F5W-6f-Tni">
                                                                     <rect key="frame" x="202" y="0.0" width="70" height="85"/>
                                                                     <subviews>
-                                                                        <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageComment" translatesAutoresizingMaskIntoConstraints="NO" id="CbC-rf-uPD">
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hXT-bq-kA8">
                                                                             <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
-                                                                            <gestureRecognizers/>
-                                                                            <constraints>
-                                                                                <constraint firstAttribute="height" constant="70" id="pVP-qd-VMu"/>
-                                                                                <constraint firstAttribute="width" constant="70" id="uI6-ps-Xps"/>
-                                                                            </constraints>
+                                                                            <state key="normal" title="Button" image="imageComment"/>
                                                                             <connections>
-                                                                                <outletCollection property="gestureRecognizers" destination="Qqg-uX-GgJ" appends="YES" id="aaE-iT-3is"/>
+                                                                                <segue destination="A51-Dt-Z55" kind="show" identifier="toCommentVC" id="M9F-hu-9Ud"/>
                                                                             </connections>
-                                                                        </imageView>
+                                                                        </button>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OL7-sz-TiK" userLabel="Comment">
                                                                             <rect key="frame" x="0.0" y="70" width="70" height="15"/>
                                                                             <constraints>
@@ -583,9 +577,6 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
-                                                                    <constraints>
-                                                                        <constraint firstItem="OL7-sz-TiK" firstAttribute="top" secondItem="CbC-rf-uPD" secondAttribute="bottom" id="CUJ-2j-iGB"/>
-                                                                    </constraints>
                                                                 </stackView>
                                                             </subviews>
                                                             <constraints>
@@ -669,7 +660,6 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="commentImage" destination="CbC-rf-uPD" id="1yU-11-8FF"/>
                                             <outlet property="commentsLabel" destination="9K5-9j-hbH" id="84T-AD-Ggk"/>
                                             <outlet property="likeImage" destination="cVL-ER-k3s" id="QFc-nA-xqV"/>
                                             <outlet property="likesLabel" destination="DDA-kC-Kob" id="JuM-uJ-eqj"/>
@@ -716,11 +706,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ilT-W9-4il" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="Qqg-uX-GgJ" userLabel="CommentTapGesture">
-                    <connections>
-                        <segue destination="A51-Dt-Z55" kind="show" id="lcD-FD-rCc"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="886.875" y="11.619718309859156"/>
         </scene>

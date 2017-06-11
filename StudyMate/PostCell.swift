@@ -108,6 +108,7 @@ class PostCell: UITableViewCell {
 	}
 	
 //	func commentTapped(sender: UITapGestureRecognizer) {
+//		print("I am here")
 //		//self.performSegue(withIdentifier: "toCommentVC", sender: self)
 //	}
 }
