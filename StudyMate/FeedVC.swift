@@ -92,17 +92,6 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	
 	@IBAction func unwindToMain(segue:UIStoryboardSegue) { }
 	
-	
-//	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//		if segue.identifier == "toCommentVC" { // Make sure you name the segue to match
-//			
-//			let controller = segue.destination as! CommentVC
-//			controller.testText = "Hi"
-//			//controller.someInt = 5
-//		}
-//	}
-	
-	
 	func someAction() {
 		print("I am in someAction")
 		self.performSegue(withIdentifier: "toCommentVC", sender: self)
