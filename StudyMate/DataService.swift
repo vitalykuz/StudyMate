@@ -51,6 +51,12 @@ class DataService {
 		return user
 	}
 	
+	var REF_POST_CURRENT: FIRDatabaseReference {
+		let postId = KeychainWrapper.standard.string(forKey: "PostId")
+		let post = REF_POSTS.child(postId!)
+		return post
+	}
+	
 	var REF_PROFILE_IMAGES: FIRStorageReference {
 		return _REF_PROFILE_IMAGES
 	}

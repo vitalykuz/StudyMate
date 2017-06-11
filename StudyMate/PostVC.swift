@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SwiftKeychainWrapper
 
 class PostVC: UIViewController, UITextViewDelegate, UITextFieldDelegate {
 	@IBOutlet var subjectNameField: TextFieldCustomView!
@@ -75,7 +76,7 @@ class PostVC: UIViewController, UITextViewDelegate, UITextFieldDelegate {
 		]
 		
 		let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
-		print("Post id: \(firebasePost.key)") // it works
+		//print("Post id: \(firebasePost.key)") // it works
 		firebasePost.setValue(post)
 	}
 

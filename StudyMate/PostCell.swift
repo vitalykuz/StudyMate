@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SwiftKeychainWrapper
 
 class PostCell: UITableViewCell {
 
@@ -110,6 +111,8 @@ class PostCell: UITableViewCell {
 	@IBAction func commentButtonTapped(_ sender: Any) {
 		print("I am here in commentButtonTapped")
 		print("PostId: \(self.post.postKey)")
+		KeychainWrapper.standard.set(self.post.postKey, forKey: "PostId")
+
 	}
 //	func commentTapped(sender: UITapGestureRecognizer) {
 //		print("I am here")
