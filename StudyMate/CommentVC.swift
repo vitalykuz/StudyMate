@@ -12,6 +12,8 @@ import Firebase
 class CommentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 	@IBOutlet var futureCommentLabel: TextFieldCustomView!
 	@IBOutlet var tableView: UITableView!
+	var userName: String = "N/A"
+	var profileImageUrl: String!
 	var comments = [Comment]()
 	
     override func viewDidLoad() {
@@ -21,32 +23,42 @@ class CommentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 		tableView.dataSource = self
         // Do any additional setup after loading the view.
 		
+		findUser()
+		
 		startObservingChangesInComments()
 		
     }
 	
 	func startObservingChangesInComments() {
-		DataService.ds.REF_POSTS.observe(.value, with: { (snapshot) in
+		DataService.ds.REF_COMMENTS.observe(.value, with: { (snapshot) in
 			
-			self.comments = [] // THIS IS THE NEW LINE
+			self.comments = []
 			
 			if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
 				for snap in snapshot {
 					print("SNAP: \(snap)")
-//					if let postDict = snap.value as? Dictionary<String, AnyObject> {
-//						let key = snap.key
-//						let post = Post(postKey: key, postData: postDict)
-//						self.posts.append(post)
-//					}
+					if let commentDict = snap.value as? Dictionary<String, AnyObject> {
+						let key = snap.key
+						let comment = Comment(commentId: key, commentData: commentDict)
+						self.comments.append(comment)
+					}
 				}
 			}
-			//self.tableView.reloadData()
+			self.comments.reverse()
+			self.tableView.reloadData()
 		})
 
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		return CommentCell()
+		let comment = comments[indexPath.row]
+		
+		if let cell = tableView.dequeueReusableCell(withIdentifier: COMMENT_CELL) as? CommentCell {
+			cell.configureCell(comment: comment)
+			return cell
+		} else {
+			return PostCell()
+		}
 	}
 	
 	func numberOfSections(in tableView: UITableView) -> Int {
@@ -54,7 +66,7 @@ class CommentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 	}
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 5
+		return comments.count
 	}
 	
 	@IBAction func backImageTapped(_ sender: Any) {
@@ -67,5 +79,40 @@ class CommentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
 
 	@IBAction func sendButtonTapped(_ sender: Any) {
+		guard let commentText = futureCommentLabel.text, commentText != "" else {
+			futureCommentLabel.attributedPlaceholder = NSAttributedString(string: ERROR_COMMENT_TEXT_EMPTY, attributes: [NSForegroundColorAttributeName: UIColor.red])
+			return
+		}
+		
+		self.postToFirebase()
+		
 	}
+	
+	func findUser() {
+		let ref = DataService.ds.REF_BASE
+		let userID = FIRAuth.auth()?.currentUser?.uid
+		_ = ref.child(USERS).child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+			if let dictionary = snapshot.value as? [String: AnyObject] {
+				print("User: \(snapshot)")
+				self.userName = (dictionary[USER_NAME] as? String)!
+				//self.uni = dictionary[UNIVERSITY] as? String
+				self.profileImageUrl = dictionary[PROFILE_IMAGE_URL] as? String
+			}
+		})
+	}
+	
+	func postToFirebase() {
+		let comment: Dictionary<String, Any> = [
+			PROFILE_IMAGE_URL: self.profileImageUrl as Any,
+			USER_NAME: self.userName as Any,
+			COMMENT_TEXT: self.futureCommentLabel.text as Any
+			//COMMENTS: 0 as Any,
+			//LIKES: 0 as Any
+		]
+		
+		let firebaseComment = DataService.ds.REF_COMMENTS.childByAutoId()
+		print("Post id: \(firebaseComment.key)") // it works
+		firebaseComment.setValue(comment)
+	}
+	
 }

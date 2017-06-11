@@ -7,14 +7,20 @@
 //
 
 import UIKit
+import QuartzCore
 
 class CommentCell: UITableViewCell {
 	@IBOutlet var profileImage: CustomCircleView!
 	@IBOutlet var commentLabel: UILabel!
+	var comment: Comment!
 	
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+		
+		commentLabel.layer.masksToBounds = true
+		commentLabel.layer.cornerRadius = 15
+		
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -23,4 +29,9 @@ class CommentCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+	func configureCell(comment: Comment) {
+		self.comment = comment
+		self.commentLabel.text = comment.comment
+	}
+	
 }

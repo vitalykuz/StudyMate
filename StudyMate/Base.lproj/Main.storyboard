@@ -194,18 +194,19 @@
                                     <constraint firstAttribute="bottom" secondItem="4rg-9O-58y" secondAttribute="bottom" constant="5" id="txT-FG-ULG"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="110" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cSh-x6-N9K">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="110" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cSh-x6-N9K">
                                 <rect key="frame" x="16" y="73" width="288" height="387"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentCell" rowHeight="110" id="G4n-O1-HB4" customClass="CommentCell" customModule="StudyMate" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CommentCell" rowHeight="110" id="G4n-O1-HB4" customClass="CommentCell" customModule="StudyMate" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="288" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="G4n-O1-HB4" id="6qc-KV-xVA">
-                                            <rect key="frame" x="0.0" y="0.0" width="288" height="109.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="288" height="110"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nwJ-27-KQR">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nwJ-27-KQR" customClass="CustomShadowView" customModule="StudyMate" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="288" height="100"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myself" translatesAutoresizingMaskIntoConstraints="NO" id="1x9-IB-ki2" customClass="CustomCircleView" customModule="StudyMate" customModuleProvider="target">
@@ -215,23 +216,28 @@
                                                                 <constraint firstAttribute="width" constant="50" id="b7V-Rf-gvw"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi! I would like to join. This is a good idea. thanks mate. What happens when its bigger" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="KKN-FK-G1g">
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SMQ-Jj-5bC">
                                                             <rect key="frame" x="66" y="8" width="214" height="84"/>
-                                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
-                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi! I would like to join. This is a good idea. thanks mate. What happens when its bigger" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="KKN-FK-G1g">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="214" height="84"/>
+                                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.95686274510000002" green="0.26274509800000001" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" red="0.95686274510000002" green="0.26274509800000001" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
-                                                        <constraint firstItem="KKN-FK-G1g" firstAttribute="top" secondItem="nwJ-27-KQR" secondAttribute="top" constant="8" id="23z-TB-OUy"/>
-                                                        <constraint firstItem="KKN-FK-G1g" firstAttribute="leading" secondItem="1x9-IB-ki2" secondAttribute="trailing" constant="8" id="3pQ-1R-tIc"/>
                                                         <constraint firstAttribute="height" constant="100" id="5hd-ef-Yzz"/>
                                                         <constraint firstItem="1x9-IB-ki2" firstAttribute="centerY" secondItem="nwJ-27-KQR" secondAttribute="centerY" id="BIP-h2-qxT"/>
                                                         <constraint firstItem="1x9-IB-ki2" firstAttribute="leading" secondItem="nwJ-27-KQR" secondAttribute="leading" constant="8" id="Ooi-XY-ahz"/>
-                                                        <constraint firstAttribute="bottom" secondItem="KKN-FK-G1g" secondAttribute="bottom" constant="8" id="nM6-5o-iua"/>
-                                                        <constraint firstAttribute="trailing" secondItem="KKN-FK-G1g" secondAttribute="trailing" constant="8" id="qdt-bw-Bct"/>
+                                                        <constraint firstItem="SMQ-Jj-5bC" firstAttribute="leading" secondItem="1x9-IB-ki2" secondAttribute="trailing" constant="8" id="c0d-Vb-MSu"/>
+                                                        <constraint firstAttribute="trailing" secondItem="SMQ-Jj-5bC" secondAttribute="trailing" constant="8" id="fSI-IH-C0E"/>
+                                                        <constraint firstAttribute="bottom" secondItem="SMQ-Jj-5bC" secondAttribute="bottom" constant="8" id="hUX-AM-Xu8"/>
+                                                        <constraint firstItem="SMQ-Jj-5bC" firstAttribute="top" secondItem="nwJ-27-KQR" secondAttribute="top" constant="8" id="tjf-7u-xUk"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -273,7 +279,7 @@
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                     </textField>
                                 </subviews>
-                                <color key="backgroundColor" red="0.95686274510000002" green="0.26274509800000001" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.95686274510000002" green="0.26274509800000001" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="5co-V5-bIh" firstAttribute="leading" secondItem="yDX-c2-hBc" secondAttribute="leading" constant="10" id="09g-eo-bzY"/>
                                     <constraint firstAttribute="trailing" secondItem="08J-aC-rev" secondAttribute="trailing" constant="10" id="0RO-36-U3R"/>
@@ -288,16 +294,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="cSh-x6-N9K" firstAttribute="trailing" secondItem="vFs-la-rRe" secondAttribute="trailingMargin" id="6Wu-eb-Rmr"/>
-                            <constraint firstItem="yDX-c2-hBc" firstAttribute="top" secondItem="cSh-x6-N9K" secondAttribute="bottom" constant="8" id="9tf-HS-e4z"/>
                             <constraint firstItem="u7v-mc-5CU" firstAttribute="top" secondItem="vFs-la-rRe" secondAttribute="top" id="GSz-hu-KFA"/>
                             <constraint firstAttribute="trailing" secondItem="yDX-c2-hBc" secondAttribute="trailing" id="Hhs-3h-bbs"/>
-                            <constraint firstItem="cSh-x6-N9K" firstAttribute="leading" secondItem="vFs-la-rRe" secondAttribute="leadingMargin" id="KvE-Di-kTc"/>
                             <constraint firstItem="yDX-c2-hBc" firstAttribute="leading" secondItem="vFs-la-rRe" secondAttribute="leading" id="Qkl-xq-rq5"/>
                             <constraint firstItem="fRi-Pl-7Ws" firstAttribute="top" secondItem="yDX-c2-hBc" secondAttribute="bottom" id="W90-uO-nOA"/>
                             <constraint firstAttribute="trailing" secondItem="u7v-mc-5CU" secondAttribute="trailing" id="dcN-lM-pc5"/>
                             <constraint firstItem="u7v-mc-5CU" firstAttribute="leading" secondItem="vFs-la-rRe" secondAttribute="leading" id="kCp-4y-tex"/>
-                            <constraint firstItem="cSh-x6-N9K" firstAttribute="top" secondItem="u7v-mc-5CU" secondAttribute="bottom" constant="8" id="r3S-1o-n7I"/>
                         </constraints>
                     </view>
                     <connections>
@@ -716,7 +718,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ilT-W9-4il" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="Qqg-uX-GgJ" userLabel="CommentTapGesture">
                     <connections>
-                        <segue destination="A51-Dt-Z55" kind="show" identifier="toCommentVC" id="NxB-U7-7Ck"/>
+                        <segue destination="A51-Dt-Z55" kind="show" id="lcD-FD-rCc"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -1075,6 +1077,6 @@
         <image name="sign-out" width="92" height="65"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Pks-a9-gwD"/>
+        <segue reference="MRc-yH-MUN"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -32,8 +32,13 @@ let SUBJECT_NAME = "subjectName"
 let LOCATION = "location"
 let MEETING_TIME = "meetingTime"
 
+//Comments table in database
+let COMMENT_TEXT = "commentText"
+let COMMENT_IMAGE = "profileImageUrl"
+
 // identifiers
 let POST_CELL = "postCell"
+let COMMENT_CELL = "CommentCell"
 
 // View Controllers
 let ACCOUNT_VC = "toAccountVC"
@@ -53,6 +58,7 @@ let ERROR_LOCATION_EMPTY = "Meeting location is required"
 let ERROR_MEETING_TIME_EMPTY = "Meeting time is required"
 let ERROR_POST_DESCRIPTION_EMPTY = "Plese provide post description"
 let ERROR_DEFAULT_VALUE = "Default value"
+let ERROR_COMMENT_TEXT_EMPTY = "Cannot be empty"
 
 // placeholders
 let PROVIDE_POST_DESCRIPTION = "Add post description"

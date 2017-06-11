@@ -34,6 +34,11 @@ class PostCell: UITableViewCell {
 		tap.numberOfTapsRequired = 1
 		likeImage.addGestureRecognizer(tap)
 		likeImage.isUserInteractionEnabled = true
+		
+//		let commentTap = UITapGestureRecognizer(target: self, action: #selector(commentTapped))
+//		commentTap.numberOfTapsRequired = 1
+//		commentImage.addGestureRecognizer(commentTap)
+//		commentImage.isUserInteractionEnabled = true
 
     }
 
@@ -101,6 +106,10 @@ class PostCell: UITableViewCell {
 			}
 		})
 	}
+	
+//	func commentTapped(sender: UITapGestureRecognizer) {
+//		//self.performSegue(withIdentifier: "toCommentVC", sender: self)
+//	}
 }
 
 

@@ -11,7 +11,27 @@ import Firebase
 
 class Comment {
 	private var _profileImageUrl: String!
-	private var _comment: String!
+	private var _comment: String = "N/A"
+	private var _commentId: String!
+	private var _commentRef: FIRDatabaseReference!
+	
+	init(commentId: String, commentData: Dictionary<String, Any>) {
+		self._commentId	= commentId
+		
+		if let commentText = commentData[COMMENT_TEXT] as? String {
+			self._comment = commentText
+		}
+		
+		if let profileImageUrl = commentData[COMMENT_IMAGE] as? String {
+			self._profileImageUrl = profileImageUrl
+		}
+		
+		_commentRef = DataService.ds.REF_COMMENTS.child(_commentId)
+	}
+	
+	var commentId: String {
+		return _commentId
+	}
 	
 	var profileImageUrl: String {
 		return _profileImageUrl
