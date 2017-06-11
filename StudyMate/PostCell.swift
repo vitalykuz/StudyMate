@@ -112,7 +112,10 @@ class PostCell: UITableViewCell {
 		print("I am here in commentButtonTapped")
 		print("PostId: \(self.post.postKey)")
 		KeychainWrapper.standard.set(self.post.postKey, forKey: "PostId")
-
+		
+		print("Vitaly number of comment before keichain : \(self.commentsLabel.text ?? "default")")
+		KeychainWrapper.standard.set(self.commentsLabel.text!, forKey: "NumberOfComments")
+		
 	}
 //	func commentTapped(sender: UITapGestureRecognizer) {
 //		print("I am here")

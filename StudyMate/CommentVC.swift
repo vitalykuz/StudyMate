@@ -14,12 +14,14 @@ class CommentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 	@IBOutlet var futureCommentLabel: TextFieldCustomView!
 	@IBOutlet var tableView: UITableView!
 	var postId: String = "empty"
+	var numberOfCommentsInt: Int = 0
 	var commentId: String = "not provided"
 	var testText: String = ":("
 	var userName: String = "N/A"
 	var profileImageUrl: String!
 	var comments = [Comment]()
 	var currentCommentRef: FIRDatabaseReference!
+	var numberOfComments: FIRDatabaseReference!
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +34,10 @@ class CommentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 			//print("Vitaly: PostID is in key chain \(self.postId)")
 		}
 		
-		
+		if KeychainWrapper.standard.string(forKey: "NumberOfComments") != nil {
+			self.numberOfCommentsInt = Int(KeychainWrapper.standard.string(forKey: "NumberOfComments")!)!
+			print("Vitaly: number of comments is in key chain \(self.numberOfCommentsInt)")
+		}
 		
 		findUser()
 		
@@ -41,15 +46,11 @@ class CommentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
 	
 	func startObservingChangesInComments() {
-		//DataService.ds.REF_COMMENTS.observe(.value, with: { (snapshot) in
-		//DataService.ds.REF_POST_CURRENT.child(COMMENTS_LIST).observe(.value, with: { (snapshot) in
 		DataService.ds.REF_POST_CURRENT.child("commentsList").observe(.value, with: { (snapshot) in
-			//print("SNAPSHOT in ref comments : \(snapshot)")
 			self.comments = []
-			
 			if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
 				for snap in snapshot {
-					print("SNAP in changes in comments : \(snap)")
+					//print("SNAP in changes in comments : \(snap)")
 					if let commentDict = snap.value as? Dictionary<String, AnyObject> {
 						let key = snap.key
 						let comment = Comment(commentId: key, commentData: commentDict)
@@ -87,7 +88,6 @@ class CommentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 	@IBAction func sendButtonTapped(_ sender: Any) {
@@ -109,6 +109,7 @@ class CommentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 				
 				//self.post.adjustLikes(addLike: true)
 				self.currentCommentRef.setValue(comment)
+				self.futureCommentLabel.text = ""
 			}
 		})
 		
@@ -119,29 +120,29 @@ class CommentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 		let userID = FIRAuth.auth()?.currentUser?.uid
 		_ = ref.child(USERS).child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
 			if let dictionary = snapshot.value as? [String: AnyObject] {
-				//print("User: \(snapshot)")
 				self.userName = (dictionary[USER_NAME] as? String)!
-				//self.uni = dictionary[UNIVERSITY] as? String
-				//self.profileImageUrl = dictionary[PROFILE_IMAGE_URL] as? String
 			}
 		})
 	}
 	
 	func postToFirebase() {
 		let comment: Dictionary<String, Any> = [
-			//PROFILE_IMAGE_URL: self.profileImageUrl as Any,
 			USER_NAME: self.userName as Any,
 			COMMENT_TEXT: self.futureCommentLabel.text as Any
-			//COMMENTS: 0 as Any,
-			//LIKES: 0 as Any
 		]
 		
 		let firebaseComment = DataService.ds.REF_COMMENTS.childByAutoId()
-		//print("Comment id: \(firebaseComment.key)") // it works
 		self.commentId = firebaseComment.key
 		
 		currentCommentRef  = DataService.ds.REF_POST_CURRENT.child(COMMENTS_LIST).child(self.commentId)
-		//print("Vitaly: current comment ref \(currentCommentRef)")
+		
+		// get access to number of comments stored as Ints in the database
+		numberOfComments = DataService.ds.REF_POST_CURRENT.child("comments")
+		numberOfComments.setValue(self.numberOfCommentsInt + 1)
+		
+		//new comment was added, so increment the number of comments
+		self.numberOfCommentsInt = self.numberOfCommentsInt + 1
+		KeychainWrapper.standard.set(self.numberOfCommentsInt, forKey: "NumberOfComments")
 		
 		firebaseComment.setValue(comment)
 	}

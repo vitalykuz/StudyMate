@@ -12,8 +12,6 @@ import Firebase
 
 //rename to Post manager
 class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
-
 	@IBOutlet var tableView: UITableView!
 	static var imageCache: NSCache<NSString, UIImage> = NSCache()
 	var posts = [Post]()

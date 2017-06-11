@@ -142,7 +142,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="24.375" y="35.91549295774648"/>
+            <point key="canvasLocation" x="-206" y="12"/>
         </scene>
         <!--CommentVC-->
         <scene sceneID="Rfq-rr-1yQ">
@@ -314,7 +314,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1260" y="-777.46478873239437"/>
+            <point key="canvasLocation" x="887" y="-818"/>
         </scene>
         <!--FeedVC-->
         <scene sceneID="AqY-dG-OM6">
@@ -862,7 +862,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1342.5" y="800.70422535211264"/>
+            <point key="canvasLocation" x="887" y="823"/>
         </scene>
         <!--AccountVC-->
         <scene sceneID="ibq-dH-6ZR">
@@ -1048,7 +1048,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1702.5" y="11.619718309859156"/>
+            <point key="canvasLocation" x="2199" y="12"/>
         </scene>
     </scenes>
     <resources>
