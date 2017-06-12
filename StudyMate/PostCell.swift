@@ -30,29 +30,21 @@ class PostCell: UITableViewCell {
 	
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-		
+
 		let tap = UITapGestureRecognizer(target: self, action: #selector(likeTapped))
 		tap.numberOfTapsRequired = 1
 		likeImage.addGestureRecognizer(tap)
 		likeImage.isUserInteractionEnabled = true
-		
-//		let commentTap = UITapGestureRecognizer(target: self, action: #selector(commentTapped))
-//		commentTap.numberOfTapsRequired = 1
-//		commentImage.addGestureRecognizer(commentTap)
-//		commentImage.isUserInteractionEnabled = true
 
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 	func configureCell(post: Post, profileImage: UIImage? = nil) {
 		self.post = post
-		likesRef  = DataService.ds.REF_USER_CURRENT.child(LIKES).child(post.postKey)
+		likesRef  = DataService.shared.REF_USER_CURRENT.child(Constants.Posts.likes.rawValue).child(post.postKey)
 		
 		self.postDescriptionLabel.text = post.postDescription
 		self.likesLabel.text = "\(post.likes)"
@@ -70,13 +62,11 @@ class PostCell: UITableViewCell {
 			let ref = FIRStorage.storage().reference(forURL: post.profileImageURL)
 			ref.data(withMaxSize: 2 * 1024 * 1024, completion: { (data, error) in
 				if error != nil {
-					print("Vitaly: Unable to download image from Firebase storage")
 				} else {
-					print("Vitaly: Image downloaded from Firebase storage")
 					if let imgData = data {
 						if let profileImage = UIImage(data: imgData) {
 							self.profileImage.image = profileImage
-							FeedVC.imageCache.setObject(profileImage, forKey: post.profileImageURL as NSString)
+							FeedViewController.imageCache.setObject(profileImage, forKey: post.profileImageURL as NSString)
 						}
 					}
 				}
@@ -92,9 +82,7 @@ class PostCell: UITableViewCell {
 		})
 		
 	}
-	
-	
-	// TO-DO: change the text label to "liked" on "unlike"
+
 	func likeTapped(sender: UITapGestureRecognizer) {
 		likesRef.observeSingleEvent(of: .value, with: { (snapshot) in
 			if let _ = snapshot.value as? NSNull {
@@ -110,25 +98,13 @@ class PostCell: UITableViewCell {
 	}
 	
 	@IBAction func commentButtonTapped(_ sender: Any) {
-		print("I am here in commentButtonTapped")
-		print("PostId: \(self.post.postKey)")
 		KeychainWrapper.standard.set(self.post.postKey, forKey: "PostId")
-		
-		print("Vitaly number of comment before keichain : \(self.commentsLabel.text ?? "default")")
 		KeychainWrapper.standard.set(self.commentsLabel.text!, forKey: "NumberOfComments")
 		
 	}
-	
-	
+
 	@IBAction func userDetailsTapped(_ sender: Any) {
-		print("Vitaly: I am here in userDetailsTapped")
-		//performSegue(withIdentifier: ACCOUNT_VC, sender: nil)
 	}
-	
-//	func commentTapped(sender: UITapGestureRecognizer) {
-//		print("I am here")
-//		//self.performSegue(withIdentifier: "toCommentVC", sender: self)
-//	}
 }
 
 

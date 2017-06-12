@@ -13,7 +13,7 @@
         <!--Sign InVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="SignInVC" customModule="StudyMate" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SignInViewController" customModule="StudyMate" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -154,7 +154,7 @@
         <!--CommentVC-->
         <scene sceneID="Rfq-rr-1yQ">
             <objects>
-                <viewController id="A51-Dt-Z55" customClass="CommentVC" customModule="StudyMate" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="A51-Dt-Z55" customClass="CommentViewController" customModule="StudyMate" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DhQ-5S-WNN"/>
                         <viewControllerLayoutGuide type="bottom" id="fRi-Pl-7Ws"/>
@@ -325,7 +325,7 @@
         <!--FeedVC-->
         <scene sceneID="AqY-dG-OM6">
             <objects>
-                <viewController id="Gsz-xR-Oxh" customClass="FeedVC" customModule="StudyMate" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Gsz-xR-Oxh" customClass="FeedViewController" customModule="StudyMate" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZRO-pe-7uE"/>
                         <viewControllerLayoutGuide type="bottom" id="guI-kK-G8v"/>
@@ -695,7 +695,7 @@
         <!--PostVC-->
         <scene sceneID="mHS-bJ-CmG">
             <objects>
-                <viewController id="ATV-5V-Uic" customClass="PostVC" customModule="StudyMate" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ATV-5V-Uic" customClass="PostViewController" customModule="StudyMate" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0tw-ER-nLh"/>
                         <viewControllerLayoutGuide type="bottom" id="VSc-RE-Myt"/>
@@ -861,7 +861,7 @@
         <!--AccountVC-->
         <scene sceneID="ibq-dH-6ZR">
             <objects>
-                <viewController id="5h3-IY-h1M" customClass="AccountVC" customModule="StudyMate" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="5h3-IY-h1M" customClass="AccountViewController" customModule="StudyMate" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dBO-jq-Bgl"/>
                         <viewControllerLayoutGuide type="bottom" id="whc-rQ-aah"/>

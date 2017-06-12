@@ -11,10 +11,10 @@ import Firebase
 
 class FeedManager {
 	
-	static let fm = FeedManager()
+	static let shared = FeedManager()
 	
 	// func to observe changes in post
 	func startListeningToChangesInPost(completion: @escaping (FIRDataSnapshot) -> Swift.Void ) -> Void {
-		DataService.ds.REF_POSTS.observe(.value, with: completion)
+		DataService.shared.REF_POSTS.observe(.value, with: completion)
 	}
 }

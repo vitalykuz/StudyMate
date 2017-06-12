@@ -13,8 +13,7 @@ class User {
 	private var _profileImageUrl: String!
 	private var _likes: Int!
 	private var _postKey: String!
-	
-	
+		
 	var postDescription: String {
 		return _postDescription
 	}
@@ -22,9 +21,5 @@ class User {
 	var profileImageURL: String {
 		return _profileImageUrl
 	}
-	
-//	var USER_CURRENT: User {
-//		let user  = DataService.ds.REF_USER_CURRENT
-//		return user
-//	}
+
 }

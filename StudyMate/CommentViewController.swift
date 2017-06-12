@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import SwiftKeychainWrapper
 
-class CommentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
+class CommentViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
 	@IBOutlet var futureCommentLabel: TextFieldCustomView!
 	@IBOutlet var tableView: UITableView!
 	var postId: String = "empty"
@@ -37,7 +37,6 @@ class CommentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, U
 		
 		if KeychainWrapper.standard.string(forKey: "NumberOfComments") != nil {
 			self.numberOfCommentsInt = Int(KeychainWrapper.standard.string(forKey: "NumberOfComments")!)!
-			print("Vitaly: number of comments is in key chain \(self.numberOfCommentsInt)")
 		}
 		
 		findUser()
@@ -47,7 +46,7 @@ class CommentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, U
     }
 	
 	func startObservingChangesInComments() {
-		DataService.ds.REF_POST_CURRENT.child("commentsList").observe(.value, with: { (snapshot) in
+		DataService.shared.REF_POST_CURRENT.child("commentsList").observe(.value, with: { (snapshot) in
 			self.comments = []
 			if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
 				for snap in snapshot {
@@ -101,14 +100,12 @@ class CommentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, U
 		
 		currentCommentRef.observeSingleEvent(of: .value, with: { (snapshot) in
 			if let _ = snapshot.value as? NSNull {
-				//print("Vitaly: Current Comment Ref: \(String(describing: snapshot.value))")
 				
 				let comment: Dictionary<String, Any> = [
-					USER_NAME: self.userName as Any,
+					Constants.DatabaseColumn.userName.rawValue: self.userName as Any,
 					COMMENT_TEXT: self.futureCommentLabel.text as Any
 				]
-				
-				//self.post.adjustLikes(addLike: true)
+
 				self.currentCommentRef.setValue(comment)
 				self.futureCommentLabel.text = ""
 			}
@@ -118,28 +115,28 @@ class CommentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, U
 	}
 	
 	func findUser() {
-		let ref = DataService.ds.REF_BASE
+		let ref = DataService.shared.REF_BASE
 		let userID = FIRAuth.auth()?.currentUser?.uid
-		_ = ref.child(USERS).child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+		_ = ref.child(Constants.DatabaseColumn.users.rawValue).child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
 			if let dictionary = snapshot.value as? [String: AnyObject] {
-				self.userName = (dictionary[USER_NAME] as? String)!
+				self.userName = (dictionary[Constants.DatabaseColumn.userName.rawValue] as? String)!
 			}
 		})
 	}
 	
 	func postToFirebase() {
 		let comment: Dictionary<String, Any> = [
-			USER_NAME: self.userName as Any,
+			Constants.DatabaseColumn.userName.rawValue: self.userName as Any,
 			COMMENT_TEXT: self.futureCommentLabel.text as Any
 		]
 		
-		let firebaseComment = DataService.ds.REF_COMMENTS.childByAutoId()
+		let firebaseComment = DataService.shared.REF_COMMENTS.childByAutoId()
 		self.commentId = firebaseComment.key
 		
-		currentCommentRef  = DataService.ds.REF_POST_CURRENT.child(COMMENTS_LIST).child(self.commentId)
+		currentCommentRef  = DataService.shared.REF_POST_CURRENT.child(Constants.Posts.commentList.rawValue).child(self.commentId)
 		
 		// get access to number of comments stored as Ints in the database
-		numberOfComments = DataService.ds.REF_POST_CURRENT.child("comments")
+		numberOfComments = DataService.shared.REF_POST_CURRENT.child("comments")
 		numberOfComments.setValue(self.numberOfCommentsInt + 1)
 		
 		//new comment was added, so increment the number of comments
