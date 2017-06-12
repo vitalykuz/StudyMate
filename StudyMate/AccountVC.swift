@@ -39,8 +39,6 @@ class AccountVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
 		self.fetchUserData()
     }
 	
-	
-	//TO-DO you need to create a default profile image url, otherwice the app crashes
 	func fetchUserData() {
 			let ref = DataService.ds.REF_BASE
 			let userID = FIRAuth.auth()?.currentUser?.uid
@@ -131,10 +129,7 @@ class AccountVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
 				}
 			}
 		}
-		
-		
-		
-		
+		self.imageSelected = true
 	}
 	
 	

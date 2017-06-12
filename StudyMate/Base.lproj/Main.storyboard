@@ -682,6 +682,7 @@
                             <constraint firstAttribute="trailing" secondItem="IyR-eY-zMR" secondAttribute="trailing" id="yMg-qe-yAn"/>
                         </constraints>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="tableView" destination="Hw0-tO-Dgi" id="yBh-We-frx"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="toSignInVC" id="Rup-XJ-UXv"/>
@@ -838,6 +839,7 @@
                             <constraint firstItem="odQ-vb-53d" firstAttribute="leading" secondItem="oI8-lF-iWx" secondAttribute="leading" id="wJv-OM-bzE"/>
                         </constraints>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="activityIndicator" destination="gkS-ah-VdY" id="lMb-pT-gsZ"/>
                         <outlet property="locationField" destination="Tbv-hk-SfY" id="Bol-Bp-ik1"/>
