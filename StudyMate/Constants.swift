@@ -8,26 +8,42 @@
 
 import UIKit
 
+enum Constants: String {
+	
+	enum DatabaseColumn: String {
+		case userID = "uid"
+		case userEmail = "userEmail"
+		case provider = "provider"
+		case userName = "name"
+		case users = "users"
+		case commentsColumn = "comments"
+		case profileImageUrl = "profileImageURL"
+		case profileDescription = "profileDescription"
+	}
+	
+	enum Posts: String {
+		case postDescription = "postDescription"
+		case posts = "posts"
+		case likes = "likes"
+		case comments = "comments"
+		case commentList = "commentsList"
+	}
+	
+	enum ViewController: String {
+		case feedViewController = "toFeedVC"
+		case accountViewController = "toAccountVC"
+		case signInViewController = "toSignInVC"
+		case commentViewController = "toCommentVC"
+	}
+	
+	case error = "error"
+}
+
 //defines colors for shadows
 let SHADOW_GRAY: CGFloat = 120.0 / 255.0
 
-//database constants
-let USER_ID = "uid"
-let USER_EMAIL = "userEmail"
-let PROVIDER = "provider"
-let USER_NAME = "name"
-let USERS = "users"
-let COMMENTS_TABLE = "comments"
-let PROFILE_IMAGE_URL = "profileImageURL"
-let PROFILE_DESCRIPTION = "profileDescription"
 let EMAIL_NOT_PROVIDED = "email not provided"
 
-// Posts table in database
-let POST_DESCRIPTION = "postDescription"
-let POSTS = "posts"
-let LIKES = "likes"
-let COMMENTS = "comments"
-let COMMENTS_LIST = "commentsList"
 let UNIVERSITY = "uni"
 let SUBJECT_NAME = "subjectName"
 let LOCATION = "location"
@@ -40,10 +56,6 @@ let COMMENT_IMAGE = "profileImageURL"
 // identifiers
 let POST_CELL = "postCell"
 let COMMENT_CELL = "CommentCell"
-
-// View Controllers
-let ACCOUNT_VC = "toAccountVC"
-let FEED_VC = "toFeedVC"
 
 // Images
 let DEFAULT_PROFILE_IMAGE_URL = "https://firebasestorage.googleapis.com/v0/b/study-mate-86d3d.appspot.com/o/profile-images%2Fprofile_image.png?alt=media&token=e27fec66-cfba-4740-ab3b-3801a9c2ed9d"

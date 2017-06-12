@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import SwiftKeychainWrapper
 
-class CommentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class CommentViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
 	@IBOutlet var futureCommentLabel: TextFieldCustomView!
 	@IBOutlet var tableView: UITableView!
 	var postId: String = "empty"
@@ -25,7 +25,8 @@ class CommentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-
+		
+		futureCommentLabel.delegate = self
 		tableView.delegate = self
 		tableView.dataSource = self
 		
@@ -36,7 +37,6 @@ class CommentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 		
 		if KeychainWrapper.standard.string(forKey: "NumberOfComments") != nil {
 			self.numberOfCommentsInt = Int(KeychainWrapper.standard.string(forKey: "NumberOfComments")!)!
-			print("Vitaly: number of comments is in key chain \(self.numberOfCommentsInt)")
 		}
 		
 		findUser()
@@ -46,7 +46,7 @@ class CommentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
 	
 	func startObservingChangesInComments() {
-		DataService.ds.REF_POST_CURRENT.child("commentsList").observe(.value, with: { (snapshot) in
+		DataService.shared.REF_POST_CURRENT.child("commentsList").observe(.value, with: { (snapshot) in
 			self.comments = []
 			if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
 				for snap in snapshot {
@@ -100,44 +100,43 @@ class CommentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 		
 		currentCommentRef.observeSingleEvent(of: .value, with: { (snapshot) in
 			if let _ = snapshot.value as? NSNull {
-				//print("Vitaly: Current Comment Ref: \(String(describing: snapshot.value))")
 				
 				let comment: Dictionary<String, Any> = [
-					USER_NAME: self.userName as Any,
+					Constants.DatabaseColumn.userName.rawValue: self.userName as Any,
 					COMMENT_TEXT: self.futureCommentLabel.text as Any
 				]
-				
-				//self.post.adjustLikes(addLike: true)
+
 				self.currentCommentRef.setValue(comment)
 				self.futureCommentLabel.text = ""
 			}
 		})
-		
+		_ = self.textFieldShouldReturn(futureCommentLabel)
+		futureCommentLabel.attributedPlaceholder = NSAttributedString(string: "Type your comment here...", attributes: [NSForegroundColorAttributeName: UIColor.gray])
 	}
 	
 	func findUser() {
-		let ref = DataService.ds.REF_BASE
+		let ref = DataService.shared.REF_BASE
 		let userID = FIRAuth.auth()?.currentUser?.uid
-		_ = ref.child(USERS).child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+		_ = ref.child(Constants.DatabaseColumn.users.rawValue).child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
 			if let dictionary = snapshot.value as? [String: AnyObject] {
-				self.userName = (dictionary[USER_NAME] as? String)!
+				self.userName = (dictionary[Constants.DatabaseColumn.userName.rawValue] as? String)!
 			}
 		})
 	}
 	
 	func postToFirebase() {
 		let comment: Dictionary<String, Any> = [
-			USER_NAME: self.userName as Any,
+			Constants.DatabaseColumn.userName.rawValue: self.userName as Any,
 			COMMENT_TEXT: self.futureCommentLabel.text as Any
 		]
 		
-		let firebaseComment = DataService.ds.REF_COMMENTS.childByAutoId()
+		let firebaseComment = DataService.shared.REF_COMMENTS.childByAutoId()
 		self.commentId = firebaseComment.key
 		
-		currentCommentRef  = DataService.ds.REF_POST_CURRENT.child(COMMENTS_LIST).child(self.commentId)
+		currentCommentRef  = DataService.shared.REF_POST_CURRENT.child(Constants.Posts.commentList.rawValue).child(self.commentId)
 		
 		// get access to number of comments stored as Ints in the database
-		numberOfComments = DataService.ds.REF_POST_CURRENT.child("comments")
+		numberOfComments = DataService.shared.REF_POST_CURRENT.child("comments")
 		numberOfComments.setValue(self.numberOfCommentsInt + 1)
 		
 		//new comment was added, so increment the number of comments
@@ -145,6 +144,30 @@ class CommentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 		KeychainWrapper.standard.set(self.numberOfCommentsInt, forKey: "NumberOfComments")
 		
 		firebaseComment.setValue(comment)
+	}
+	
+	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+		self.view.endEditing(true)
+		return false
+	}
+	
+	// methods below resposible for moving text fields up, when the keyboard appears
+	func textFieldDidBeginEditing(_ textField: UITextField) {
+		animateViewMoving(up: true, moveValue: 250)
+	}
+	
+	func textFieldDidEndEditing(_ textField: UITextField) {
+		animateViewMoving(up: false, moveValue: 250)
+	}
+	
+	func animateViewMoving (up:Bool, moveValue :CGFloat){
+		let movementDuration:TimeInterval = 0.3
+		let movement:CGFloat = ( up ? -moveValue : moveValue)
+		UIView.beginAnimations( "animateView", context: nil)
+		UIView.setAnimationBeginsFromCurrentState(true)
+		UIView.setAnimationDuration(movementDuration )
+		self.view.frame = self.view.frame.offsetBy(dx: 0,  dy: movement)
+		UIView.commitAnimations()
 	}
 	
 }

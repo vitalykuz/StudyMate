@@ -26,5 +26,4 @@ class FacebookButton: UIButton {
 		
 		layer.cornerRadius = self.frame.width / 2
 	}
-
 }

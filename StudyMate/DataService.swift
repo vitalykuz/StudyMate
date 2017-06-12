@@ -15,13 +15,13 @@ let STORAGE_BASE = FIRStorage.storage().reference()
 
 class DataService {
 	
-	static let ds = DataService()
-
+	static let shared = DataService()
+	
 	// DB references
 	private var _REF_BASE = DB_BASE
-	private var _REF_POSTS = DB_BASE.child(POSTS)
-	private var _REF_USERS = DB_BASE.child(USERS)
-	private var _REF_COMMENTS = DB_BASE.child(COMMENTS_TABLE)
+	private var _REF_POSTS = DB_BASE.child(Constants.Posts.posts.rawValue)
+	private var _REF_USERS = DB_BASE.child(Constants.DatabaseColumn.users.rawValue)
+	private var _REF_COMMENTS = DB_BASE.child(Constants.DatabaseColumn.commentsColumn.rawValue)
 	
 	// Storage references
 	private var _REF_PROFILE_IMAGES = STORAGE_BASE.child(STORAGE_PROFILE_IMAGES)
@@ -43,18 +43,19 @@ class DataService {
 	}
 	
 	var REF_USER_CURRENT: FIRDatabaseReference {
-		//let uid = KeychainWrapper.stringForKey(KEY_UID)
-		//let uid = KeychainWrapper.set(KEY_UID)
-		//let uid = KeychainWrapper.defaultKeychainWrapper.string(forKey: KEY_UID)
-		let uid = KeychainWrapper.standard.string(forKey: USER_ID)
-		let user = REF_USERS.child(uid!)
-		return user
+		if let uid = KeychainWrapper.standard.string(forKey: Constants.DatabaseColumn.userID.rawValue) {
+			let user = REF_USERS.child(uid)
+			return user
+		}
+		return REF_USERS
 	}
 	
 	var REF_POST_CURRENT: FIRDatabaseReference {
-		let postId = KeychainWrapper.standard.string(forKey: "PostId")
-		let post = REF_POSTS.child(postId!)
-		return post
+		if let postId =  KeychainWrapper.standard.string(forKey: "PostId") {
+			let post = REF_POSTS.child(postId)
+			return post
+		}
+		return REF_POSTS
 	}
 	
 	var REF_PROFILE_IMAGES: FIRStorageReference {

@@ -10,11 +10,13 @@ import UIKit
 import Firebase
 import SwiftKeychainWrapper
 
-class PostVC: UIViewController, UITextViewDelegate, UITextFieldDelegate {
+class PostViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate {
 	@IBOutlet var subjectNameField: TextFieldCustomView!
 	@IBOutlet var locationField: TextFieldCustomView!
 	@IBOutlet var whenLabel: TextFieldCustomView!
 	@IBOutlet var postDescription: UITextView!
+	
+	@IBOutlet var activityIndicator: UIActivityIndicatorView!
 	
 	private var userName: String?
 	private var uni: String?
@@ -27,16 +29,19 @@ class PostVC: UIViewController, UITextViewDelegate, UITextFieldDelegate {
 		subjectNameField.delegate = self
 		whenLabel.delegate = self
 		locationField.delegate = self
-        // Do any additional setup after loading the view.
 		
 		postDescription.text = PROVIDE_POST_DESCRIPTION
 		postDescription.textColor = UIColor.lightGray
 		
+		activityIndicator.isHidden = true
+
+		NotificationCenter.default.addObserver(self, selector: #selector(PostViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(PostViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+		
 		self.findUser()
 		
     }
-	
-	// TO-DO: when post is created, segue to feed vc
+
 	@IBAction func createPostButtonTapped(_ sender: Any) {
 		guard let subjectName = subjectNameField.text, subjectName != "" else {
 			subjectNameField.attributedPlaceholder = NSAttributedString(string: ERROR_SUBJECT_NAME_EMPTY, attributes: [NSForegroundColorAttributeName: UIColor.red])
@@ -59,6 +64,10 @@ class PostVC: UIViewController, UITextViewDelegate, UITextFieldDelegate {
 			return
 		}
 		
+		activityIndicator.isHidden = false
+		activityIndicator.startAnimating()
+		UIApplication.shared.beginIgnoringInteractionEvents()
+		
 		self.postToFirebase()
 	}
 	
@@ -67,32 +76,38 @@ class PostVC: UIViewController, UITextViewDelegate, UITextFieldDelegate {
 			SUBJECT_NAME: self.subjectNameField.text as Any,
 			LOCATION: self.locationField.text as Any,
 			MEETING_TIME: self.whenLabel.text as Any,
-			POST_DESCRIPTION: self.postDescription.text as Any,
-			PROFILE_IMAGE_URL: self.profileImageUrl as Any,
-			USER_NAME: self.userName as Any,
+			Constants.Posts.postDescription.rawValue: self.postDescription.text as Any,
+			Constants.DatabaseColumn.profileImageUrl.rawValue: self.profileImageUrl as Any,
+			Constants.DatabaseColumn.userName.rawValue: self.userName as Any,
 			UNIVERSITY: self.uni ?? ERROR_DEFAULT_VALUE,
-			COMMENTS: 0 as Any,
-			LIKES: 0 as Any
+			Constants.Posts.comments.rawValue: 0 as Any,
+			Constants.Posts.likes.rawValue: 0 as Any
 		]
 		
-		let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
-		//print("Post id: \(firebasePost.key)") // it works
+		let firebasePost = DataService.shared.REF_POSTS.childByAutoId()
 		firebasePost.setValue(post)
+		
+		self.updateActivityIndicator()
+	}
+	
+	func updateActivityIndicator() {
+		self.activityIndicator.stopAnimating()
+		self.activityIndicator.isHidden = true
+		UIApplication.shared.endIgnoringInteractionEvents()
 	}
 
 	func findUser() {
-		let ref = DataService.ds.REF_BASE
+		let ref = DataService.shared.REF_BASE
 		let userID = FIRAuth.auth()?.currentUser?.uid
-		_ = ref.child(USERS).child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+		_ = ref.child(Constants.DatabaseColumn.users.rawValue).child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
 			if let dictionary = snapshot.value as? [String: AnyObject] {
-				self.userName = dictionary[USER_NAME] as? String
+				self.userName = dictionary[Constants.DatabaseColumn.userName.rawValue] as? String
 				self.uni = dictionary[UNIVERSITY] as? String
-				self.profileImageUrl = dictionary[PROFILE_IMAGE_URL] as? String
+				self.profileImageUrl = dictionary[Constants.DatabaseColumn.profileImageUrl.rawValue] as? String
 			}
 		})
 	}
-	
-	
+
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 		self.view.endEditing(true)
 		return false
@@ -120,5 +135,11 @@ class PostVC: UIViewController, UITextViewDelegate, UITextFieldDelegate {
 		}
 	}
 	
+	func keyboardWillShow(notification: NSNotification) {
+		self.view.frame.origin.y -= 50
+	}
 	
+	func keyboardWillHide(notification: NSNotification) {
+		self.view.frame.origin.y += 50
+	}
 }

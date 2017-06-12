@@ -31,19 +31,19 @@ class Post {
 	init(postId: String, postData: Dictionary<String, Any>) {
 		self._postKey = postId
 		
-		if let postDescription = postData[POST_DESCRIPTION] as? String {
+		if let postDescription = postData[Constants.Posts.postDescription.rawValue] as? String {
 			self._postDescription = postDescription
 		}
 		
-		if let imageUrl = postData[PROFILE_IMAGE_URL] as? String {
+		if let imageUrl = postData[Constants.DatabaseColumn.profileImageUrl.rawValue] as? String {
 			self._profileImageUrl = imageUrl
 		}
 		
-		if let likes = postData[LIKES] as? Int {
+		if let likes = postData[Constants.Posts.likes.rawValue] as? Int {
 			self._likes = likes
 		}
 		
-		if let comments = postData[COMMENTS] as? Int {
+		if let comments = postData[Constants.Posts.comments.rawValue] as? Int {
 			self._comments = comments
 		}
 		
@@ -55,7 +55,7 @@ class Post {
 			self._meetingTime = meetingTime
 		}
 		
-		if let userName = postData[USER_NAME] as? String {
+		if let userName = postData[Constants.DatabaseColumn.userName.rawValue] as? String {
 			self._userName = userName
 		}
 		
@@ -67,7 +67,7 @@ class Post {
 			self._uni = uni
 		}
 		
-		_postRef = DataService.ds.REF_POSTS.child(_postKey)
+		_postRef = DataService.shared.REF_POSTS.child(_postKey)
 		
 	}
 	
@@ -77,7 +77,7 @@ class Post {
 		} else {
 			_likes = likes - 1
 		}
-		_postRef.child(LIKES).setValue(_likes)
+		_postRef.child(Constants.Posts.likes.rawValue).setValue(_likes)
 		
 	}
 	

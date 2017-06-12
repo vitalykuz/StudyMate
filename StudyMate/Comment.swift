@@ -22,11 +22,11 @@ class Comment {
 			self._comment = commentText
 		}
 		
-		if let userName = commentData[USER_NAME] as? String {
+		if let userName = commentData[Constants.DatabaseColumn.userName.rawValue] as? String {
 			self._userName = userName
 		}
 		
-		_commentRef = DataService.ds.REF_COMMENTS.child(_commentId)
+		_commentRef = DataService.shared.REF_COMMENTS.child(_commentId)
 	}
 	
 	var commentId: String {
