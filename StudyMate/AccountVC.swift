@@ -33,6 +33,9 @@ class AccountVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
 		uniLabel.delegate = self
 		profileDescription.delegate = self
 		
+		NotificationCenter.default.addObserver(self, selector: #selector(AccountVC.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(AccountVC.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+		
 		self.fetchUserData()
     }
 	
@@ -183,5 +186,11 @@ class AccountVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
 		return true
 	}
 
+	func keyboardWillShow(notification: NSNotification) {
+		 self.view.frame.origin.y -= 150
+	}
 	
+	func keyboardWillHide(notification: NSNotification) {
+		 self.view.frame.origin.y += 150
+	}
 }

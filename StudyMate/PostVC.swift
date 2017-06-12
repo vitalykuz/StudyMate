@@ -37,11 +37,9 @@ class PostVC: UIViewController, UITextViewDelegate, UITextFieldDelegate {
 		postDescription.textColor = UIColor.lightGray
 		
 		activityIndicator.isHidden = true
-//		activityIndicator.center = self.view.center
-//		activityIndicator.hidesWhenStopped = true
-//		activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
-//		view.addSubview(activityIndicator)
-		
+
+		NotificationCenter.default.addObserver(self, selector: #selector(PostVC.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(PostVC.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
 		
 		self.findUser()
 		
@@ -150,5 +148,11 @@ class PostVC: UIViewController, UITextViewDelegate, UITextFieldDelegate {
 		}
 	}
 	
+	func keyboardWillShow(notification: NSNotification) {
+		self.view.frame.origin.y -= 50
+	}
 	
+	func keyboardWillHide(notification: NSNotification) {
+		self.view.frame.origin.y += 50
+	}
 }

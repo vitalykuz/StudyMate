@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import SwiftKeychainWrapper
 
-class CommentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class CommentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
 	@IBOutlet var futureCommentLabel: TextFieldCustomView!
 	@IBOutlet var tableView: UITableView!
 	var postId: String = "empty"
@@ -25,7 +25,8 @@ class CommentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-
+		
+		futureCommentLabel.delegate = self
 		tableView.delegate = self
 		tableView.dataSource = self
 		
@@ -112,7 +113,8 @@ class CommentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 				self.futureCommentLabel.text = ""
 			}
 		})
-		
+		_ = self.textFieldShouldReturn(futureCommentLabel)
+		futureCommentLabel.attributedPlaceholder = NSAttributedString(string: "Type your comment here...", attributes: [NSForegroundColorAttributeName: UIColor.gray])
 	}
 	
 	func findUser() {
@@ -145,6 +147,30 @@ class CommentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 		KeychainWrapper.standard.set(self.numberOfCommentsInt, forKey: "NumberOfComments")
 		
 		firebaseComment.setValue(comment)
+	}
+	
+	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+		self.view.endEditing(true)
+		return false
+	}
+	
+	// methods below resposible for moving text fields up, when the keyboard appears
+	func textFieldDidBeginEditing(_ textField: UITextField) {
+		animateViewMoving(up: true, moveValue: 250)
+	}
+	
+	func textFieldDidEndEditing(_ textField: UITextField) {
+		animateViewMoving(up: false, moveValue: 250)
+	}
+	
+	func animateViewMoving (up:Bool, moveValue :CGFloat){
+		let movementDuration:TimeInterval = 0.3
+		let movement:CGFloat = ( up ? -moveValue : moveValue)
+		UIView.beginAnimations( "animateView", context: nil)
+		UIView.setAnimationBeginsFromCurrentState(true)
+		UIView.setAnimationDuration(movementDuration )
+		self.view.frame = self.view.frame.offsetBy(dx: 0,  dy: movement)
+		UIView.commitAnimations()
 	}
 	
 }
